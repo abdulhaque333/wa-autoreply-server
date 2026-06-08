@@ -1,0 +1,27 @@
+# Render Blueprint — এক ক্লিকে deploy করার জন্য।
+# Render dashboard → New → Blueprint → এই repo সিলেক্ট করলেই সব তৈরি হয়ে যাবে।
+# এরপর শুধু sync=false করা variable গুলোতে value বসাতে হবে।
+services:
+  - type: web
+    name: wa-autoreply
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn server:app --bind 0.0.0.0:$PORT --workers 2 --timeout 60 --log-file -
+    healthCheckPath: /
+    autoDeploy: true
+    envVars:
+      # ⬇️ এই ৩টা অবশ্যই বসাতে হবে (Render dashboard-এ গিয়ে value দাও)
+      - key: WHATSAPP_TOKEN
+        sync: false
+      - key: PHONE_NUMBER_ID
+        sync: false
+      - key: VERIFY_TOKEN
+        value: verify_me_123   # ইচ্ছেমতো বদলাও; Meta webhook-এও একই দিতে হবে
+      # ⬇️ ঐচ্ছিক — AI চালু করতে চাইলে OpenAI key দাও, নাহলে fallback টেক্সট যাবে
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: OPENAI_MODEL
+        value: gpt-4o-mini
+      - key: GRAPH_VERSION
+        value: v20.0
