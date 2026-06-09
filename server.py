@@ -74,11 +74,14 @@ def wa_send_text(to: str, body: str):
         log.info("WA send ok -> %s", to)
     return data
 
+# OpenAI fail করলে / key না থাকলে এই সাহায্যকারী মেসেজটাই যাবে (error মেসেজ নয়)
+FALLBACK_TEXT = ("Thanks! Please share service type (plumbing/electrical), "
+                 "location, preferred time, and budget. We’ll reply quickly.")
+
 def ai_reply(user_text: str) -> str:
-    """OpenAI দিয়ে স্মার্ট রেসপন্স বানায়; key না থাকলে fallback দেয়"""
+    """OpenAI দিয়ে স্মার্ট রেসপন্স বানায়; কোনো সমস্যা হলে নিরাপদে fallback দেয়"""
     if not OPENAI_API_KEY:
-        return ("Thanks! Please share service type (plumbing/electrical), "
-                "location, preferred time, and budget. We’ll reply quickly.")
+        return FALLBACK_TEXT
 
     url = "https://api.openai.com/v1/chat/completions"
     headers = {
@@ -99,19 +102,15 @@ def ai_reply(user_text: str) -> str:
     }
     try:
         resp = requests.post(url, headers=headers, json=body, timeout=45)
-    except requests.RequestException as e:
-        log.exception("OpenAI network error: %s", e)
-        return "Sorry, I had a problem replying. Please try again."
-
-    try:
         data = resp.json()
-    except Exception:
-        log.exception("OpenAI non-JSON response")
-        return "Sorry, I had a problem replying. Please try again."
-    if resp.status_code >= 400:
-        log.error("OpenAI error %s: %s", resp.status_code, data)
-        return "Sorry, I had a problem replying. Please try again."
-    return data["choices"][0]["message"]["content"].strip()
+        if resp.status_code >= 400:
+            # যেমন insufficient_quota / invalid_key — সাহায্যকারী fallback দাও
+            log.error("OpenAI error %s: %s — falling back", resp.status_code, data)
+            return FALLBACK_TEXT
+        return data["choices"][0]["message"]["content"].strip()
+    except Exception as e:
+        log.exception("OpenAI call failed: %s — falling back", e)
+        return FALLBACK_TEXT
 
 # ------------ App ------------
 app = Flask(__name__)
