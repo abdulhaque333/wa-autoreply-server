@@ -1,7 +1,7 @@
 import os
 import json
 import logging
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 import requests
 
 # ------------ Config ------------
@@ -75,9 +75,15 @@ def ai_reply(user_text: str) -> str:
     return data["choices"][0]["message"]["content"].strip()
 
 # ------------ App ------------
-app = Flask(__name__)
+SITE_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "docs")
+app = Flask(__name__, static_folder=SITE_DIR, static_url_path="")
 
 @app.get("/")
+def home():
+    """Handyman Maldives marketing website"""
+    return send_from_directory(SITE_DIR, "index.html")
+
+@app.get("/health")
 def health():
     return {"ok": True, "service": "wa-ai-autoreply"}
 
