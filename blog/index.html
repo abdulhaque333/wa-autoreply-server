@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mohammad Abdul Haque — ব্লগ</title>
+<meta name="description" content="মোহাম্মদ আবদুল হকের ব্যক্তিগত ব্লগ — বাংলা, আরবি ও ইংরেজিতে নানা বিষয়ে লেখালেখি: ভাবনা, বই, বিশ্বাস ও প্রতিদিনের জীবন।" />
+<meta name="theme-color" content="#0d7a6e" />
+<meta name="author" content="Mohammad Abdul Haque" />
+<link rel="canonical" href="/" />
+
+<!-- Open Graph -->
+<meta property="og:title" content="Mohammad Abdul Haque — ব্লগ" />
+<meta property="og:description" content="বাংলা, আরবি ও ইংরেজিতে নানা বিষয়ে লেখালেখি।" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="bn_BD" />
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✍️</text></svg>" />
+<link rel="stylesheet" href="assets/style.css" />
+<script src="assets/main.js" defer></script>
+<script src="posts.js" defer></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="bar">
+    <a href="index.html" class="brand">Mohammad Abdul Haque</a>
+    <nav class="nav">
+      <a href="index.html">লেখা</a>
+      <a href="about.html">পরিচিতি</a>
+      <button class="theme-toggle" type="button" onclick="toggleTheme()" aria-label="থিম পরিবর্তন">☾</button>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="hero">
+    <h1>আসসালামু আলাইকুম 👋</h1>
+    <p>আমি মোহাম্মদ আবদুল হক। এখানে বাংলা, আরবি ও মাঝেমধ্যে ইংরেজিতে নানা বিষয়ে লিখি — ভাবনা, বই, বিশ্বাস আর প্রতিদিনের জীবন নিয়ে।</p>
+    <div class="socials">
+      <a href="mailto:abdulhaque333@gmail.com">ইমেইল</a>
+      <a href="about.html">আমার সম্পর্কে</a>
+    </div>
+  </section>
+
+  <div class="filters" role="tablist" aria-label="ভাষা অনুযায়ী ছাঁকনি">
+    <button class="filter-btn active" data-lang="all">সব</button>
+    <button class="filter-btn" data-lang="bn">বাংলা</button>
+    <button class="filter-btn" data-lang="ar">العربية</button>
+    <button class="filter-btn" data-lang="en">English</button>
+  </div>
+
+  <ul class="post-list" id="post-list">
+    <li class="empty">লেখা লোড হচ্ছে…</li>
+  </ul>
+
+</main>
+
+<footer class="site-footer">
+  <p>© <span id="year"></span> Mohammad Abdul Haque · <a href="mailto:abdulhaque333@gmail.com">যোগাযোগ</a></p>
+</footer>
+
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
