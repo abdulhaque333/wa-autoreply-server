@@ -1,0 +1,24 @@
+# ব্লগের জন্য আলাদা Netlify সাইটের কনফিগ।
+# Netlify ড্যাশবোর্ডে নতুন সাইট বানানোর সময়:
+#   Base directory   = blog
+#   Publish directory = blog   (অথবা base = blog হলে শুধু ".")
+# তাহলে এই ফাইলটি স্বয়ংক্রিয়ভাবে কাজ করবে।
+
+[build]
+  publish = "."
+  command = "python3 generate.py"
+
+[build.environment]
+  PYTHON_VERSION = "3.11"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
