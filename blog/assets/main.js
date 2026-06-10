@@ -1,5 +1,5 @@
 /* =========================================================
-   Theme toggle + post-list rendering
+   Theme toggle + category filter + post-list rendering
    ========================================================= */
 
 /* ---- Theme (light/dark, remembers choice) ---- */
@@ -23,11 +23,14 @@
   document.addEventListener("DOMContentLoaded", syncIcon);
 })();
 
-/* ---- Home page: render post list with language filter ---- */
+/* ---- Home page: render category filter + post list ---- */
 (function () {
   const LANG_LABEL = { bn: "বাংলা", ar: "العربية", en: "English" };
   const LANG_DIR = { bn: "ltr", ar: "rtl", en: "ltr" };
   const READ_MORE = { bn: "পড়ুন", ar: "اقرأ المزيد", en: "Read" };
+
+  function categories() { return window.CATEGORIES || []; }
+  function catBy(slug) { return categories().find((c) => c.slug === slug) || null; }
 
   function fmtDate(iso, lang) {
     const d = new Date(iso + "T00:00:00");
@@ -40,16 +43,52 @@
       ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   }
 
-  function render(filter) {
+  /* current category slug from the URL hash (#cat=slug); "" means all */
+  function currentCat() {
+    const m = (location.hash || "").match(/cat=([^&]+)/);
+    return m ? decodeURIComponent(m[1]) : "";
+  }
+
+  function renderFilters() {
+    const bar = document.getElementById("filters");
+    if (!bar) return;
+    const active = currentCat();
+    let html = `<button class="filter-btn${active ? "" : " active"}" data-cat="">সব</button>`;
+    html += categories().map((c) =>
+      `<button class="filter-btn${active === c.slug ? " active" : ""}" data-cat="${esc(c.slug)}" title="${esc(c.name)}">${esc(c.short || c.name)}</button>`
+    ).join("");
+    bar.innerHTML = html;
+    bar.querySelectorAll(".filter-btn").forEach((btn) => {
+      btn.addEventListener("click", function () {
+        const slug = btn.dataset.cat;
+        location.hash = slug ? "cat=" + encodeURIComponent(slug) : "";
+      });
+    });
+  }
+
+  function renderList() {
     const list = document.getElementById("post-list");
     if (!list || !window.POSTS) return;
+    const filter = currentCat();
+
+    // active pill state
+    document.querySelectorAll("#filters .filter-btn").forEach((b) =>
+      b.classList.toggle("active", (b.dataset.cat || "") === filter));
+
+    // category heading
+    const heading = document.getElementById("cat-heading");
+    if (heading) {
+      const c = filter ? catBy(filter) : null;
+      if (c) { heading.textContent = c.name; heading.hidden = false; }
+      else { heading.textContent = ""; heading.hidden = true; }
+    }
 
     const posts = window.POSTS.slice()
       .sort((a, b) => (a.date < b.date ? 1 : -1))
-      .filter((p) => filter === "all" || p.lang === filter);
+      .filter((p) => !filter || p.category === filter);
 
     if (!posts.length) {
-      list.innerHTML = '<li class="empty">এই ভাষায় এখনো কোনো লেখা নেই।</li>';
+      list.innerHTML = '<li class="empty">এই ক্যাটাগরিতে এখনো কোনো লেখা নেই।</li>';
       return;
     }
 
@@ -57,10 +96,15 @@
       const dir = LANG_DIR[p.lang] || "ltr";
       const tags = (p.tags || []).map((t) => `<span class="tag">${esc(t)}</span>`).join("");
       const url = `posts/${encodeURIComponent(p.slug)}.html`;
+      const c = catBy(p.category);
+      const catChip = c
+        ? `<a class="cat-chip" href="#cat=${esc(c.slug)}" title="${esc(c.name)}">${esc(c.short || c.name)}</a>`
+        : "";
       return `
       <li class="post-item" data-lang="${p.lang}" dir="${dir}">
         <div class="post-meta">
           <span class="badge">${LANG_LABEL[p.lang] || p.lang}</span>
+          ${catChip}
           <span>${fmtDate(p.date, p.lang)}</span>
           ${tags ? `<span class="dot-sep">·</span>${tags}` : ""}
         </div>
@@ -73,13 +117,8 @@
 
   document.addEventListener("DOMContentLoaded", function () {
     if (!document.getElementById("post-list")) return;
-    render("all");
-    document.querySelectorAll(".filter-btn").forEach((btn) => {
-      btn.addEventListener("click", function () {
-        document.querySelectorAll(".filter-btn").forEach((b) => b.classList.remove("active"));
-        btn.classList.add("active");
-        render(btn.dataset.lang);
-      });
-    });
+    renderFilters();
+    renderList();
+    window.addEventListener("hashchange", renderList);
   });
 })();

@@ -136,6 +136,32 @@ img { max-width: 100%; height: auto; border-radius: 8px; }
 .filter-btn:hover { border-color: var(--accent); color: var(--accent-deep); }
 .filter-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; }
 
+/* ---------- Category heading (shown when a category is selected) ---------- */
+.cat-heading {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(1.4rem, 4vw, 1.8rem);
+  letter-spacing: -.01em;
+  margin: 0 0 26px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--accent);
+}
+
+/* ---------- Category chip on a post card ---------- */
+.cat-chip {
+  font-family: var(--ui);
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .02em;
+  padding: 3px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  background: transparent;
+  white-space: nowrap;
+}
+a.cat-chip:hover { background: var(--gold); color: #fff; text-decoration: none; }
+
 /* ---------- Post list ---------- */
 .post-list { list-style: none; padding: 0; margin: 0; }
 .post-item {
