@@ -1,8 +1,9 @@
 # ব্লগের জন্য আলাদা Netlify সাইটের কনফিগ।
 # Netlify ড্যাশবোর্ডে নতুন সাইট বানানোর সময়:
-#   Base directory   = blog
-#   Publish directory = blog   (অথবা base = blog হলে শুধু ".")
-# তাহলে এই ফাইলটি স্বয়ংক্রিয়ভাবে কাজ করবে।
+#   Base directory    = docs/blog
+#   Build command     = python3 generate.py   (নিচেও দেওয়া আছে)
+#   Publish directory = docs/blog              (base দিলে শুধু ".")
+# তাহলে ব্লগটি ওই সাইটের রুটে (যেমন abdulhaque.netlify.app/) সার্ভ হবে।
 
 [build]
   publish = "."
@@ -10,6 +11,9 @@
 
 [build.environment]
   PYTHON_VERSION = "3.11"
+  # সাইট তৈরির পর নিচের লাইনটি আপনার আসল Netlify ঠিকানায় বদলে দিন
+  # (RSS feed ও sitemap-এর লিংক ঠিক হওয়ার জন্য):
+  SITE_URL = "https://abdulhaque.netlify.app"
 
 [[headers]]
   for = "/*"
