@@ -216,6 +216,38 @@ img { max-width: 100%; height: auto; border-radius: 8px; }
 .prose code { background: var(--code-bg); padding: .15em .4em; border-radius: 5px; font-size: .88em; font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; }
 .prose pre { background: var(--code-bg); padding: 16px 18px; border-radius: 12px; overflow-x: auto; border: 1px solid var(--line); }
 .prose pre code { background: none; padding: 0; }
+/* Embedded Arabic passages inside a Bangla/English article */
+.prose .arabic {
+  font-family: var(--ar) !important;
+  direction: rtl;
+  text-align: right;
+  font-style: normal;
+  font-size: 1.15em;
+  line-height: 2.05;
+}
+.prose blockquote.arabic { color: var(--ink); }
+/* The objection statement being quoted */
+.prose .claim {
+  background: var(--accent-soft);
+  border-inline-start: 3px solid var(--accent);
+  border-radius: 10px;
+  padding: .7em 1.1em;
+  margin: 0 0 1.2em;
+  font-weight: 600;
+}
+/* Source reference under a quote */
+.prose cite.src {
+  display: block;
+  font-style: normal;
+  font-family: var(--ui);
+  font-size: .82rem;
+  color: var(--ink-soft);
+  margin-top: .5em;
+}
+.prose figure { margin: 0 0 1.8em; }
+.prose figure img { margin: 0 auto; }
+.prose figcaption { text-align: center; font-family: var(--ui); font-size: .82rem; color: var(--ink-soft); margin-top: .5em; }
+
 .prose hr { border: 0; text-align: center; margin: 2.4em 0; }
 .prose hr::before { content: "✦ ✦ ✦"; color: var(--line-strong); letter-spacing: .6em; font-size: .8rem; }
 .prose img { display: block; margin: 1.8em auto; box-shadow: var(--shadow); }
