@@ -5,23 +5,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Handyman Maldives — Trusted Home & Property Services</title>
 <meta name="description" content="Handyman Maldives offers professional plumbing, electrical, aircon servicing, painting, tiling, ceiling & roofing, apartment moving and more across the Maldives. Fast, reliable, affordable." />
-<meta name="theme-color" content="#070b16" />
+<meta name="theme-color" content="#101a33" />
 <meta name="google-site-verification" content="uP_fp2exWjtJFJCGkklnpJUsFNhvWsxe-CYs3FvXeOg" />
 <link rel="canonical" href="https://handymanmaldives.netlify.app/" />
 <meta name="robots" content="index, follow" />
 <meta name="keywords" content="handyman Maldives, plumber Male, electrician Maldives, aircon repair Maldives, painting, tiling, apartment moving, ceiling roofing, home repair Maldives" />
 <meta name="geo.region" content="MV" />
 <meta name="geo.placename" content="Malé, Maldives" />
+<link rel="icon" type="image/png" href="/logo.png" />
+<link rel="apple-touch-icon" href="/logo.png" />
 
 <!-- Open Graph -->
 <meta property="og:title" content="Handyman Maldives — Trusted Home & Property Services" />
 <meta property="og:description" content="Plumbing, Electrical, Aircon, Painting, Tiling, Roofing, Moving & more. Book in minutes on WhatsApp." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://handymanmaldives.netlify.app/" />
+<meta property="og:image" content="https://handymanmaldives.netlify.app/logo.png" />
 <meta property="og:locale" content="en_US" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Handyman Maldives — Trusted Home & Property Services" />
 <meta name="twitter:description" content="Plumbing, Electrical, Aircon, Painting, Tiling, Roofing, Moving & more. Book on WhatsApp." />
+<meta name="twitter:image" content="https://handymanmaldives.netlify.app/logo.png" />
 
 <!-- Local business structured data for Google -->
 <script type="application/ld+json">
@@ -32,7 +36,8 @@
   "description": "Professional handyman services across the Maldives: plumbing, electrical work, aircon repair & servicing, painting, tiling, ceiling & roofing, apartment moving, carpentry and general repairs.",
   "url": "https://handymanmaldives.netlify.app/",
   "telephone": "+9607237764",
-  "image": "https://handymanmaldives.netlify.app/",
+  "image": "https://handymanmaldives.netlify.app/logo.png",
+  "logo": "https://handymanmaldives.netlify.app/logo.png",
   "areaServed": { "@type": "Country", "name": "Maldives" },
   "address": {
     "@type": "PostalAddress",
@@ -56,211 +61,221 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
   :root{
-    --bg:#070b16;
-    --bg-soft:#0c1322;
-    --card:rgba(255,255,255,.045);
-    --card-brd:rgba(255,255,255,.09);
-    --ink:#eef2fb;
-    --muted:#9aa7c2;
-    --teal:#2dd4bf;
-    --cyan:#38bdf8;
-    --indigo:#818cf8;
-    --amber:#fbbf24;
-    --amber-2:#f59e0b;
-    --grad: linear-gradient(120deg,#2dd4bf,#38bdf8 45%,#818cf8);
-    --radius:20px;
+    --navy:#101a33;          /* page background (matches logo) */
+    --navy-2:#0c1429;        /* darker */
+    --navy-card:#16223f;     /* card base */
+    --card:rgba(255,255,255,.04);
+    --line:rgba(245,166,35,.16);
+    --line-soft:rgba(255,255,255,.09);
+    --gold:#f5a623;
+    --gold-2:#fbc05b;
+    --gold-deep:#e08e10;
+    --ink:#f5f8ff;
+    --muted:#9fb0d0;
+    --body:#c4cfe6;
+    --grad:linear-gradient(120deg,#f5a623,#fbc05b);
+    --grad-soft:linear-gradient(135deg,rgba(245,166,35,.18),rgba(251,192,91,.06));
+    --radius:18px;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{
-    font-family:'Inter',system-ui,-apple-system,sans-serif;
-    background:var(--bg);color:var(--ink);line-height:1.65;overflow-x:hidden;
-  }
-  h1,h2,h3,h4,.brand,.btn,.stat b,.pill{font-family:'Space Grotesk',sans-serif}
+  body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--navy);color:var(--body);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,h4,.brand,.btn,.stat b,.eyebrow,.step .n,.logo-txt,.who b{font-family:'Plus Jakarta Sans',sans-serif}
+  h1,h2,h3,h4{color:var(--ink)}
   a{text-decoration:none;color:inherit}
+  img{max-width:100%;display:block}
   .wrap{width:min(1180px,92%);margin-inline:auto}
-  section{padding:90px 0;position:relative}
-  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;font-weight:600;letter-spacing:.14em;
-    text-transform:uppercase;color:var(--teal);padding:7px 14px;border:1px solid var(--card-brd);
-    border-radius:999px;background:var(--card);backdrop-filter:blur(8px)}
-  h2{font-size:clamp(1.9rem,4.2vw,3rem);line-height:1.1;letter-spacing:-.02em;margin:18px 0 12px;font-weight:700}
-  .lead{color:var(--muted);max-width:600px;font-size:1.05rem}
-  .center{text-align:center}
-  .center .lead{margin-inline:auto}
+  section{padding:88px 0;position:relative}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.76rem;font-weight:700;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--gold);padding:7px 15px;border:1px solid var(--line);border-radius:999px;
+    background:var(--grad-soft);margin-bottom:18px}
+  h2{font-size:clamp(1.9rem,4vw,2.9rem);line-height:1.12;letter-spacing:-.02em;font-weight:800;margin-bottom:14px}
+  .lead{color:var(--muted);max-width:580px;font-size:1.06rem}
+  .center{text-align:center}.center .lead{margin-inline:auto}
   .grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 
-  /* Aurora background blobs */
-  .aurora{position:fixed;inset:0;z-index:-2;overflow:hidden;pointer-events:none}
-  .blob{position:absolute;border-radius:50%;filter:blur(90px);opacity:.5;animation:float 18s ease-in-out infinite}
-  .b1{width:520px;height:520px;background:#0e7490;top:-160px;left:-120px}
-  .b2{width:460px;height:460px;background:#4f46e5;top:18%;right:-160px;animation-delay:-5s}
-  .b3{width:420px;height:420px;background:#0d9488;bottom:-160px;left:25%;animation-delay:-9s}
-  .grid-overlay{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.4;
-    background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),
-                     linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);
-    background-size:54px 54px;
-    mask-image:radial-gradient(ellipse at 50% 0%,#000 40%,transparent 80%)}
-  @keyframes float{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(30px,-40px) scale(1.08)}}
+  /* Aurora glow */
+  .glow{position:fixed;inset:0;z-index:-2;overflow:hidden;pointer-events:none}
+  .blob{position:absolute;border-radius:50%;filter:blur(100px);opacity:.4;animation:float 20s ease-in-out infinite}
+  .b1{width:520px;height:520px;background:#f5a623;top:-200px;right:-120px;opacity:.22}
+  .b2{width:440px;height:440px;background:#1d4ed8;bottom:-160px;left:-120px;opacity:.28;animation-delay:-7s}
+  @keyframes float{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-30px,40px) scale(1.1)}}
 
   /* Buttons */
-  .btn{display:inline-flex;align-items:center;gap:9px;padding:14px 26px;border-radius:999px;font-weight:600;
-    font-size:.98rem;cursor:pointer;border:0;transition:transform .18s,box-shadow .18s,background .18s;white-space:nowrap}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:14px 26px;border-radius:999px;
+    font-weight:700;font-size:.97rem;cursor:pointer;border:0;transition:transform .18s,box-shadow .18s,background .2s;white-space:nowrap}
   .btn:hover{transform:translateY(-3px)}
-  .btn-wa{background:#25D366;color:#06250f;box-shadow:0 10px 30px rgba(37,211,102,.35)}
-  .btn-amber{background:linear-gradient(120deg,var(--amber),var(--amber-2));color:#241803;box-shadow:0 10px 30px rgba(245,158,11,.32)}
-  .btn-ghost{background:var(--card);color:var(--ink);border:1px solid var(--card-brd);backdrop-filter:blur(8px)}
-  .btn-ghost:hover{background:rgba(255,255,255,.09)}
+  .btn-wa{background:#25D366;color:#fff;box-shadow:0 12px 30px -8px rgba(37,211,102,.55)}
+  .btn-gold{background:var(--grad);color:#1a1203;box-shadow:0 12px 30px -8px rgba(245,166,35,.5)}
+  .btn-ghost{background:var(--card);color:var(--ink);border:1px solid var(--line-soft)}
+  .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold)}
+  .btn-navy{background:#101a33;color:var(--gold)}
+
+  /* Topbar */
+  .topbar{background:var(--navy-2);color:#aab8d6;font-size:.85rem;text-align:center;padding:9px 16px;border-bottom:1px solid var(--line-soft)}
+  .topbar b{color:var(--gold)}
+  .topbar a{color:var(--gold-2);font-weight:700}
 
   /* Header */
-  header{position:sticky;top:0;z-index:60;transition:.3s}
-  header.scrolled{background:rgba(7,11,22,.78);backdrop-filter:blur(14px);border-bottom:1px solid var(--card-brd)}
-  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
-  .brand{display:flex;align-items:center;gap:12px;font-weight:700;font-size:1.2rem;letter-spacing:-.01em}
-  .logo{width:44px;height:44px;border-radius:13px;display:grid;place-items:center;font-size:1.35rem;
-    background:var(--grad);color:#04121a;box-shadow:0 8px 22px rgba(45,212,191,.35);position:relative}
-  .brand small{display:block;font-weight:500;font-size:.62rem;color:var(--muted);letter-spacing:.22em;text-transform:uppercase}
-  .menu{display:flex;gap:30px;font-size:.95rem;font-weight:500;color:var(--muted)}
-  .menu a{position:relative}
-  .menu a:hover{color:var(--ink)}
-  .menu a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--grad);transition:.25s}
+  header{position:sticky;top:0;z-index:60;background:rgba(16,26,51,.8);backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:.25s}
+  header.scrolled{border-color:var(--line-soft);box-shadow:0 10px 30px -16px rgba(0,0,0,.6)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:13px 0}
+  .brand{display:flex;align-items:center;gap:12px;font-weight:800;font-size:1.16rem;letter-spacing:-.01em;color:var(--ink)}
+  .brand img{width:46px;height:46px;border-radius:12px;flex:0 0 auto;box-shadow:0 6px 18px -6px rgba(0,0,0,.6)}
+  .brand small{display:block;font-weight:600;font-size:.6rem;color:var(--muted);letter-spacing:.2em;text-transform:uppercase}
+  .menu{display:flex;gap:30px;font-size:.95rem;font-weight:600;color:var(--body)}
+  .menu a{position:relative;padding:4px 0}
+  .menu a:hover{color:var(--gold)}
+  .menu a::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:2px;background:var(--grad);transition:.25s;border-radius:2px}
   .menu a:hover::after{width:100%}
-  @media(max-width:880px){.menu{display:none}}
+  .nav .btn{padding:11px 20px}
+  @media(max-width:900px){.menu{display:none}}
 
   /* Hero */
-  .hero{padding:70px 0 40px;text-align:center}
-  .hero .badge{display:inline-flex;align-items:center;gap:9px;font-size:.84rem;color:var(--muted);
-    padding:8px 16px;border:1px solid var(--card-brd);border-radius:999px;background:var(--card);margin-bottom:26px}
+  .hero{position:relative;overflow:hidden;padding:74px 0 84px}
+  .hero::after{content:"";position:absolute;inset:0;z-index:-1;opacity:.5;
+    background-image:linear-gradient(var(--line-soft) 1px,transparent 1px),linear-gradient(90deg,var(--line-soft) 1px,transparent 1px);
+    background-size:48px 48px;mask-image:radial-gradient(ellipse 60% 55% at 50% 0%,#000 30%,transparent 78%);
+    -webkit-mask-image:radial-gradient(ellipse 60% 55% at 50% 0%,#000 30%,transparent 78%)}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center}
+  .badge{display:inline-flex;align-items:center;gap:9px;font-size:.84rem;font-weight:600;color:var(--gold-2);
+    padding:7px 15px;border:1px solid var(--line);border-radius:999px;background:var(--grad-soft);margin-bottom:22px}
   .dot{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 0 rgba(34,197,94,.6);animation:ping 2s infinite}
-  @keyframes ping{0%{box-shadow:0 0 0 0 rgba(34,197,94,.5)}70%{box-shadow:0 0 0 10px rgba(34,197,94,0)}100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}}
-  .hero h1{font-size:clamp(2.4rem,6.4vw,4.6rem);line-height:1.04;letter-spacing:-.03em;font-weight:700;margin-bottom:22px}
-  .hero p.sub{color:var(--muted);font-size:clamp(1rem,2.2vw,1.22rem);max-width:620px;margin:0 auto 34px}
-  .hero-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-  .mini-trust{display:flex;gap:8px;justify-content:center;align-items:center;flex-wrap:wrap;margin-top:26px;color:var(--muted);font-size:.9rem}
-  .stars{color:var(--amber);letter-spacing:2px}
+  @keyframes ping{0%{box-shadow:0 0 0 0 rgba(34,197,94,.5)}70%{box-shadow:0 0 0 9px rgba(34,197,94,0)}100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}}
+  .hero h1{font-size:clamp(2.4rem,5.4vw,3.9rem);line-height:1.06;letter-spacing:-.03em;font-weight:800;margin-bottom:20px}
+  .hero p.sub{color:var(--muted);font-size:clamp(1rem,2vw,1.18rem);max-width:520px;margin-bottom:30px}
+  .hero-actions{display:flex;gap:13px;flex-wrap:wrap}
+  .hero-trust{display:flex;align-items:center;gap:14px;margin-top:30px;flex-wrap:wrap}
+  .stars{color:var(--gold);letter-spacing:1px}
+  .hero-trust small{color:var(--muted);font-size:.9rem}
+  .avs{display:flex}
+  .avs span{width:34px;height:34px;border-radius:50%;border:2px solid var(--navy);margin-left:-10px;display:grid;place-items:center;font-size:.8rem;font-weight:700;color:#1a1203;font-family:'Plus Jakarta Sans'}
+  .avs span:first-child{margin-left:0}
 
-  /* Marquee */
-  .marquee{margin-top:60px;border-block:1px solid var(--card-brd);padding:18px 0;overflow:hidden;
-    -webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);
-    mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
-  .marquee-track{display:flex;gap:46px;width:max-content;animation:scroll 26s linear infinite}
-  .marquee:hover .marquee-track{animation-play-state:paused}
-  .marquee span{display:inline-flex;align-items:center;gap:12px;color:var(--muted);font-weight:600;
-    font-family:'Space Grotesk';font-size:1.05rem;white-space:nowrap}
-  .marquee span::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--teal)}
-  @keyframes scroll{to{transform:translateX(-50%)}}
+  /* Hero logo visual */
+  .hero-visual{display:grid;place-items:center;position:relative}
+  .logo-ring{position:relative;width:min(420px,90%);aspect-ratio:1;display:grid;place-items:center}
+  .logo-ring::before{content:"";position:absolute;inset:0;border-radius:50%;
+    background:radial-gradient(circle,rgba(245,166,35,.28),transparent 65%);filter:blur(20px)}
+  .logo-ring img{position:relative;width:100%;border-radius:28px;box-shadow:0 40px 80px -30px rgba(0,0,0,.8),0 0 0 1px var(--line-soft)}
+  .float-badge{position:absolute;background:var(--navy-card);border:1px solid var(--line-soft);border-radius:14px;padding:11px 15px;
+    box-shadow:0 16px 36px -16px rgba(0,0,0,.7);display:flex;align-items:center;gap:10px;font-size:.85rem;font-weight:700;color:var(--ink)}
+  .float-badge .fi{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;font-size:1.1rem;background:var(--grad-soft)}
+  .fb1{top:8px;left:-14px;animation:bob 4s ease-in-out infinite}
+  .fb2{bottom:14px;right:-10px;animation:bob 4s ease-in-out infinite;animation-delay:-2s}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+  @media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:50px}.logo-ring{width:min(320px,80%)}}
+
+  /* Strip */
+  .strip{border-block:1px solid var(--line-soft);background:var(--navy-2)}
+  .strip .wrap{display:flex;align-items:center;justify-content:center;gap:14px 40px;flex-wrap:wrap;padding:22px 0}
+  .strip span{font-family:'Plus Jakarta Sans';font-weight:700;color:#6f7fa3;font-size:.98rem;display:inline-flex;align-items:center;gap:9px}
 
   /* Stats */
-  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:14px}
-  .stat{background:var(--card);border:1px solid var(--card-brd);border-radius:var(--radius);padding:26px 20px;text-align:center;backdrop-filter:blur(8px)}
-  .stat b{display:block;font-size:2rem;font-weight:700;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-  .stat span{color:var(--muted);font-size:.88rem}
-  @media(max-width:680px){.stats{grid-template-columns:repeat(2,1fr)}}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .stat{text-align:center;padding:26px 16px;background:var(--card);border:1px solid var(--line-soft);border-radius:var(--radius);backdrop-filter:blur(6px)}
+  .stat b{display:block;font-size:2.1rem;font-weight:800;line-height:1;margin-bottom:6px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .stat span{color:var(--muted);font-size:.88rem;font-weight:500}
+  @media(max-width:640px){.stats{grid-template-columns:repeat(2,1fr)}}
 
-  /* Bento services */
-  .bento{display:grid;grid-template-columns:repeat(6,1fr);gap:18px;margin-top:44px}
-  .card{position:relative;background:var(--card);border:1px solid var(--card-brd);border-radius:var(--radius);
-    padding:28px;overflow:hidden;backdrop-filter:blur(8px);transition:transform .25s,border-color .25s,background .25s}
-  .card::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;opacity:0;transition:.3s;
-    background:var(--grad);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
-    -webkit-mask-composite:xor;mask-composite:exclude}
-  .card:hover{transform:translateY(-6px);background:rgba(255,255,255,.07)}
-  .card:hover::before{opacity:1}
-  .card .ico{width:56px;height:56px;border-radius:15px;display:grid;place-items:center;font-size:1.7rem;margin-bottom:18px;
-    background:linear-gradient(135deg,rgba(45,212,191,.18),rgba(129,140,248,.18));border:1px solid var(--card-brd)}
-  .card h3{font-size:1.22rem;font-weight:600;margin-bottom:7px;letter-spacing:-.01em}
+  /* Services */
+  .sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:46px}
+  .card{position:relative;background:var(--card);border:1px solid var(--line-soft);border-radius:var(--radius);padding:28px;
+    transition:transform .24s,box-shadow .24s,border-color .24s,background .24s;overflow:hidden;backdrop-filter:blur(6px)}
+  .card::after{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad);transform:scaleX(0);transform-origin:left;transition:.3s}
+  .card:hover{transform:translateY(-7px);background:rgba(255,255,255,.06);border-color:var(--line)}
+  .card:hover::after{transform:scaleX(1)}
+  .card .ico{width:58px;height:58px;border-radius:16px;display:grid;place-items:center;font-size:1.7rem;margin-bottom:18px;background:var(--grad-soft);border:1px solid var(--line)}
+  .card h3{font-size:1.2rem;font-weight:700;margin-bottom:7px}
   .card p{color:var(--muted);font-size:.95rem}
-  .card .go{display:inline-flex;align-items:center;gap:7px;margin-top:16px;color:var(--teal);font-weight:600;font-size:.9rem;font-family:'Space Grotesk'}
+  .card .go{display:inline-flex;align-items:center;gap:6px;margin-top:16px;color:var(--gold);font-weight:700;font-size:.9rem;font-family:'Plus Jakarta Sans'}
   .card .go svg{transition:transform .2s}
   .card:hover .go svg{transform:translateX(4px)}
-  .col-3{grid-column:span 3}.col-2{grid-column:span 2}
-  .feature{display:flex;flex-direction:column;justify-content:flex-end;min-height:230px;
-    background:linear-gradient(135deg,rgba(45,212,191,.14),rgba(56,189,248,.06))}
-  @media(max-width:960px){.col-3,.col-2{grid-column:span 3}}
-  @media(max-width:640px){.bento{grid-template-columns:1fr}.col-3,.col-2{grid-column:span 1}}
+  @media(max-width:900px){.sgrid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.sgrid{grid-template-columns:1fr}}
 
-  /* Why / features */
-  .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px}
-  .feat{background:var(--card);border:1px solid var(--card-brd);border-radius:var(--radius);padding:26px;backdrop-filter:blur(8px);transition:.25s}
-  .feat:hover{transform:translateY(-4px);border-color:rgba(45,212,191,.4)}
-  .feat .b{width:48px;height:48px;border-radius:13px;display:grid;place-items:center;font-size:1.4rem;margin-bottom:14px;
-    background:linear-gradient(135deg,var(--teal),var(--cyan));color:#04121a}
-  .feat h4{font-size:1.12rem;font-weight:600;margin-bottom:6px}
+  /* Why */
+  .why{background:var(--navy-2);border-block:1px solid var(--line-soft)}
+  .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:46px}
+  .feat{background:var(--card);border:1px solid var(--line-soft);border-radius:var(--radius);padding:28px;transition:.24s;backdrop-filter:blur(6px)}
+  .feat:hover{transform:translateY(-5px);border-color:var(--line)}
+  .feat .b{width:50px;height:50px;border-radius:14px;display:grid;place-items:center;font-size:1.4rem;margin-bottom:15px;background:var(--grad);color:#1a1203}
+  .feat h4{font-size:1.13rem;font-weight:700;margin-bottom:6px}
   .feat p{color:var(--muted);font-size:.94rem}
   @media(max-width:860px){.why-grid{grid-template-columns:1fr}}
 
   /* Process */
-  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:46px}
-  .step{position:relative;background:var(--card);border:1px solid var(--card-brd);border-radius:var(--radius);padding:30px 26px;backdrop-filter:blur(8px)}
-  .step .n{font-family:'Space Grotesk';font-size:2.6rem;font-weight:700;line-height:1;
-    background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:14px}
-  .step h4{font-size:1.15rem;font-weight:600;margin-bottom:6px}
-  .step p{color:var(--muted);font-size:.94rem}
-  @media(max-width:860px){.steps{grid-template-columns:1fr}}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px;position:relative}
+  .steps::before{content:"";position:absolute;top:34px;left:16%;right:16%;height:2px;background:linear-gradient(90deg,var(--gold),transparent);opacity:.4}
+  .step{text-align:center;position:relative}
+  .step .n{width:68px;height:68px;border-radius:50%;display:grid;place-items:center;margin:0 auto 18px;font-size:1.5rem;font-weight:800;color:#1a1203;background:var(--grad);box-shadow:0 14px 30px -10px rgba(245,166,35,.6);border:5px solid var(--navy)}
+  .step h4{font-size:1.18rem;font-weight:700;margin-bottom:7px}
+  .step p{color:var(--muted);font-size:.95rem;max-width:280px;margin-inline:auto}
+  @media(max-width:860px){.steps{grid-template-columns:1fr;gap:30px}.steps::before{display:none}}
 
   /* Testimonials */
-  .tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px}
-  .quote{background:var(--card);border:1px solid var(--card-brd);border-radius:var(--radius);padding:28px;backdrop-filter:blur(8px)}
-  .quote .stars{font-size:.95rem;margin-bottom:12px}
-  .quote p{font-size:.98rem;margin-bottom:18px}
+  .tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:46px}
+  .quote{background:var(--card);border:1px solid var(--line-soft);border-radius:var(--radius);padding:28px;transition:.24s;backdrop-filter:blur(6px)}
+  .quote:hover{transform:translateY(-4px);border-color:var(--line)}
+  .quote .stars{font-size:1rem;margin-bottom:13px}
+  .quote p{font-size:.98rem;color:var(--body);margin-bottom:18px}
   .who{display:flex;align-items:center;gap:12px}
-  .av{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-family:'Space Grotesk';color:#04121a;background:var(--grad)}
-  .who b{display:block;font-size:.95rem}.who span{color:var(--muted);font-size:.82rem}
+  .av{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-family:'Plus Jakarta Sans';color:#1a1203;background:var(--grad)}
+  .who b{display:block;font-size:.95rem;color:var(--ink)}.who span{color:var(--muted);font-size:.82rem}
   @media(max-width:860px){.tgrid{grid-template-columns:1fr}}
 
   /* FAQ */
-  .faq{max-width:760px;margin:44px auto 0}
-  .qa{border:1px solid var(--card-brd);border-radius:16px;background:var(--card);margin-bottom:14px;overflow:hidden;backdrop-filter:blur(8px)}
-  .qa summary{list-style:none;cursor:pointer;padding:20px 24px;font-weight:600;font-family:'Space Grotesk';
-    display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:1.02rem}
+  .faq{max-width:780px;margin:46px auto 0}
+  .qa{border:1px solid var(--line-soft);border-radius:14px;background:var(--card);margin-bottom:14px;overflow:hidden;transition:.2s;backdrop-filter:blur(6px)}
+  .qa[open]{border-color:var(--line)}
+  .qa summary{list-style:none;cursor:pointer;padding:20px 24px;font-weight:700;font-family:'Plus Jakarta Sans';color:var(--ink);display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:1.02rem}
   .qa summary::-webkit-details-marker{display:none}
-  .qa summary .plus{transition:.25s;color:var(--teal);font-size:1.4rem;flex:0 0 auto}
+  .qa summary .plus{transition:.25s;color:var(--gold);font-size:1.5rem;flex:0 0 auto;line-height:1}
   .qa[open] summary .plus{transform:rotate(45deg)}
   .qa .a{padding:0 24px 22px;color:var(--muted);font-size:.96rem}
 
   /* CTA */
-  .cta-band{position:relative;border-radius:30px;padding:60px 40px;text-align:center;overflow:hidden;
-    background:linear-gradient(135deg,rgba(45,212,191,.16),rgba(129,140,248,.16));border:1px solid var(--card-brd)}
-  .cta-band::after{content:"";position:absolute;width:340px;height:340px;border-radius:50%;background:var(--teal);
-    filter:blur(120px);opacity:.35;top:-120px;right:-60px}
-  .cta-band h2{position:relative}
-  .cta-band p{position:relative;color:var(--muted);max-width:520px;margin:10px auto 28px}
-  .cta-band .hero-actions{position:relative}
+  .cta-band{position:relative;border-radius:28px;padding:60px 40px;text-align:center;overflow:hidden;background:var(--grad);box-shadow:0 30px 70px -28px rgba(245,166,35,.6)}
+  .cta-band::before{content:"";position:absolute;inset:0;opacity:.12;background:radial-gradient(circle at 85% 15%,#000,transparent 40%),radial-gradient(circle at 10% 90%,#000,transparent 45%)}
+  .cta-band h2{color:#1a1203;position:relative;font-size:clamp(1.8rem,4vw,2.7rem)}
+  .cta-band p{color:#3a2a06;position:relative;max-width:520px;margin:10px auto 28px;font-weight:500}
+  .cta-band .hero-actions{position:relative;justify-content:center}
 
   /* Footer */
-  footer{border-top:1px solid var(--card-brd);padding:60px 0 30px;background:var(--bg-soft)}
-  .fgrid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:36px}
-  footer h5{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;font-weight:600}
-  .fcol li{list-style:none;margin-bottom:10px;color:var(--muted);font-size:.95rem}
-  .fcol a:hover{color:var(--teal)}
-  .copy{border-top:1px solid var(--card-brd);margin-top:40px;padding-top:22px;text-align:center;color:var(--muted);font-size:.85rem}
-  @media(max-width:760px){.fgrid{grid-template-columns:1fr;gap:26px}}
+  footer{background:var(--navy-2);color:#8294b5;padding:62px 0 28px;border-top:1px solid var(--line-soft)}
+  .fgrid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:38px}
+  footer .brand{color:#fff}
+  footer h5{font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:#5d6f92;margin-bottom:16px;font-weight:700;font-family:'Plus Jakarta Sans'}
+  .fcol li{list-style:none;margin-bottom:11px;font-size:.95rem}
+  .fcol a:hover{color:var(--gold)}
+  .copy{border-top:1px solid var(--line-soft);margin-top:42px;padding-top:22px;text-align:center;color:#5d6f92;font-size:.85rem}
+  @media(max-width:760px){.fgrid{grid-template-columns:1fr;gap:28px}}
 
   /* Floating WhatsApp */
-  .float-wa{position:fixed;right:20px;bottom:20px;z-index:80;background:#25D366;color:#fff;
-    width:62px;height:62px;border-radius:50%;display:grid;place-items:center;font-size:1.9rem;
-    box-shadow:0 12px 30px rgba(37,211,102,.5);animation:ping2 2.6s infinite}
-  @keyframes ping2{0%{box-shadow:0 0 0 0 rgba(37,211,102,.45)}70%{box-shadow:0 0 0 18px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+  .float-wa{position:fixed;right:20px;bottom:20px;z-index:80;background:#25D366;color:#fff;width:62px;height:62px;border-radius:50%;display:grid;place-items:center;font-size:1.9rem;box-shadow:0 14px 32px -8px rgba(37,211,102,.7);animation:ping2 2.6s infinite}
+  @keyframes ping2{0%{box-shadow:0 0 0 0 rgba(37,211,102,.45)}70%{box-shadow:0 0 0 16px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
 
-  /* Reveal animation */
-  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+  /* Reveal */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
   .reveal.in{opacity:1;transform:none}
-  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}.blob,.marquee-track{animation:none}}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}.dot,.float-badge,.float-wa,.blob{animation:none}}
 </style>
 </head>
 <body>
 
-<div class="aurora"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
-<div class="grid-overlay"></div>
+<div class="glow"><div class="blob b1"></div><div class="blob b2"></div></div>
+
+<div class="topbar">⚡ <b>Same-day service</b> across Malé &amp; nearby islands — <a id="top-wa">Book on WhatsApp →</a></div>
 
 <header id="hdr">
   <div class="wrap nav">
     <a class="brand" href="#top">
-      <span class="logo">🛠️</span>
-      <span>Handyman Maldives<small>Home &amp; Property Care</small></span>
+      <img src="/logo.png" alt="Handyman Maldives logo" />
+      <span class="logo-txt">Handyman Maldives<small>Home Repair Services</small></span>
     </a>
     <nav class="menu">
       <a href="#services">Services</a>
@@ -268,37 +283,53 @@
       <a href="#how">Process</a>
       <a href="#faq">FAQ</a>
     </nav>
-    <a class="btn btn-wa" id="nav-wa">💬 WhatsApp</a>
+    <a class="btn btn-gold" id="nav-wa">💬 Book Now</a>
   </div>
 </header>
 
 <!-- HERO -->
 <section class="hero" id="top">
-  <div class="wrap">
-    <span class="badge"><span class="dot"></span> Available now · Same-day bookings across Malé</span>
-    <h1>Anything broken?<br><span class="grad-text">We fix it. Fast.</span></h1>
-    <p class="sub">From a dripping tap to a full apartment move — Maldives' all-in-one handyman team.
-       Skilled, reliable, fair-priced. One WhatsApp message and it's handled.</p>
-    <div class="hero-actions">
-      <a class="btn btn-wa" id="hero-wa">💬 Book on WhatsApp</a>
-      <a class="btn btn-ghost" href="#services">Explore services →</a>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="badge"><span class="dot"></span> Available now · Booking in under 60 seconds</span>
+      <h1>Your trusted handyman, <span class="grad-text">anywhere in the Maldives</span></h1>
+      <p class="sub">From a dripping tap to a full apartment move — one skilled team for every home, office and resort job. Fast, reliable, and fairly priced.</p>
+      <div class="hero-actions">
+        <a class="btn btn-wa" id="hero-wa">💬 Book on WhatsApp</a>
+        <a class="btn btn-ghost" href="#services">Browse services →</a>
+      </div>
+      <div class="hero-trust">
+        <div class="avs">
+          <span style="background:#f5a623">A</span><span style="background:#fbc05b">M</span>
+          <span style="background:#e08e10">S</span><span style="background:#1d4ed8;color:#fff">+</span>
+        </div>
+        <div><div class="stars">★★★★★</div><small>Trusted by homes, offices &amp; resorts</small></div>
+      </div>
     </div>
-    <div class="mini-trust"><span class="stars">★★★★★</span> Trusted by homes, offices &amp; resorts · Open 7 days</div>
-  </div>
 
-  <!-- Marquee -->
-  <div class="marquee wrap" style="border:0;padding:0;margin-top:54px">
-    <div class="marquee" style="border-radius:16px">
-      <div class="marquee-track" id="marquee"></div>
+    <div class="hero-visual">
+      <div class="logo-ring">
+        <div class="float-badge fb1"><span class="fi">⚡</span> Quick response</div>
+        <div class="float-badge fb2"><span class="fi">✅</span> Work guaranteed</div>
+        <img src="/logo.png" alt="Handyman Maldives — Home Repair Services" />
+      </div>
     </div>
   </div>
 </section>
 
+<!-- STRIP -->
+<div class="strip">
+  <div class="wrap">
+    <span>🏠 Homes</span><span>🏢 Offices</span><span>🏝️ Resorts</span>
+    <span>🛟 Insured Work</span><span>🕒 Open 7 Days</span>
+  </div>
+</div>
+
 <!-- STATS -->
-<section style="padding-top:10px">
+<section style="padding:54px 0">
   <div class="wrap">
     <div class="stats reveal">
-      <div class="stat"><b data-count="10">0</b><span>Service categories</span></div>
+      <div class="stat"><b data-count="10" data-suffix="+">0</b><span>Service categories</span></div>
       <div class="stat"><b data-count="500" data-suffix="+">0</b><span>Jobs completed</span></div>
       <div class="stat"><b data-count="60" data-suffix="min">0</b><span>Avg. response time</span></div>
       <div class="stat"><b data-count="7">0</b><span>Days a week</span></div>
@@ -306,33 +337,33 @@
   </div>
 </section>
 
-<!-- SERVICES (Bento) -->
-<section id="services">
+<!-- SERVICES -->
+<section id="services" style="padding-top:30px">
   <div class="wrap">
     <div class="center reveal">
       <span class="eyebrow">⚙️ What we do</span>
       <h2>One team for <span class="grad-text">every fix</span></h2>
       <p class="lead">Professional help for homes, apartments, offices and resorts — all under one roof.</p>
     </div>
-    <div class="bento" id="bento"></div>
+    <div class="sgrid" id="sgrid"></div>
   </div>
 </section>
 
 <!-- WHY -->
-<section id="why" style="padding-top:30px">
+<section class="why" id="why">
   <div class="wrap">
-    <div class="reveal">
-      <span class="eyebrow">✨ Why Handyman Maldives</span>
-      <h2>Reliable work, <span class="grad-text">every time</span></h2>
-      <p class="lead">We treat your space like our own — here's what sets us apart.</p>
+    <div class="center reveal">
+      <span class="eyebrow">✨ Why choose us</span>
+      <h2>Reliable work, <span class="grad-text">every single time</span></h2>
+      <p class="lead">We treat your space like our own. Here's what sets Handyman Maldives apart.</p>
     </div>
     <div class="why-grid">
-      <div class="feat reveal"><div class="b">⚡</div><h4>Fast Response</h4><p>Quote within minutes on WhatsApp — not days. Same-day &amp; emergency slots available.</p></div>
-      <div class="feat reveal"><div class="b">🧰</div><h4>Skilled Pros</h4><p>Experienced plumbers, electricians, painters &amp; AC technicians you can trust.</p></div>
-      <div class="feat reveal"><div class="b">💎</div><h4>Fair, Upfront Pricing</h4><p>Clear quotes before we start. No hidden charges, no surprises.</p></div>
-      <div class="feat reveal"><div class="b">🧹</div><h4>Clean &amp; Tidy</h4><p>We leave your home spotless once the job is done — guaranteed.</p></div>
+      <div class="feat reveal"><div class="b">⚡</div><h4>Fast Response</h4><p>Get a quote within minutes on WhatsApp — not days. Same-day &amp; emergency slots available.</p></div>
+      <div class="feat reveal"><div class="b">🧰</div><h4>Skilled Professionals</h4><p>Experienced plumbers, electricians, painters &amp; AC technicians you can trust.</p></div>
+      <div class="feat reveal"><div class="b">💎</div><h4>Fair, Upfront Pricing</h4><p>Clear quotes before we start — no hidden charges, no surprises.</p></div>
+      <div class="feat reveal"><div class="b">🧹</div><h4>Clean &amp; Tidy</h4><p>We leave your home spotless once the job is done, every time.</p></div>
       <div class="feat reveal"><div class="b">🛡️</div><h4>Work Guaranteed</h4><p>Not happy with something? We'll come back and make it right.</p></div>
-      <div class="feat reveal"><div class="b">📍</div><h4>Local & Island-wide</h4><p>Based in Malé, serving nearby islands and resorts across the Maldives.</p></div>
+      <div class="feat reveal"><div class="b">📍</div><h4>Local &amp; Island-wide</h4><p>Based in Malé, serving nearby islands and resorts across the Maldives.</p></div>
     </div>
   </div>
 </section>
@@ -340,42 +371,30 @@
 <!-- PROCESS -->
 <section id="how">
   <div class="wrap">
-    <div class="reveal">
+    <div class="center reveal">
       <span class="eyebrow">🚀 How it works</span>
       <h2>Booked in <span class="grad-text">3 simple steps</span></h2>
-      <p class="lead">No apps, no forms, no waiting. Just message and relax.</p>
+      <p class="lead">No apps, no forms, no waiting. Just message us and relax.</p>
     </div>
     <div class="steps">
-      <div class="step reveal"><div class="n">01</div><h4>Tell us the job</h4><p>Send a WhatsApp with your service, location and a photo if you have one.</p></div>
-      <div class="step reveal"><div class="n">02</div><h4>Get a quick quote</h4><p>We reply fast with a clear price and the earliest available time slot.</p></div>
-      <div class="step reveal"><div class="n">03</div><h4>We get it done</h4><p>Our pro arrives on time, fixes it right, and leaves your space clean.</p></div>
+      <div class="step reveal"><div class="n">1</div><h4>Tell us the job</h4><p>Send a WhatsApp with your service, location and a photo if you have one.</p></div>
+      <div class="step reveal"><div class="n">2</div><h4>Get a quick quote</h4><p>We reply fast with a clear price and the earliest available time slot.</p></div>
+      <div class="step reveal"><div class="n">3</div><h4>We get it done</h4><p>Our pro arrives on time, fixes it right, and leaves your space clean.</p></div>
     </div>
   </div>
 </section>
 
 <!-- TESTIMONIALS -->
-<section id="reviews" style="padding-top:30px">
+<section id="reviews" class="why" style="border-bottom:0">
   <div class="wrap">
     <div class="center reveal">
       <span class="eyebrow">💬 Happy customers</span>
       <h2>Loved across <span class="grad-text">the Maldives</span></h2>
     </div>
     <div class="tgrid">
-      <div class="quote reveal">
-        <div class="stars">★★★★★</div>
-        <p>"AC stopped working at night — they came the next morning and fixed it within an hour. Super professional."</p>
-        <div class="who"><div class="av">AR</div><div><b>Aishath R.</b><span>Hulhumalé</span></div></div>
-      </div>
-      <div class="quote reveal">
-        <div class="stars">★★★★★</div>
-        <p>"Booked plumbing and painting together. Fair price, clean work, and they tidied up everything after. Highly recommend."</p>
-        <div class="who"><div class="av">MH</div><div><b>Mohamed H.</b><span>Malé</span></div></div>
-      </div>
-      <div class="quote reveal">
-        <div class="stars">★★★★★</div>
-        <p>"Whole apartment move handled with care. Nothing broken, very fast team. Will use again for sure."</p>
-        <div class="who"><div class="av">SN</div><div><b>Sana N.</b><span>Villingili</span></div></div>
-      </div>
+      <div class="quote reveal"><div class="stars">★★★★★</div><p>"AC stopped working at night — they came the next morning and fixed it within an hour. Super professional and clean."</p><div class="who"><div class="av">AR</div><div><b>Aishath R.</b><span>Hulhumalé</span></div></div></div>
+      <div class="quote reveal"><div class="stars">★★★★★</div><p>"Booked plumbing and painting together. Fair price, great work, and they tidied everything up after. Highly recommend."</p><div class="who"><div class="av">MH</div><div><b>Mohamed H.</b><span>Malé</span></div></div></div>
+      <div class="quote reveal"><div class="stars">★★★★★</div><p>"Whole apartment move handled with real care. Nothing broken, very fast team. Will definitely use them again."</p><div class="who"><div class="av">SN</div><div><b>Sana N.</b><span>Villingili</span></div></div></div>
     </div>
   </div>
 </section>
@@ -401,11 +420,11 @@
 <section style="padding-top:10px">
   <div class="wrap">
     <div class="cta-band reveal">
-      <h2>Need it fixed <span class="grad-text">today?</span></h2>
+      <h2>Need it fixed today?</h2>
       <p>Don't wait around. Message us now and get a quote in minutes.</p>
       <div class="hero-actions">
-        <a class="btn btn-wa" id="cta-wa">💬 Chat on WhatsApp</a>
-        <a class="btn btn-amber" id="cta-call">📞 Call +960 723 7764</a>
+        <a class="btn btn-navy" id="cta-wa">💬 Chat on WhatsApp</a>
+        <a class="btn btn-navy" id="cta-call">📞 Call +960 723 7764</a>
       </div>
     </div>
   </div>
@@ -416,8 +435,8 @@
   <div class="wrap">
     <div class="fgrid">
       <div class="fcol">
-        <div class="brand" style="margin-bottom:16px"><span class="logo">🛠️</span><span>Handyman Maldives</span></div>
-        <p style="color:var(--muted);font-size:.95rem;max-width:340px">Your one-stop solution for home, apartment, office and resort maintenance across the Maldives.</p>
+        <div class="brand" style="margin-bottom:16px;display:flex;align-items:center;gap:12px"><img src="/logo.png" alt="Handyman Maldives" style="width:46px;height:46px;border-radius:12px"><span>Handyman Maldives</span></div>
+        <p style="max-width:340px">Your one-stop solution for home, apartment, office and resort maintenance across the Maldives.</p>
       </div>
       <div class="fcol">
         <h5>Services</h5>
@@ -450,64 +469,52 @@
   /* =========================================== */
 
   const services = [
-    {i:"🚚", t:"Apartment Moving", d:"Careful packing, lifting and moving for homes, apartments and offices.", span:"col-3"},
-    {i:"🔧", t:"Plumbing", d:"Leaks, blocked drains, taps, pipes, water heaters and bathroom fittings.", span:"col-3"},
-    {i:"❄️", t:"Aircon Repair & Servicing", d:"AC cleaning, gas refill, installation, repair and maintenance.", span:"col-2"},
-    {i:"⚡", t:"Electrical Work", d:"Wiring, sockets, lights, fans, switchboards and safe fault fixing.", span:"col-2"},
-    {i:"🧱", t:"Tiling", d:"Floor & wall tiling, repairs, grouting and waterproofing.", span:"col-2"},
-    {i:"🎨", t:"Painting", d:"Interior & exterior painting with a clean, professional finish.", span:"col-3"},
-    {i:"🏠", t:"Ceiling & Roofing", d:"Ceiling install & repair, roof leaks, gypsum and false ceilings.", span:"col-3"},
-    {i:"🪚", t:"Carpentry", d:"Doors, locks, shelves, cabinets, furniture assembly & repairs.", span:"col-2"},
-    {i:"🧰", t:"General Repairs", d:"Odd jobs, fixtures, mounting, sealing and small fixes.", span:"col-2"},
-    {i:"🧽", t:"Deep Cleaning", d:"Move-in / move-out and post-renovation cleaning for any space.", span:"col-2"},
+    {i:"🚚", t:"Apartment Moving", d:"Careful packing, lifting and moving for homes, apartments and offices."},
+    {i:"🔧", t:"Plumbing", d:"Leaks, blocked drains, taps, pipes, water heaters and bathroom fittings."},
+    {i:"❄️", t:"Aircon Repair & Servicing", d:"AC cleaning, gas refill, installation, repair and routine maintenance."},
+    {i:"⚡", t:"Electrical Work", d:"Wiring, sockets, lights, fans, switchboards and safe fault fixing."},
+    {i:"🧱", t:"Tiling", d:"Floor and wall tiling, repairs, grouting and waterproofing."},
+    {i:"🎨", t:"Painting", d:"Interior and exterior painting with a clean, professional finish."},
+    {i:"🏠", t:"Ceiling & Roofing", d:"Ceiling install & repair, roof leaks, gypsum and false ceilings."},
+    {i:"🪚", t:"Carpentry", d:"Doors, locks, shelves, cabinets, furniture assembly and repairs."},
+    {i:"🧰", t:"General Repairs", d:"Odd jobs, fixtures, mounting, sealing and small fixes around the home."},
   ];
 
-  const arrow = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+  const arrow='<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
 
-  // Build bento cards
-  document.getElementById("bento").innerHTML = services.map(s => `
-    <div class="card ${s.span}">
+  document.getElementById("sgrid").innerHTML = services.map(s=>`
+    <div class="card">
       <div class="ico">${s.i}</div>
       <h3>${s.t}</h3>
       <p>${s.d}</p>
       <a class="go" href="#" data-svc="${s.t}">Book this ${arrow}</a>
     </div>`).join("");
 
-  // Marquee items (duplicated for seamless loop)
-  const mq = services.map(s => `<span>${s.i} ${s.t}</span>`).join("");
-  document.getElementById("marquee").innerHTML = mq + mq;
-
-  // WhatsApp links
-  const waLink = (msg) => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg || DEFAULT_MESSAGE)}`;
-  ["nav-wa","hero-wa","cta-wa","float-wa","footer-wa"].forEach(id=>{
+  const waLink=(msg)=>`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg||DEFAULT_MESSAGE)}`;
+  ["top-wa","nav-wa","hero-wa","cta-wa","float-wa","footer-wa"].forEach(id=>{
     const el=document.getElementById(id); if(el){el.href=waLink();el.target="_blank";el.rel="noopener";}
   });
-  ["cta-call","footer-call"].forEach(id=>{ const el=document.getElementById(id); if(el) el.href="tel:"+CALL_NUMBER; });
+  ["cta-call","footer-call"].forEach(id=>{const el=document.getElementById(id);if(el)el.href="tel:"+CALL_NUMBER;});
 
-  // Service-specific booking
-  document.getElementById("bento").addEventListener("click",(e)=>{
+  document.getElementById("sgrid").addEventListener("click",(e)=>{
     const a=e.target.closest("a[data-svc]"); if(!a) return;
     e.preventDefault();
     window.open(waLink(`Hi Handyman Maldives! I'd like to book: ${a.dataset.svc}.`),"_blank");
   });
 
-  // Header scroll state
   const hdr=document.getElementById("hdr");
-  addEventListener("scroll",()=>hdr.classList.toggle("scrolled",scrollY>20));
+  addEventListener("scroll",()=>hdr.classList.toggle("scrolled",scrollY>16));
 
-  // Reveal on scroll
   const io=new IntersectionObserver((es)=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.add("in");io.unobserve(en.target);}}),{threshold:.12});
   document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
 
-  // Animated counters
-  const fmt=(n)=>n.toString();
   const countIO=new IntersectionObserver((es)=>es.forEach(en=>{
     if(!en.isIntersecting) return;
-    const el=en.target, end=+el.dataset.count, suf=el.dataset.suffix||"";
-    let cur=0, step=Math.max(1,Math.round(end/40));
-    const t=setInterval(()=>{cur+=step; if(cur>=end){cur=end;clearInterval(t);} el.textContent=fmt(cur)+suf;},28);
+    const el=en.target,end=+el.dataset.count,suf=el.dataset.suffix||"";
+    let cur=0,step=Math.max(1,Math.round(end/40));
+    const t=setInterval(()=>{cur+=step;if(cur>=end){cur=end;clearInterval(t);}el.textContent=cur+suf;},28);
     countIO.unobserve(el);
-  }),{threshold:.5});
+  }),{threshold:.6});
   document.querySelectorAll("[data-count]").forEach(el=>countIO.observe(el));
 
   document.getElementById("year").textContent=new Date().getFullYear();
