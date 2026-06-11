@@ -16,7 +16,7 @@ from pathlib import Path
 from xml.sax.saxutils import escape
 
 # ---- কনফিগ: SITE_URL এনভায়রনমেন্ট থেকে নিলে নেয়, নইলে নিচের ডিফল্ট ----
-SITE_URL = os.environ.get("SITE_URL", "https://abdulhaque333.github.io/wa-autoreply-server/blog").rstrip("/")
+SITE_URL = os.environ.get("SITE_URL", "https://abdulhaque.netlify.app").rstrip("/")
 SITE_TITLE = "Mohammad Abdul Haque — ব্লগ"
 SITE_DESC = "বাংলা, আরবি ও ইংরেজিতে নানা বিষয়ে লেখালেখি।"
 AUTHOR = "Mohammad Abdul Haque"

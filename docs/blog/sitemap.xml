@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://abdulhaque333.github.io/wa-autoreply-server/blog/</loc></url>
-  <url><loc>https://abdulhaque333.github.io/wa-autoreply-server/blog/about.html</loc></url>
-  <url><loc>https://abdulhaque333.github.io/wa-autoreply-server/blog/posts/ibn-taymiyyah-kashmiri-objections.html</loc></url>
-  <url><loc>https://abdulhaque333.github.io/wa-autoreply-server/blog/posts/arabic-reflections.html</loc></url>
-  <url><loc>https://abdulhaque333.github.io/wa-autoreply-server/blog/posts/on-writing-daily.html</loc></url>
+  <url><loc>https://abdulhaque.netlify.app/</loc></url>
+  <url><loc>https://abdulhaque.netlify.app/about.html</loc></url>
+  <url><loc>https://abdulhaque.netlify.app/posts/ibn-taymiyyah-kashmiri-objections.html</loc></url>
+  <url><loc>https://abdulhaque.netlify.app/posts/arabic-reflections.html</loc></url>
+  <url><loc>https://abdulhaque.netlify.app/posts/on-writing-daily.html</loc></url>
 </urlset>
