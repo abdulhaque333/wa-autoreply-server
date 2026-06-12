@@ -171,6 +171,8 @@
   .fb1{top:8px;left:-14px;animation:bob 4s ease-in-out infinite}
   .fb2{bottom:14px;right:-10px;animation:bob 4s ease-in-out infinite;animation-delay:-2s}
   @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+  .social-proof{padding:34px 0 2px}
+  .social-proof .hero-trust{justify-content:center;margin-top:0}
   .brand-show{display:none}
   @media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:26px}.logo-ring{width:min(260px,72%)}
     .hero-visual{display:none}
@@ -309,13 +311,6 @@
         <a class="btn btn-wa" id="hero-wa"><svg><use href="#wa"/></svg> Book on WhatsApp</a>
         <a class="btn btn-ghost" href="#services">Browse services →</a>
       </div>
-      <div class="hero-trust">
-        <div class="avs">
-          <span style="background:#f5a623">A</span><span style="background:#fbc05b">M</span>
-          <span style="background:#e08e10">S</span><span style="background:#1d4ed8;color:#fff">+</span>
-        </div>
-        <div><div class="stars">★★★★★</div><small>Trusted by homes, offices &amp; resorts</small></div>
-      </div>
     </div>
 
     <div class="hero-visual">
@@ -328,16 +323,8 @@
   </div>
 </section>
 
-<!-- STRIP -->
-<div class="strip">
-  <div class="wrap">
-    <span>🏠 Homes</span><span>🏢 Offices</span><span>🏝️ Resorts</span>
-    <span>🛟 Insured Work</span><span>🕒 Open 7 Days</span>
-  </div>
-</div>
-
 <!-- SERVICES -->
-<section id="services" style="padding-top:46px">
+<section id="services" style="padding-top:40px">
   <div class="wrap">
     <div class="center reveal">
       <span class="eyebrow">⚙️ What we do</span>
@@ -347,6 +334,25 @@
     <div class="sgrid" id="sgrid"></div>
   </div>
 </section>
+
+<!-- SOCIAL PROOF + STRIP (moved below services) -->
+<div class="social-proof reveal">
+  <div class="wrap">
+    <div class="hero-trust">
+      <div class="avs">
+        <span style="background:#f5a623">A</span><span style="background:#fbc05b">M</span>
+        <span style="background:#e08e10">S</span><span style="background:#1d4ed8;color:#fff">+</span>
+      </div>
+      <div><div class="stars">★★★★★</div><small>Trusted by homes, offices &amp; resorts</small></div>
+    </div>
+  </div>
+</div>
+<div class="strip">
+  <div class="wrap">
+    <span>🏠 Homes</span><span>🏢 Offices</span><span>🏝️ Resorts</span>
+    <span>🛟 Insured Work</span><span>🕒 Open 7 Days</span>
+  </div>
+</div>
 
 <!-- BRAND SHOWCASE (mobile: shown below services) -->
 <div class="brand-show">
