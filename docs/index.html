@@ -108,12 +108,15 @@
   /* Buttons */
   .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:14px 26px;border-radius:999px;
     font-weight:700;font-size:.97rem;cursor:pointer;border:0;transition:transform .18s,box-shadow .18s,background .2s;white-space:nowrap}
-  .btn:hover{transform:translateY(-3px)}
-  .btn-wa{background:#25D366;color:#fff;box-shadow:0 12px 30px -8px rgba(37,211,102,.55)}
+  .btn:hover{transform:translateY(-2px)}
+  .btn svg{width:19px;height:19px;flex:0 0 auto}
+  .btn-wa{background:linear-gradient(135deg,#2bd566,#16a34a);color:#fff;box-shadow:0 10px 26px -10px rgba(37,211,102,.55)}
+  .btn-wa:hover{box-shadow:0 14px 30px -10px rgba(37,211,102,.7)}
   .btn-gold{background:var(--grad);color:#1a1203;box-shadow:0 12px 30px -8px rgba(245,166,35,.5)}
   .btn-ghost{background:var(--card);color:var(--ink);border:1px solid var(--line-soft)}
   .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold)}
-  .btn-navy{background:#101a33;color:var(--gold)}
+  .btn-navy{background:#0c1428;color:var(--gold);border:1px solid var(--line)}
+  .btn-navy:hover{border-color:var(--gold)}
 
   /* Topbar */
   .topbar{background:var(--navy-2);color:#aab8d6;font-size:.85rem;text-align:center;padding:9px 16px;border-bottom:1px solid var(--line-soft)}
@@ -256,8 +259,11 @@
   @media(max-width:760px){.fgrid{grid-template-columns:1fr;gap:28px}}
 
   /* Floating WhatsApp */
-  .float-wa{position:fixed;right:20px;bottom:20px;z-index:80;background:#25D366;color:#fff;width:62px;height:62px;border-radius:50%;display:grid;place-items:center;font-size:1.9rem;box-shadow:0 14px 32px -8px rgba(37,211,102,.7);animation:ping2 2.6s infinite}
-  @keyframes ping2{0%{box-shadow:0 0 0 0 rgba(37,211,102,.45)}70%{box-shadow:0 0 0 16px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+  .float-wa{position:fixed;right:22px;bottom:22px;z-index:80;background:linear-gradient(135deg,#2bd566,#16a34a);color:#fff;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;box-shadow:0 12px 28px -8px rgba(37,211,102,.6);transition:transform .2s,box-shadow .2s}
+  .float-wa::before{content:"";position:absolute;inset:0;border-radius:50%;animation:ping2 2.6s infinite}
+  .float-wa:hover{transform:scale(1.07);box-shadow:0 16px 34px -8px rgba(37,211,102,.75)}
+  .float-wa svg{width:30px;height:30px}
+  @keyframes ping2{0%{box-shadow:0 0 0 0 rgba(37,211,102,.4)}70%{box-shadow:0 0 0 14px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
 
   /* Reveal */
   .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
@@ -266,6 +272,7 @@
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></symbol></svg>
 
 <div class="glow"><div class="blob b1"></div><div class="blob b2"></div></div>
 
@@ -283,7 +290,7 @@
       <a href="#how">Process</a>
       <a href="#faq">FAQ</a>
     </nav>
-    <a class="btn btn-gold" id="nav-wa">💬 Book Now</a>
+    <a class="btn btn-wa" id="nav-wa"><svg><use href="#wa"/></svg> Book Now</a>
   </div>
 </header>
 
@@ -295,7 +302,7 @@
       <h1>Your trusted handyman, <span class="grad-text">anywhere in the Maldives</span></h1>
       <p class="sub">From a dripping tap to a full apartment move — one skilled team for every home, office and resort job. Fast, reliable, and fairly priced.</p>
       <div class="hero-actions">
-        <a class="btn btn-wa" id="hero-wa">💬 Book on WhatsApp</a>
+        <a class="btn btn-wa" id="hero-wa"><svg><use href="#wa"/></svg> Book on WhatsApp</a>
         <a class="btn btn-ghost" href="#services">Browse services →</a>
       </div>
       <div class="hero-trust">
@@ -388,7 +395,7 @@
 <section id="reviews" class="why" style="border-bottom:0">
   <div class="wrap">
     <div class="center reveal">
-      <span class="eyebrow">💬 Happy customers</span>
+      <span class="eyebrow">★ Happy customers</span>
       <h2>Loved across <span class="grad-text">the Maldives</span></h2>
     </div>
     <div class="tgrid">
@@ -423,7 +430,7 @@
       <h2>Need it fixed today?</h2>
       <p>Don't wait around. Message us now and get a quote in minutes.</p>
       <div class="hero-actions">
-        <a class="btn btn-navy" id="cta-wa">💬 Chat on WhatsApp</a>
+        <a class="btn btn-navy" id="cta-wa"><svg><use href="#wa"/></svg> Chat on WhatsApp</a>
         <a class="btn btn-navy" id="cta-call">📞 Call +960 723 7764</a>
       </div>
     </div>
@@ -448,7 +455,7 @@
       <div class="fcol">
         <h5>Get in touch</h5>
         <ul>
-          <li>💬 <a id="footer-wa">WhatsApp us</a></li>
+          <li><a id="footer-wa" style="display:inline-flex;align-items:center;gap:7px"><svg width="15" height="15"><use href="#wa"/></svg> WhatsApp us</a></li>
           <li>📞 <a id="footer-call">+960 723 7764</a></li>
           <li>📍 Malé &amp; nearby islands</li>
           <li>🕒 Open 7 days a week</li>
@@ -459,7 +466,7 @@
   </div>
 </footer>
 
-<a class="float-wa" id="float-wa" aria-label="Chat on WhatsApp">💬</a>
+<a class="float-wa" id="float-wa" aria-label="Chat on WhatsApp"><svg><use href="#wa"/></svg></a>
 
 <script>
   /* ===== EDIT YOUR BUSINESS DETAILS HERE ===== */
