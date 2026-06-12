@@ -171,7 +171,11 @@
   .fb1{top:8px;left:-14px;animation:bob 4s ease-in-out infinite}
   .fb2{bottom:14px;right:-10px;animation:bob 4s ease-in-out infinite;animation-delay:-2s}
   @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-  @media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:26px}.logo-ring{width:min(240px,62%)}}
+  .brand-show{display:none}
+  @media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:26px}.logo-ring{width:min(260px,72%)}
+    .hero-visual{display:none}
+    .brand-show{display:block;padding:6px 0 12px}
+    .brand-show .logo-ring{margin:0 auto}}
 
   /* Strip */
   .strip{border-block:1px solid var(--line-soft);background:var(--navy-2)}
@@ -343,6 +347,17 @@
     <div class="sgrid" id="sgrid"></div>
   </div>
 </section>
+
+<!-- BRAND SHOWCASE (mobile: shown below services) -->
+<div class="brand-show">
+  <div class="wrap">
+    <div class="logo-ring">
+      <div class="float-badge fb1"><span class="fi">⚡</span> Quick response</div>
+      <div class="float-badge fb2"><span class="fi">✅</span> Work guaranteed</div>
+      <img src="/logo.png" alt="Handyman Maldives — Home Repair Services" />
+    </div>
+  </div>
+</div>
 
 <!-- STATS -->
 <section style="padding:50px 0 6px">
