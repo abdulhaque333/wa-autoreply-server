@@ -14,6 +14,9 @@
 <meta name="geo.placename" content="Malé, Maldives" />
 <link rel="icon" type="image/png" href="/logo.png" />
 <link rel="apple-touch-icon" href="/logo.png" />
+<link rel="manifest" href="/manifest.webmanifest" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-title" content="Handyman MV" />
 
 <!-- Open Graph -->
 <meta property="og:title" content="Handyman Maldives — Trusted Home & Property Services" />
@@ -308,7 +311,7 @@
       <h1>Your trusted handyman, <span class="grad-text">anywhere in the Maldives</span></h1>
       <p class="sub">From a dripping tap to a full apartment move — one skilled team for every home, office and resort job. Fast, reliable, and fairly priced.</p>
       <div class="hero-actions">
-        <a class="btn btn-wa" id="hero-wa"><svg><use href="#wa"/></svg> Book on WhatsApp</a>
+        <a class="btn btn-wa" id="hero-wa"><svg><use href="#wa"/></svg> Book a service</a>
         <a class="btn btn-ghost" href="#services">Browse services →</a>
       </div>
     </div>
@@ -518,16 +521,24 @@
       <a class="go" href="#" data-svc="${s.t}">Book this ${arrow}</a>
     </div>`).join("");
 
+  const ORDER_URL = "/order.html";   // the booking app
   const waLink=(msg)=>`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg||DEFAULT_MESSAGE)}`;
-  ["top-wa","nav-wa","hero-wa","cta-wa","float-wa","footer-wa"].forEach(id=>{
+
+  // Primary "book" CTAs open the step-by-step ordering app
+  ["top-wa","nav-wa","hero-wa"].forEach(id=>{
+    const el=document.getElementById(id); if(el) el.href=ORDER_URL;
+  });
+  // Quick-chat CTAs go straight to WhatsApp
+  ["cta-wa","float-wa","footer-wa"].forEach(id=>{
     const el=document.getElementById(id); if(el){el.href=waLink();el.target="_blank";el.rel="noopener";}
   });
   ["cta-call","footer-call"].forEach(id=>{const el=document.getElementById(id);if(el)el.href="tel:"+CALL_NUMBER;});
 
+  // Tapping a service card opens the app with that service pre-selected
   document.getElementById("sgrid").addEventListener("click",(e)=>{
     const a=e.target.closest("a[data-svc]"); if(!a) return;
     e.preventDefault();
-    window.open(waLink(`Hi Handyman Maldives! I'd like to book: ${a.dataset.svc}.`),"_blank");
+    window.location.href=`${ORDER_URL}?service=${encodeURIComponent(a.dataset.svc)}`;
   });
 
   const hdr=document.getElementById("hdr");
@@ -546,6 +557,8 @@
   document.querySelectorAll("[data-count]").forEach(el=>countIO.observe(el));
 
   document.getElementById("year").textContent=new Date().getFullYear();
+
+  if("serviceWorker" in navigator){ window.addEventListener("load",()=>navigator.serviceWorker.register("/sw.js").catch(()=>{})); }
 </script>
 </body>
 </html>
