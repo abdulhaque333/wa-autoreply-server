@@ -1,5 +1,5 @@
 /* Handyman Maldives — service worker (offline-ready app shell) */
-const CACHE = "hm-app-v1";
+const CACHE = "hm-app-v2";
 const ASSETS = [
   "/",
   "/index.html",

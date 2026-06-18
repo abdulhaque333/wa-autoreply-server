@@ -278,10 +278,111 @@
   .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
   .reveal.in{opacity:1;transform:none}
   @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}.dot,.float-badge,.float-wa,.blob{animation:none}}
+
+  /* ===== Header actions: hamburger + call ===== */
+  .nav-left{display:flex;align-items:center;gap:12px}
+  .nav-actions{display:flex;align-items:center;gap:10px}
+  .icon-btn{display:grid;place-items:center;width:44px;height:44px;border-radius:12px;cursor:pointer;
+    background:var(--card);border:1px solid var(--line-soft);color:var(--ink);transition:.2s;flex:0 0 auto}
+  .icon-btn svg{width:21px;height:21px}
+  .icon-btn:hover{border-color:var(--gold);background:rgba(255,255,255,.08)}
+  .icon-btn.call{color:#1a1203;background:var(--grad);border-color:transparent;box-shadow:0 10px 24px -10px rgba(245,166,35,.5)}
+  .icon-btn.call:hover{transform:translateY(-2px)}
+  .nav .btn{padding:11px 20px}
+  @media(max-width:900px){.nav-book{display:none}}
+
+  /* ===== Search bar ===== */
+  .searchwrap{background:rgba(12,20,41,.55);border-bottom:1px solid var(--line-soft);backdrop-filter:blur(8px);position:relative;z-index:40}
+  .searchwrap .wrap{padding:20px 0;position:relative}
+  .search{display:flex;align-items:center;gap:8px;background:var(--navy-card);border:1.5px solid var(--line-soft);
+    border-radius:999px;padding:7px 7px 7px 26px;transition:border-color .2s,box-shadow .2s}
+  .search:focus-within{border-color:var(--gold);box-shadow:0 0 0 4px rgba(245,166,35,.16)}
+  .search input{flex:1;background:none;border:0;outline:none;color:var(--ink);font-family:inherit;font-size:1.08rem;padding:15px 0;min-width:0}
+  .search input::placeholder{color:#7184a6}
+  .search .sbtn{flex:0 0 auto;width:54px;height:54px;border-radius:50%;display:grid;place-items:center;
+    background:var(--grad);color:#1a1203;border:0;cursor:pointer;transition:transform .16s,box-shadow .2s;
+    box-shadow:0 10px 24px -8px rgba(245,166,35,.55)}
+  .search .sbtn svg{width:24px;height:24px}
+  .search .sbtn:hover{transform:scale(1.05)}
+  .search .sbtn:active{transform:scale(.96)}
+  @media(max-width:560px){.search{padding-left:22px}.search input{font-size:1.02rem;padding:14px 0}.search .sbtn{width:50px;height:50px}.search .sbtn svg{width:22px;height:22px}}
+  .search-results{position:absolute;left:0;right:0;top:calc(100% - 2px);background:var(--navy-card);
+    border:1px solid var(--line);border-radius:18px;box-shadow:0 26px 60px -20px rgba(0,0,0,.8);overflow:hidden;
+    z-index:50;display:none}
+  .search-results.show{display:block;animation:fade .2s}
+  @keyframes fade{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+  .sr{display:flex;align-items:center;gap:13px;padding:13px 16px;cursor:pointer;border-bottom:1px solid var(--line-soft);transition:background .15s}
+  .sr:last-child{border-bottom:0}
+  .sr:hover,.sr.act{background:rgba(245,166,35,.1)}
+  .sr .si2{width:40px;height:40px;border-radius:11px;display:grid;place-items:center;font-size:1.2rem;background:var(--grad-soft);border:1px solid var(--line);flex:0 0 auto}
+  .sr b{color:var(--ink);font-size:.97rem;font-weight:700;font-family:'Plus Jakarta Sans';display:block}
+  .sr span{color:var(--muted);font-size:.82rem}
+  .sr .go-ic{margin-left:auto;color:var(--gold);width:18px;height:18px;flex:0 0 auto}
+  .sr-empty{padding:16px;color:var(--muted);font-size:.92rem;text-align:center}
+  .sr-empty a{color:var(--gold);font-weight:700}
+  .sr-head{padding:11px 16px 7px;font-size:.7rem;letter-spacing:.13em;text-transform:uppercase;color:#5d6f92;font-weight:700;font-family:'Plus Jakarta Sans'}
+  .search-results{max-height:min(60vh,440px);overflow-y:auto}
+
+  /* ===== Drawer (kebab info panel) ===== */
+  .drawer-overlay{position:fixed;inset:0;background:rgba(4,8,18,.6);backdrop-filter:blur(2px);z-index:90;opacity:0;
+    transition:opacity .3s}
+  .drawer-overlay.show{opacity:1}
+  .drawer{position:fixed;top:0;left:0;height:100dvh;width:min(380px,88vw);z-index:100;background:var(--navy-2);
+    border-right:1px solid var(--line);box-shadow:30px 0 80px -30px rgba(0,0,0,.8);transform:translateX(-102%);
+    transition:transform .34s cubic-bezier(.2,.7,.2,1);display:flex;flex-direction:column}
+  .drawer.show{transform:translateX(0)}
+  .drawer-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 18px;
+    border-bottom:1px solid var(--line-soft);padding-top:calc(16px + env(safe-area-inset-top))}
+  .drawer-head .brand{display:flex;align-items:center;gap:11px;font-weight:800;font-size:1.02rem;color:var(--ink);font-family:'Plus Jakarta Sans'}
+  .drawer-head .brand img{width:40px;height:40px;border-radius:11px}
+  .drawer-head .brand small{display:block;font-weight:600;font-size:.55rem;color:var(--muted);letter-spacing:.16em;text-transform:uppercase}
+  .drawer-scroll{overflow-y:auto;padding:18px 18px calc(28px + env(safe-area-inset-bottom));flex:1}
+  .verify{display:flex;align-items:center;gap:8px;font-size:.82rem;font-weight:600;color:#7fe0a3;
+    background:rgba(43,213,102,.08);border:1px solid rgba(43,213,102,.22);border-radius:99px;padding:8px 14px;margin-bottom:18px}
+  .verify .v-dot{width:8px;height:8px;border-radius:50%;background:#2bd566;box-shadow:0 0 0 0 rgba(43,213,102,.6);animation:ping 2s infinite}
+  .drawer-cta{display:flex;flex-direction:column;gap:10px;margin-bottom:22px}
+  .drawer-cta .btn{width:100%}
+  .drawer-cta-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .btn-call{background:#0c1428;color:var(--gold);border:1px solid var(--line)}
+  .btn-call:hover{border-color:var(--gold)}
+  .drawer-nav{display:flex;flex-direction:column;margin-bottom:8px}
+  .drawer-nav a{padding:13px 4px;font-weight:600;color:var(--body);border-bottom:1px solid var(--line-soft);font-size:1rem;transition:.15s}
+  .drawer-nav a:hover{color:var(--gold);padding-left:8px}
+  .drawer-h{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:#5d6f92;margin:22px 0 12px;font-weight:700;font-family:'Plus Jakarta Sans'}
+  .drawer-svcs{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+  .drawer-svcs a{display:flex;align-items:center;gap:9px;background:var(--card);border:1px solid var(--line-soft);
+    border-radius:12px;padding:10px 11px;font-size:.86rem;font-weight:600;color:var(--ink);transition:.18s}
+  .drawer-svcs a:hover{border-color:var(--gold);transform:translateY(-2px)}
+  .drawer-svcs a .em{font-size:1.1rem;flex:0 0 auto}
+  .drawer-contact{list-style:none}
+  .drawer-contact li{display:flex;align-items:center;gap:13px;padding:11px 0;border-bottom:1px solid var(--line-soft)}
+  .drawer-contact li:last-child{border-bottom:0}
+  .drawer-contact .ci{width:40px;height:40px;border-radius:11px;display:grid;place-items:center;background:var(--grad-soft);border:1px solid var(--line);color:var(--gold);flex:0 0 auto}
+  .drawer-contact .ci svg{width:19px;height:19px}
+  .drawer-contact a{display:block}
+  .drawer-contact b{display:block;color:var(--ink);font-size:.95rem;font-weight:700;font-family:'Plus Jakarta Sans'}
+  .drawer-contact span{color:var(--muted);font-size:.8rem}
+  .trust-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+  .trust-badges span{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:600;color:var(--gold-2);
+    background:var(--grad-soft);border:1px solid var(--line);border-radius:99px;padding:7px 12px}
+  .trust-badges svg{width:15px;height:15px}
+  .drawer-foot{margin-top:24px;font-size:.78rem;color:#5d6f92;text-align:center}
+  body.no-scroll{overflow:hidden}
 </style>
 </head>
 <body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></symbol></svg>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></symbol>
+  <symbol id="phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+  <symbol id="dots" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="12" cy="19" r="2"/></symbol>
+  <symbol id="bars" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></symbol>
+  <symbol id="mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol>
+  <symbol id="pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></symbol>
+  <symbol id="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></symbol>
+</svg>
 
 <div class="glow"><div class="blob b1"></div><div class="blob b2"></div></div>
 
@@ -289,19 +390,88 @@
 
 <header id="hdr">
   <div class="wrap nav">
-    <a class="brand" href="#top">
-      <img src="/logo.png" alt="Handyman Maldives logo" />
-      <span class="logo-txt">Handyman Maldives<small>Home Repair Services</small></span>
-    </a>
+    <div class="nav-left">
+      <button class="icon-btn hamburger" id="menuBtn" aria-label="Open menu" aria-expanded="false"><svg><use href="#bars"/></svg></button>
+      <a class="brand" href="#top">
+        <img src="/logo.png" alt="Handyman Maldives logo" />
+        <span class="logo-txt">Handyman Maldives<small>Home Repair Services</small></span>
+      </a>
+    </div>
     <nav class="menu">
       <a href="#services">Services</a>
       <a href="#why">Why Us</a>
       <a href="#how">Process</a>
       <a href="#faq">FAQ</a>
     </nav>
-    <a class="btn btn-wa" id="nav-wa"><svg><use href="#wa"/></svg> Book Now</a>
+    <div class="nav-actions">
+      <a class="icon-btn call" id="nav-call" aria-label="Call us"><svg><use href="#phone"/></svg></a>
+      <a class="btn btn-wa nav-book" id="nav-wa"><svg><use href="#wa"/></svg> Book Now</a>
+    </div>
   </div>
 </header>
+
+<!-- SLIDE-OUT MENU / INFO PANEL -->
+<div class="drawer-overlay" id="drawerOverlay" hidden></div>
+<aside class="drawer" id="drawer" aria-hidden="true" aria-label="Menu and business information">
+  <div class="drawer-head">
+    <div class="brand">
+      <img src="/logo.png" alt="Handyman Maldives logo" />
+      <span class="logo-txt">Handyman Maldives<small>Home Repair Services</small></span>
+    </div>
+    <button class="icon-btn" id="drawerClose" aria-label="Close menu"><svg><use href="#close"/></svg></button>
+  </div>
+
+  <div class="drawer-scroll">
+    <div class="verify"><span class="v-dot"></span> Verified local business · Malé, Maldives 🇲🇻</div>
+
+    <div class="drawer-cta">
+      <a class="btn btn-gold dbook" id="drawer-book"><svg><use href="#wa"/></svg> Book a service</a>
+      <div class="drawer-cta-row">
+        <a class="btn btn-call" id="drawer-call"><svg><use href="#phone"/></svg> Call</a>
+        <a class="btn btn-wa" id="drawer-wa"><svg><use href="#wa"/></svg> WhatsApp</a>
+      </div>
+    </div>
+
+    <nav class="drawer-nav">
+      <a href="#services">Services</a>
+      <a href="#why">Why choose us</a>
+      <a href="#how">How it works</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+
+    <h6 class="drawer-h">Our services</h6>
+    <div class="drawer-svcs" id="drawerSvcs"></div>
+
+    <h6 class="drawer-h">Get in touch</h6>
+    <ul class="drawer-contact">
+      <li><span class="ci"><svg><use href="#phone"/></svg></span><a id="drawer-call2"><b>+960 723 7764</b><span>Tap to call · 7 days a week</span></a></li>
+      <li><span class="ci"><svg><use href="#wa"/></svg></span><a id="drawer-wa2"><b>WhatsApp us</b><span>Fast quotes &amp; booking</span></a></li>
+      <li><span class="ci"><svg><use href="#pin"/></svg></span><a><b>Malé &amp; nearby islands</b><span>Hulhumalé · Villingili · resorts</span></a></li>
+      <li><span class="ci"><svg><use href="#clock"/></svg></span><a><b>Open every day</b><span>Same-day &amp; emergency slots</span></a></li>
+    </ul>
+
+    <div class="trust-badges">
+      <span><svg><use href="#shield"/></svg> Work guaranteed</span>
+      <span><svg><use href="#shield"/></svg> Insured &amp; vetted pros</span>
+    </div>
+
+    <p class="drawer-foot">© <span class="yr"></span> Handyman Maldives · Built with care in the Maldives 🇲🇻</p>
+  </div>
+</aside>
+
+<!-- SEARCH -->
+<div class="searchwrap">
+  <div class="wrap">
+    <form class="search" id="searchForm" role="search" autocomplete="off">
+      <input type="search" id="svcSearch" placeholder="Search a service — plumbing, AC, painting…" aria-label="Search services" />
+      <button type="submit" class="sbtn" aria-label="Search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+      </button>
+    </form>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+</div>
 
 <!-- HERO -->
 <section class="hero" id="top">
@@ -500,15 +670,15 @@
   /* =========================================== */
 
   const services = [
-    {i:"🚚", t:"Apartment Moving", d:"Careful packing, lifting and moving for homes, apartments and offices."},
-    {i:"🔧", t:"Plumbing", d:"Leaks, blocked drains, taps, pipes, water heaters and bathroom fittings."},
-    {i:"❄️", t:"Aircon Repair & Servicing", d:"AC cleaning, gas refill, installation, repair and routine maintenance."},
-    {i:"⚡", t:"Electrical Work", d:"Wiring, sockets, lights, fans, switchboards and safe fault fixing."},
-    {i:"🧱", t:"Tiling", d:"Floor and wall tiling, repairs, grouting and waterproofing."},
-    {i:"🎨", t:"Painting", d:"Interior and exterior painting with a clean, professional finish."},
-    {i:"🏠", t:"Ceiling & Roofing", d:"Ceiling install & repair, roof leaks, gypsum and false ceilings."},
-    {i:"🪚", t:"Carpentry", d:"Doors, locks, shelves, cabinets, furniture assembly and repairs."},
-    {i:"🧰", t:"General Repairs", d:"Odd jobs, fixtures, mounting, sealing and small fixes around the home."},
+    {i:"🚚", t:"Apartment Moving", d:"Careful packing, lifting and moving for homes, apartments and offices.", k:"move moving mover shifting relocation packing transport house shift goods furniture"},
+    {i:"🔧", t:"Plumbing", d:"Leaks, blocked drains, taps, pipes, water heaters and bathroom fittings.", k:"plumber leak leakage water tap faucet drain blockage clog pipe toilet bathroom sink geyser heater flush"},
+    {i:"❄️", t:"Aircon Repair & Servicing", d:"AC cleaning, gas refill, installation, repair and routine maintenance.", k:"ac a/c air con conditioner cooling gas refill servicing service clean cooling not cooling fridge freezer hvac"},
+    {i:"⚡", t:"Electrical Work", d:"Wiring, sockets, lights, fans, switchboards and safe fault fixing.", k:"electrician electric wiring wire socket plug light bulb fan switch switchboard power short circuit fuse db board"},
+    {i:"🧱", t:"Tiling", d:"Floor and wall tiling, repairs, grouting and waterproofing.", k:"tile tiles tiler floor wall grout grouting marble waterproofing bathroom"},
+    {i:"🎨", t:"Painting", d:"Interior and exterior painting with a clean, professional finish.", k:"paint painter painting wall colour color interior exterior putty primer"},
+    {i:"🏠", t:"Ceiling & Roofing", d:"Ceiling install & repair, roof leaks, gypsum and false ceilings.", k:"ceiling roof roofing gypsum false ceiling pop leak waterproof"},
+    {i:"🪚", t:"Carpentry", d:"Doors, locks, shelves, cabinets, furniture assembly and repairs.", k:"carpenter carpentry wood door lock hinge shelf cabinet cupboard wardrobe furniture assembly drawer"},
+    {i:"🧰", t:"General Repairs", d:"Odd jobs, fixtures, mounting, sealing and small fixes around the home.", k:"handyman general repair fix odd job mount mounting tv curtain hang drill seal silicone maintenance fixture"},
   ];
 
   const arrow='<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
@@ -523,23 +693,113 @@
 
   const ORDER_URL = "/order.html";   // the booking app
   const waLink=(msg)=>`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg||DEFAULT_MESSAGE)}`;
+  const orderLink=(svc)=> svc ? `${ORDER_URL}?service=${encodeURIComponent(svc)}` : ORDER_URL;
 
   // Primary "book" CTAs open the step-by-step ordering app
-  ["top-wa","nav-wa","hero-wa"].forEach(id=>{
+  ["top-wa","nav-wa","hero-wa","drawer-book"].forEach(id=>{
     const el=document.getElementById(id); if(el) el.href=ORDER_URL;
   });
   // Quick-chat CTAs go straight to WhatsApp
-  ["cta-wa","float-wa","footer-wa"].forEach(id=>{
+  ["cta-wa","float-wa","footer-wa","drawer-wa","drawer-wa2"].forEach(id=>{
     const el=document.getElementById(id); if(el){el.href=waLink();el.target="_blank";el.rel="noopener";}
   });
-  ["cta-call","footer-call"].forEach(id=>{const el=document.getElementById(id);if(el)el.href="tel:"+CALL_NUMBER;});
+  // Call buttons
+  ["cta-call","footer-call","nav-call","drawer-call","drawer-call2"].forEach(id=>{
+    const el=document.getElementById(id); if(el) el.href="tel:"+CALL_NUMBER;
+  });
 
   // Tapping a service card opens the app with that service pre-selected
   document.getElementById("sgrid").addEventListener("click",(e)=>{
     const a=e.target.closest("a[data-svc]"); if(!a) return;
     e.preventDefault();
-    window.location.href=`${ORDER_URL}?service=${encodeURIComponent(a.dataset.svc)}`;
+    window.location.href=orderLink(a.dataset.svc);
   });
+
+  /* ===== Slide-out menu / info drawer ===== */
+  const drawer=document.getElementById("drawer");
+  const overlay=document.getElementById("drawerOverlay");
+  const menuBtn=document.getElementById("menuBtn");
+  function openDrawer(){
+    overlay.hidden=false; requestAnimationFrame(()=>{overlay.classList.add("show");drawer.classList.add("show");});
+    drawer.setAttribute("aria-hidden","false"); menuBtn.setAttribute("aria-expanded","true"); document.body.classList.add("no-scroll");
+  }
+  function closeDrawer(){
+    overlay.classList.remove("show"); drawer.classList.remove("show");
+    drawer.setAttribute("aria-hidden","true"); menuBtn.setAttribute("aria-expanded","false"); document.body.classList.remove("no-scroll");
+    setTimeout(()=>{overlay.hidden=true;},340);
+  }
+  menuBtn.addEventListener("click",openDrawer);
+  document.getElementById("drawerClose").addEventListener("click",closeDrawer);
+  overlay.addEventListener("click",closeDrawer);
+  document.addEventListener("keydown",(e)=>{if(e.key==="Escape"&&drawer.classList.contains("show"))closeDrawer();});
+  // close drawer when an in-page link inside it is tapped
+  drawer.querySelectorAll('.drawer-nav a, .drawer-svcs a').forEach(a=>a.addEventListener("click",()=>setTimeout(closeDrawer,80)));
+
+  // populate the drawer's service shortcuts (open the app with that service)
+  document.getElementById("drawerSvcs").innerHTML = services.map(s=>
+    `<a href="${orderLink(s.t)}"><span class="em">${s.i}</span>${s.t}</a>`).join("");
+
+  /* ===== Search bar ===== */
+  const searchInput=document.getElementById("svcSearch");
+  const searchResults=document.getElementById("searchResults");
+  const searchForm=document.getElementById("searchForm");
+  let activeIdx=-1, currentMatches=[];
+
+  function paintResults(list,header){
+    activeIdx=-1; currentMatches=list;
+    const head = header ? `<div class="sr-head">${header}</div>` : "";
+    searchResults.innerHTML = head + list.map((s,i)=>`
+      <a class="sr" href="${orderLink(s.t)}" data-i="${i}">
+        <span class="si2">${s.i}</span>
+        <span><b>${s.t}</b><span>${s.d}</span></span>
+        <svg class="go-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>`).join("");
+    searchResults.classList.add("show");
+  }
+  // pre-tokenise each service for smarter matching (word-start, not loose substring)
+  services.forEach(s=>{ s._tok = (s.t+" "+s.d+" "+(s.k||"")).toLowerCase().split(/[^a-z0-9/]+/).filter(Boolean); });
+
+  function scoreMatch(s,term){
+    const title=s.t.toLowerCase();
+    if(title===term) return 0;
+    if(title.startsWith(term)) return 1;
+    if(title.split(/\s+/).some(w=>w.startsWith(term))) return 2;          // word in title starts with term
+    if(s._tok.some(w=>w===term)) return 3;                                 // exact keyword (e.g. "ac", "tv")
+    if(term.length>=2 && s._tok.some(w=>w.startsWith(term))) return 4;     // keyword starts with term
+    if(term.length>=4 && (title+" "+s.d).toLowerCase().includes(term)) return 5; // longer free-text in desc
+    return -1;
+  }
+  function renderResults(q){
+    const term=q.trim().toLowerCase();
+    // Empty box → show every service so customers can browse them all
+    if(!term){ paintResults(services, "All services"); return; }
+    const matches = services.map(s=>({s,sc:scoreMatch(s,term)}))
+      .filter(x=>x.sc>=0).sort((a,b)=>a.sc-b.sc).map(x=>x.s);
+    if(!matches.length){
+      currentMatches=[]; activeIdx=-1;
+      searchResults.innerHTML=`<div class="sr-empty">No match for “${term}”. <a href="${ORDER_URL}">See all services →</a></div>`;
+      searchResults.classList.add("show");
+    }else{
+      paintResults(matches);
+    }
+  }
+  searchInput.addEventListener("input",()=>renderResults(searchInput.value));
+  searchInput.addEventListener("focus",()=>renderResults(searchInput.value));
+  searchForm.addEventListener("submit",(e)=>{
+    e.preventDefault();
+    if(currentMatches.length){ window.location.href=orderLink(currentMatches[Math.max(0,activeIdx)].t); }
+    else { window.location.href=ORDER_URL; }
+  });
+  searchInput.addEventListener("keydown",(e)=>{
+    const items=[...searchResults.querySelectorAll(".sr")];
+    if(!items.length) return;
+    if(e.key==="ArrowDown"){ e.preventDefault(); activeIdx=Math.min(items.length-1,activeIdx+1); }
+    else if(e.key==="ArrowUp"){ e.preventDefault(); activeIdx=Math.max(0,activeIdx-1); }
+    else return;
+    items.forEach((el,i)=>el.classList.toggle("act",i===activeIdx));
+    items[activeIdx]?.scrollIntoView({block:"nearest"});
+  });
+  document.addEventListener("click",(e)=>{ if(!e.target.closest(".searchwrap")) searchResults.classList.remove("show"); });
 
   const hdr=document.getElementById("hdr");
   addEventListener("scroll",()=>hdr.classList.toggle("scrolled",scrollY>16));
@@ -556,7 +816,9 @@
   }),{threshold:.6});
   document.querySelectorAll("[data-count]").forEach(el=>countIO.observe(el));
 
-  document.getElementById("year").textContent=new Date().getFullYear();
+  const yr=new Date().getFullYear();
+  document.getElementById("year").textContent=yr;
+  document.querySelectorAll(".yr").forEach(el=>el.textContent=yr);
 
   if("serviceWorker" in navigator){ window.addEventListener("load",()=>navigator.serviceWorker.register("/sw.js").catch(()=>{})); }
 </script>
