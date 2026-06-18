@@ -8,9 +8,9 @@
 <meta name="theme-color" content="#101a33" />
 <link rel="canonical" href="https://handymanmaldives.netlify.app/order.html" />
 <meta name="robots" content="index, follow" />
-<link rel="icon" type="image/png" href="/logo.png" />
-<link rel="apple-touch-icon" href="/logo.png" />
-<link rel="manifest" href="/manifest.webmanifest" />
+<link rel="icon" type="image/png" href="logo.png" />
+<link rel="apple-touch-icon" href="logo.png" />
+<link rel="manifest" href="manifest.webmanifest" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 <meta name="apple-mobile-web-app-title" content="Handyman MV" />
@@ -199,11 +199,11 @@
 
 <header>
   <div class="wrap nav">
-    <a class="brand" href="/index.html">
-      <img src="/logo.png" alt="Handyman Maldives logo" />
+    <a class="brand" href="index.html">
+      <img src="logo.png" alt="Handyman Maldives logo" />
       <span class="logo-txt">Handyman Maldives<small>Book a Service</small></span>
     </a>
-    <a class="home" href="/index.html"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l9-9 9 9M5 10v10h14V10"/></svg> Home</a>
+    <a class="home" href="index.html"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l9-9 9 9M5 10v10h14V10"/></svg> Home</a>
   </div>
   <div class="wrap progress">
     <div class="pbar"><i id="pbar"></i></div>
@@ -325,7 +325,7 @@
     <p>WhatsApp should have opened with your order. If it didn't, tap the button below to send it now.</p>
     <div class="acts">
       <a class="btn btn-wa" id="resend"><svg><use href="#wa"/></svg> Open WhatsApp</a>
-      <a class="btn btn-ghost" href="/index.html" style="justify-content:center">Back to home</a>
+      <a class="btn btn-ghost" href="index.html" style="justify-content:center">Back to home</a>
       <a class="btn btn-ghost" id="newOrder" href="#" style="justify-content:center">Start a new order</a>
     </div>
   </section>
@@ -577,7 +577,7 @@
   hydrate(); show(1);
 
   // service worker
-  if("serviceWorker" in navigator){ window.addEventListener("load",()=>navigator.serviceWorker.register("/sw.js").catch(()=>{})); }
+  if("serviceWorker" in navigator){ window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{})); }
 </script>
 </body>
 </html>

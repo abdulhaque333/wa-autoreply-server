@@ -1,11 +1,13 @@
 /* Handyman Maldives — service worker (offline-ready app shell) */
-const CACHE = "hm-app-v2";
+/* Relative URLs so it works both at a domain root (Netlify) and a
+   project subpath (GitHub Pages). They resolve against this script's URL. */
+const CACHE = "hm-app-v3";
 const ASSETS = [
-  "/",
-  "/index.html",
-  "/order.html",
-  "/manifest.webmanifest",
-  "/logo.png"
+  "./",
+  "index.html",
+  "order.html",
+  "manifest.webmanifest",
+  "logo.png"
 ];
 
 self.addEventListener("install", (e) => {
@@ -37,7 +39,7 @@ self.addEventListener("fetch", (e) => {
           caches.open(CACHE).then((c) => c.put(req, copy));
           return res;
         })
-        .catch(() => caches.match(req).then((m) => m || caches.match("/order.html")))
+        .catch(() => caches.match(req).then((m) => m || caches.match("order.html")))
     );
     return;
   }
