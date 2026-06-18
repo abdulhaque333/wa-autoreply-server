@@ -12,9 +12,9 @@
 <meta name="keywords" content="handyman Maldives, plumber Male, electrician Maldives, aircon repair Maldives, painting, tiling, apartment moving, ceiling roofing, home repair Maldives" />
 <meta name="geo.region" content="MV" />
 <meta name="geo.placename" content="Malé, Maldives" />
-<link rel="icon" type="image/png" href="/logo.png" />
-<link rel="apple-touch-icon" href="/logo.png" />
-<link rel="manifest" href="/manifest.webmanifest" />
+<link rel="icon" type="image/png" href="logo.png" />
+<link rel="apple-touch-icon" href="logo.png" />
+<link rel="manifest" href="manifest.webmanifest" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-title" content="Handyman MV" />
 
@@ -393,7 +393,7 @@
     <div class="nav-left">
       <button class="icon-btn hamburger" id="menuBtn" aria-label="Open menu" aria-expanded="false"><svg><use href="#bars"/></svg></button>
       <a class="brand" href="#top">
-        <img src="/logo.png" alt="Handyman Maldives logo" />
+        <img src="logo.png" alt="Handyman Maldives logo" />
         <span class="logo-txt">Handyman Maldives<small>Home Repair Services</small></span>
       </a>
     </div>
@@ -415,7 +415,7 @@
 <aside class="drawer" id="drawer" aria-hidden="true" aria-label="Menu and business information">
   <div class="drawer-head">
     <div class="brand">
-      <img src="/logo.png" alt="Handyman Maldives logo" />
+      <img src="logo.png" alt="Handyman Maldives logo" />
       <span class="logo-txt">Handyman Maldives<small>Home Repair Services</small></span>
     </div>
     <button class="icon-btn" id="drawerClose" aria-label="Close menu"><svg><use href="#close"/></svg></button>
@@ -490,7 +490,7 @@
       <div class="logo-ring">
         <div class="float-badge fb1"><span class="fi">⚡</span> Quick response</div>
         <div class="float-badge fb2"><span class="fi">✅</span> Work guaranteed</div>
-        <img src="/logo.png" alt="Handyman Maldives — Home Repair Services" />
+        <img src="logo.png" alt="Handyman Maldives — Home Repair Services" />
       </div>
     </div>
   </div>
@@ -533,7 +533,7 @@
     <div class="logo-ring">
       <div class="float-badge fb1"><span class="fi">⚡</span> Quick response</div>
       <div class="float-badge fb2"><span class="fi">✅</span> Work guaranteed</div>
-      <img src="/logo.png" alt="Handyman Maldives — Home Repair Services" />
+      <img src="logo.png" alt="Handyman Maldives — Home Repair Services" />
     </div>
   </div>
 </div>
@@ -636,7 +636,7 @@
   <div class="wrap">
     <div class="fgrid">
       <div class="fcol">
-        <div class="brand" style="margin-bottom:16px;display:flex;align-items:center;gap:12px"><img src="/logo.png" alt="Handyman Maldives" style="width:46px;height:46px;border-radius:12px"><span>Handyman Maldives</span></div>
+        <div class="brand" style="margin-bottom:16px;display:flex;align-items:center;gap:12px"><img src="logo.png" alt="Handyman Maldives" style="width:46px;height:46px;border-radius:12px"><span>Handyman Maldives</span></div>
         <p style="max-width:340px">Your one-stop solution for home, apartment, office and resort maintenance across the Maldives.</p>
       </div>
       <div class="fcol">
@@ -691,7 +691,7 @@
       <a class="go" href="#" data-svc="${s.t}">Book this ${arrow}</a>
     </div>`).join("");
 
-  const ORDER_URL = "/order.html";   // the booking app
+  const ORDER_URL = "order.html";   // the booking app
   const waLink=(msg)=>`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg||DEFAULT_MESSAGE)}`;
   const orderLink=(svc)=> svc ? `${ORDER_URL}?service=${encodeURIComponent(svc)}` : ORDER_URL;
 
@@ -820,7 +820,7 @@
   document.getElementById("year").textContent=yr;
   document.querySelectorAll(".yr").forEach(el=>el.textContent=yr);
 
-  if("serviceWorker" in navigator){ window.addEventListener("load",()=>navigator.serviceWorker.register("/sw.js").catch(()=>{})); }
+  if("serviceWorker" in navigator){ window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{})); }
 </script>
 </body>
 </html>
