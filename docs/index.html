@@ -704,15 +704,28 @@
   const waLink=(msg)=>`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg||DEFAULT_MESSAGE)}`;
   const orderLink=(svc)=> svc ? `${ORDER_URL}?service=${encodeURIComponent(svc)}` : ORDER_URL;
 
-  // Primary "book" CTAs open the step-by-step ordering app
+  // ===== Google Ads conversion tracking (WhatsApp / booking contact) =====
+  const ADS_CONVERSION = 'AW-18234086732/xUFiCKW5hsIcEMyq2PZD';
+  function fireContactConversion(redirectUrl){
+    let navigated = false;
+    const go = () => { if(navigated || !redirectUrl) return; navigated = true; window.location.href = redirectUrl; };
+    if(typeof gtag === 'function'){
+      gtag('event','conversion',{ 'send_to': ADS_CONVERSION, 'event_callback': redirectUrl ? go : undefined });
+    }
+    if(redirectUrl){ setTimeout(go, 800); } // fallback so navigation never hangs
+  }
+
+  // Primary "book" CTAs open the ordering app (same tab) — count conversion, then navigate
   ["top-wa","nav-wa","hero-wa","drawer-book"].forEach(id=>{
-    const el=document.getElementById(id); if(el) el.href=ORDER_URL;
+    const el=document.getElementById(id);
+    if(el){ el.href=ORDER_URL; el.addEventListener("click",(e)=>{ e.preventDefault(); fireContactConversion(ORDER_URL); }); }
   });
-  // Quick-chat CTAs go straight to WhatsApp
+  // Quick-chat CTAs open WhatsApp in a new tab — count conversion (page stays open)
   ["cta-wa","float-wa","footer-wa","drawer-wa","drawer-wa2"].forEach(id=>{
-    const el=document.getElementById(id); if(el){el.href=waLink();el.target="_blank";el.rel="noopener";}
+    const el=document.getElementById(id);
+    if(el){ el.href=waLink(); el.target="_blank"; el.rel="noopener"; el.addEventListener("click",()=>fireContactConversion()); }
   });
-  // Call buttons
+  // Call buttons (tracked separately by the existing "Phone call lead" conversion)
   ["cta-call","footer-call","nav-call","drawer-call","drawer-call2"].forEach(id=>{
     const el=document.getElementById(id); if(el) el.href="tel:"+CALL_NUMBER;
   });
@@ -721,7 +734,7 @@
   document.getElementById("sgrid").addEventListener("click",(e)=>{
     const a=e.target.closest("a[data-svc]"); if(!a) return;
     e.preventDefault();
-    window.location.href=orderLink(a.dataset.svc);
+    fireContactConversion(orderLink(a.dataset.svc));
   });
 
   /* ===== Slide-out menu / info drawer ===== */
