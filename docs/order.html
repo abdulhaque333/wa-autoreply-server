@@ -681,7 +681,16 @@
   hydrate(); show(1);
 
   // service worker
-  if("serviceWorker" in navigator){ window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{})); }
+  // Cache kill-switch: remove any old service worker + caches so new versions always load fresh.
+  if("serviceWorker" in navigator){
+    navigator.serviceWorker.getRegistrations().then(function(rs){
+      var had = rs.length > 0;
+      Promise.all(rs.map(function(r){ return r.unregister(); })).finally(function(){
+        if(window.caches){ caches.keys().then(function(ks){ ks.forEach(function(k){ caches.delete(k); }); }); }
+        if(had && !sessionStorage.getItem("sw_cleared")){ sessionStorage.setItem("sw_cleared","1"); location.reload(); }
+      });
+    }).catch(function(){});
+  }
 </script>
 </body>
 </html>
