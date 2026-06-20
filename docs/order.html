@@ -1,18 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18234086732"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18234086732');
+</script>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 <title>Book a Service — Handyman Maldives</title>
 <meta name="description" content="Order plumbing, electrical, aircon, painting, moving and more from Handyman Maldives in a few quick taps. Get a fast quote on WhatsApp." />
-<meta name="theme-color" content="#101a33" />
+<meta name="theme-color" content="#ffffff" />
 <link rel="canonical" href="https://handymanmaldives.netlify.app/order.html" />
 <meta name="robots" content="index, follow" />
 <link rel="icon" type="image/png" href="logo.png" />
 <link rel="apple-touch-icon" href="logo.png" />
 <link rel="manifest" href="manifest.webmanifest" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
 <meta name="apple-mobile-web-app-title" content="Handyman MV" />
 
 <meta property="og:title" content="Book a Service — Handyman Maldives" />
@@ -23,168 +31,172 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
   :root{
-    --navy:#101a33; --navy-2:#0c1429; --navy-card:#16223f;
-    --card:rgba(255,255,255,.04); --line:rgba(245,166,35,.16); --line-soft:rgba(255,255,255,.09);
-    --gold:#f5a623; --gold-2:#fbc05b; --gold-deep:#e08e10;
-    --ink:#f5f8ff; --muted:#9fb0d0; --body:#c4cfe6;
-    --grad:linear-gradient(120deg,#f5a623,#fbc05b);
-    --grad-soft:linear-gradient(135deg,rgba(245,166,35,.18),rgba(251,192,91,.06));
-    --ok:#2bd566; --ok-2:#16a34a;
-    --radius:18px;
+    --navy:#0f2240; --navy-2:#0b1a33; --navy-soft:#1c3357;
+    --amber:#f59e0b; --amber-d:#d97706; --amber-soft:#fff7ec;
+    --bg:#ffffff; --bg-2:#f6f8fb; --bg-3:#eef2f8;
+    --ink:#0f2240; --body:#475569; --muted:#64748b;
+    --line:#e6eaf1; --line-2:#dde3ee; --wa:#22c55e; --wa-d:#16a34a;
+    --radius:14px;
+    --shadow-sm:0 2px 8px rgba(15,34,64,.06);
+    --shadow:0 12px 30px -12px rgba(15,34,64,.16);
+    --shadow-lg:0 26px 60px -22px rgba(15,34,64,.26);
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--navy);color:var(--body);line-height:1.6;
-    overflow-x:hidden;-webkit-font-smoothing:antialiased;min-height:100vh;
-    padding-bottom:calc(96px + env(safe-area-inset-bottom))}
-  h1,h2,h3,h4,.brand,.btn,.logo-txt,.step-n b,.opt-t,.sum-h{font-family:'Plus Jakarta Sans',sans-serif}
+  body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg-2);color:var(--body);line-height:1.6;
+    overflow-x:hidden;-webkit-font-smoothing:antialiased;min-height:100vh;padding-bottom:calc(100px + env(safe-area-inset-bottom))}
+  h1,h2,h3,h4,.brand,.btn,.logo-txt,.opt-t,.sum-h{font-family:'Poppins',sans-serif}
   h1,h2,h3,h4{color:var(--ink)}
   a{text-decoration:none;color:inherit}
   img{max-width:100%;display:block}
   .wrap{width:min(720px,94%);margin-inline:auto}
-  .grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-
-  /* Aurora */
-  .glow{position:fixed;inset:0;z-index:-2;overflow:hidden;pointer-events:none}
-  .blob{position:absolute;border-radius:50%;filter:blur(100px);opacity:.4}
-  .b1{width:480px;height:480px;background:#f5a623;top:-220px;right:-140px;opacity:.16}
-  .b2{width:420px;height:420px;background:#1d4ed8;bottom:-180px;left:-140px;opacity:.22}
+  .amber-text{color:var(--amber-d)}
 
   /* Header */
-  header{position:sticky;top:0;z-index:60;background:rgba(16,26,51,.82);backdrop-filter:blur(14px);
-    border-bottom:1px solid var(--line-soft);padding-top:env(safe-area-inset-top)}
+  header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.9);backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top)}
   .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
-  .brand{display:flex;align-items:center;gap:11px;font-weight:800;font-size:1.05rem;color:var(--ink)}
-  .brand img{width:40px;height:40px;border-radius:11px;flex:0 0 auto;box-shadow:0 6px 18px -6px rgba(0,0,0,.6)}
-  .brand small{display:block;font-weight:600;font-size:.56rem;color:var(--muted);letter-spacing:.18em;text-transform:uppercase}
-  .nav .home{color:var(--muted);font-size:.85rem;font-weight:600;display:inline-flex;align-items:center;gap:6px}
-  .nav .home:hover{color:var(--gold)}
+  .brand{display:flex;align-items:center;gap:11px;font-weight:700;font-size:1.04rem;color:var(--ink)}
+  .brand img{width:40px;height:40px;border-radius:11px;flex:0 0 auto;box-shadow:var(--shadow-sm)}
+  .brand small{display:block;font-weight:500;font-size:.56rem;color:var(--muted);letter-spacing:.18em;text-transform:uppercase}
+  .nav .home{color:var(--muted);font-size:.85rem;font-weight:600;display:inline-flex;align-items:center;gap:6px;
+    background:var(--bg-2);border:1px solid var(--line);padding:8px 13px;border-radius:10px;transition:.2s}
+  .nav .home:hover{color:var(--amber-d);border-color:var(--amber)}
 
   /* Progress */
-  .progress{padding:18px 0 4px}
-  .pbar{height:7px;border-radius:99px;background:rgba(255,255,255,.07);overflow:hidden}
-  .pbar i{display:block;height:100%;width:20%;border-radius:99px;background:var(--grad);transition:width .4s cubic-bezier(.2,.7,.2,1)}
+  .progress{padding:16px 0 14px}
+  .pbar{height:7px;border-radius:99px;background:var(--bg-3);overflow:hidden}
+  .pbar i{display:block;height:100%;width:20%;border-radius:99px;background:var(--amber);transition:width .4s cubic-bezier(.2,.7,.2,1)}
   .pmeta{display:flex;justify-content:space-between;align-items:center;margin-top:10px}
-  .pmeta .lab{font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+  .pmeta .lab{font-size:.76rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--amber-d)}
   .pmeta .cnt{font-size:.8rem;color:var(--muted);font-weight:600}
 
   /* Step */
   .step{display:none;animation:fade .45s cubic-bezier(.2,.7,.2,1)}
   .step.active{display:block}
   @keyframes fade{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-  .step-head{margin:22px 0 18px}
-  .step-head h1{font-size:clamp(1.5rem,5vw,2rem);line-height:1.14;letter-spacing:-.02em;font-weight:800;margin-bottom:7px}
+  .step-head{margin:24px 0 18px}
+  .step-head h1{font-size:clamp(1.5rem,5vw,2rem);line-height:1.14;letter-spacing:-.02em;font-weight:700;margin-bottom:7px}
   .step-head p{color:var(--muted);font-size:.97rem}
 
   /* Service options grid */
   .opts{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}
   @media(min-width:560px){.opts{grid-template-columns:repeat(3,1fr)}}
   .opt{position:relative;display:flex;flex-direction:column;gap:7px;text-align:left;cursor:pointer;
-    background:var(--card);border:1px solid var(--line-soft);border-radius:15px;padding:16px 15px;
-    transition:transform .18s,border-color .2s,background .2s}
-  .opt:hover{transform:translateY(-3px);border-color:var(--line)}
-  .opt .ico{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;font-size:1.4rem;
-    background:var(--grad-soft);border:1px solid var(--line)}
-  .opt .opt-t{font-weight:700;font-size:.98rem;color:var(--ink);font-family:'Plus Jakarta Sans'}
+    background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:16px 15px;box-shadow:var(--shadow-sm);
+    transition:transform .18s,border-color .2s,background .2s,box-shadow .2s}
+  .opt:hover{transform:translateY(-3px);border-color:var(--line-2);box-shadow:var(--shadow)}
+  .opt .ico{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;
+    background:var(--amber-soft);border:1px solid #fbe3bd;color:var(--amber-d)}
+  .opt .ico svg{width:24px;height:24px}
+  .opt .opt-t{font-weight:600;font-size:.98rem;color:var(--ink)}
   .opt .opt-d{font-size:.8rem;color:var(--muted);line-height:1.45}
   .opt input{position:absolute;opacity:0;pointer-events:none}
   .opt .tick{position:absolute;top:11px;right:11px;width:22px;height:22px;border-radius:50%;
-    border:2px solid var(--line-soft);display:grid;place-items:center;transition:.2s;color:transparent}
-  .opt.sel{border-color:var(--gold);background:linear-gradient(135deg,rgba(245,166,35,.14),rgba(245,166,35,.03))}
-  .opt.sel .tick{background:var(--grad);border-color:transparent;color:#1a1203}
+    border:2px solid var(--line-2);display:grid;place-items:center;transition:.2s;color:transparent}
+  .opt.sel{border-color:var(--amber);background:var(--amber-soft);box-shadow:0 10px 24px -12px rgba(245,158,11,.5)}
+  .opt.sel .tick{background:var(--amber);border-color:transparent;color:#fff}
   .opt .tick svg{width:13px;height:13px}
 
   /* Pills (urgency) */
   .pills{display:grid;grid-template-columns:1fr 1fr;gap:13px}
-  .pill{position:relative;cursor:pointer;background:var(--card);border:1px solid var(--line-soft);border-radius:14px;
-    padding:16px;display:flex;gap:13px;align-items:flex-start;transition:.2s}
-  .pill:hover{border-color:var(--line)}
-  .pill .pi{font-size:1.5rem;line-height:1}
-  .pill b{display:block;color:var(--ink);font-weight:700;font-size:.98rem;font-family:'Plus Jakarta Sans'}
+  .pill{position:relative;cursor:pointer;background:#fff;border:1.5px solid var(--line);border-radius:13px;
+    padding:16px;display:flex;gap:13px;align-items:flex-start;transition:.2s;box-shadow:var(--shadow-sm)}
+  .pill:hover{border-color:var(--line-2)}
+  .pill .pi{flex:0 0 auto;width:38px;height:38px;border-radius:10px;display:grid;place-items:center;
+    background:var(--amber-soft);border:1px solid #fbe3bd;color:var(--amber-d)}
+  .pill .pi svg{width:20px;height:20px}
+  .pill b{display:block;color:var(--ink);font-weight:600;font-size:.96rem;font-family:'Poppins'}
   .pill span{font-size:.8rem;color:var(--muted)}
   .pill input{position:absolute;opacity:0;pointer-events:none}
-  .pill.sel{border-color:var(--gold);background:linear-gradient(135deg,rgba(245,166,35,.14),rgba(245,166,35,.03))}
+  .pill.sel{border-color:var(--amber);background:var(--amber-soft)}
   @media(max-width:440px){.pills{grid-template-columns:1fr}}
 
   /* Fields */
   .field{margin-bottom:16px}
-  .field label{display:block;font-size:.85rem;font-weight:600;color:var(--ink);margin-bottom:7px}
-  .field label .opt-tag{color:var(--muted);font-weight:500;font-size:.78rem}
+  .field label{display:block;font-size:.85rem;font-weight:600;color:var(--ink);margin-bottom:7px;font-family:'Poppins'}
+  .field label .opt-tag{color:var(--muted);font-weight:400;font-size:.78rem;font-family:'Inter'}
   .field .hint{font-size:.78rem;color:var(--muted);margin-top:6px}
-  .ctrl{width:100%;background:var(--navy-card);border:1px solid var(--line-soft);border-radius:13px;
+  .ctrl{width:100%;background:#fff;border:1.5px solid var(--line-2);border-radius:12px;
     color:var(--ink);font-family:inherit;font-size:.96rem;padding:13px 15px;transition:border-color .2s,box-shadow .2s}
-  .ctrl::placeholder{color:#67789c}
-  .ctrl:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(245,166,35,.16)}
+  .ctrl::placeholder{color:#9aa7bd}
+  .ctrl:focus{outline:none;border-color:var(--amber);box-shadow:0 0 0 3px rgba(245,158,11,.16)}
   textarea.ctrl{resize:vertical;min-height:96px;line-height:1.55}
-  select.ctrl{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='none' stroke='%239fb0d0' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' viewBox='0 0 24 24'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 13px center;padding-right:42px}
+  select.ctrl{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' viewBox='0 0 24 24'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 13px center;padding-right:42px}
   .two{display:grid;grid-template-columns:1fr 1fr;gap:13px}
   @media(max-width:440px){.two{grid-template-columns:1fr}}
   .phone-row{display:flex;gap:0}
-  .phone-row .cc{flex:0 0 auto;display:flex;align-items:center;gap:6px;padding:13px 14px;background:var(--navy-2);
-    border:1px solid var(--line-soft);border-right:0;border-radius:13px 0 0 13px;color:var(--muted);font-weight:600;font-size:.92rem;white-space:nowrap}
-  .phone-row .ctrl{border-radius:0 13px 13px 0}
-  .err{display:none;color:#ff9a8b;font-size:.8rem;margin-top:6px;font-weight:600}
-  .field.invalid .ctrl{border-color:#ff6b6b;box-shadow:0 0 0 3px rgba(255,107,107,.14)}
+  .phone-row .cc{flex:0 0 auto;display:flex;align-items:center;gap:6px;padding:13px 14px;background:var(--bg-2);
+    border:1.5px solid var(--line-2);border-right:0;border-radius:12px 0 0 12px;color:var(--body);font-weight:600;font-size:.92rem;white-space:nowrap}
+  .phone-row .ctrl{border-radius:0 12px 12px 0}
+  .err{display:none;color:#dc2626;font-size:.8rem;margin-top:6px;font-weight:600}
+  .field.invalid .ctrl{border-color:#ef4444;box-shadow:0 0 0 3px rgba(239,68,68,.14)}
   .field.invalid .err{display:block}
 
   /* Review summary */
-  .sum{background:var(--card);border:1px solid var(--line-soft);border-radius:var(--radius);overflow:hidden}
-  .sum-row{display:flex;gap:14px;padding:16px 18px;border-bottom:1px solid var(--line-soft)}
+  .sum{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm)}
+  .sum-row{display:flex;gap:14px;padding:16px 18px;border-bottom:1px solid var(--line)}
   .sum-row:last-child{border-bottom:0}
-  .sum-row .ic{flex:0 0 auto;width:38px;height:38px;border-radius:11px;display:grid;place-items:center;font-size:1.1rem;
-    background:var(--grad-soft);border:1px solid var(--line)}
+  .sum-row .ic{flex:0 0 auto;width:40px;height:40px;border-radius:11px;display:grid;place-items:center;
+    background:var(--amber-soft);border:1px solid #fbe3bd;color:var(--amber-d)}
+  .sum-row .ic svg{width:20px;height:20px}
   .sum-row .bd{flex:1;min-width:0}
-  .sum-row .k{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:3px}
+  .sum-row .k{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:3px}
   .sum-row .v{color:var(--ink);font-weight:600;font-size:.96rem;word-wrap:break-word}
-  .sum-row .v .chip{display:inline-block;background:var(--grad-soft);border:1px solid var(--line);color:var(--gold-2);
-    font-size:.82rem;font-weight:700;padding:3px 10px;border-radius:99px;margin:3px 5px 0 0;font-family:'Plus Jakarta Sans'}
-  .sum-row .edit{flex:0 0 auto;align-self:flex-start;color:var(--gold);font-size:.8rem;font-weight:700;cursor:pointer}
+  .sum-row .v .chip{display:inline-block;background:var(--amber-soft);border:1px solid #fbe3bd;color:var(--amber-d);
+    font-size:.82rem;font-weight:600;padding:3px 10px;border-radius:99px;margin:3px 5px 0 0;font-family:'Poppins'}
+  .sum-row .edit{flex:0 0 auto;align-self:flex-start;color:var(--amber-d);font-size:.8rem;font-weight:600;cursor:pointer}
   .sum-row .edit:hover{text-decoration:underline}
   .note{margin-top:14px;font-size:.84rem;color:var(--muted);text-align:center;line-height:1.55}
 
   /* Sticky footer nav */
-  .footnav{position:fixed;left:0;right:0;bottom:0;z-index:70;background:rgba(12,20,41,.92);backdrop-filter:blur(14px);
-    border-top:1px solid var(--line-soft);padding:14px 0 calc(14px + env(safe-area-inset-bottom))}
+  .footnav{position:fixed;left:0;right:0;bottom:0;z-index:70;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);
+    border-top:1px solid var(--line);padding:13px 0 calc(13px + env(safe-area-inset-bottom));box-shadow:0 -8px 30px -18px rgba(15,34,64,.3)}
   .footnav .wrap{display:flex;gap:12px;align-items:center}
-  .btn{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:15px 22px;border-radius:14px;
-    font-weight:700;font-size:1rem;cursor:pointer;border:0;transition:transform .16s,box-shadow .18s,opacity .2s;white-space:nowrap}
+  .btn{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:15px 22px;border-radius:13px;
+    font-weight:600;font-size:1rem;cursor:pointer;border:0;transition:transform .16s,box-shadow .18s,opacity .2s,background .2s;white-space:nowrap}
   .btn:active{transform:scale(.98)}
   .btn svg{width:20px;height:20px;flex:0 0 auto}
-  .btn-gold{background:var(--grad);color:#1a1203;box-shadow:0 12px 30px -10px rgba(245,166,35,.5)}
-  .btn-wa{background:linear-gradient(135deg,var(--ok),var(--ok-2));color:#fff;box-shadow:0 12px 30px -10px rgba(37,211,102,.55)}
-  .btn-ghost{flex:0 0 auto;background:var(--card);color:var(--ink);border:1px solid var(--line-soft);min-width:54px;padding:15px 18px}
-  .btn-ghost:hover{border-color:var(--gold)}
+  .btn-gold{background:var(--amber);color:#fff;box-shadow:0 12px 26px -10px rgba(245,158,11,.55)}
+  .btn-gold:hover{background:var(--amber-d)}
+  .btn-wa{background:var(--wa);color:#fff;box-shadow:0 12px 30px -10px rgba(34,197,94,.5)}
+  .btn-wa:hover{background:var(--wa-d)}
+  .btn-ghost{flex:0 0 auto;background:#fff;color:var(--navy);border:1.5px solid var(--line-2);min-width:54px;padding:15px 18px}
+  .btn-ghost:hover{border-color:var(--amber);color:var(--amber-d)}
   .btn[disabled]{opacity:.45;cursor:not-allowed;box-shadow:none}
   .btn[disabled]:active{transform:none}
+  /* Glowing confirm button */
+  #sendBtn{position:relative;animation:glow 2.2s ease-in-out infinite}
+  @keyframes glow{0%,100%{box-shadow:0 12px 26px -10px rgba(34,197,94,.5),0 0 0 0 rgba(34,197,94,.45)}
+    50%{box-shadow:0 12px 30px -8px rgba(34,197,94,.7),0 0 0 8px rgba(34,197,94,0)}}
 
   /* Toast */
   .toast{position:fixed;left:50%;bottom:calc(104px + env(safe-area-inset-bottom));transform:translate(-50%,20px);
-    background:var(--navy-card);border:1px solid var(--line);color:var(--ink);padding:12px 18px;border-radius:12px;
-    font-size:.9rem;font-weight:600;box-shadow:0 16px 40px -12px rgba(0,0,0,.7);opacity:0;pointer-events:none;
-    transition:.3s;z-index:90;max-width:90%;text-align:center}
+    background:var(--navy);color:#fff;padding:12px 18px;border-radius:12px;font-size:.9rem;font-weight:600;
+    box-shadow:var(--shadow-lg);opacity:0;pointer-events:none;transition:.3s;z-index:90;max-width:90%;text-align:center}
   .toast.show{opacity:1;transform:translate(-50%,0)}
 
   /* Success screen */
-  .done{display:none;text-align:center;padding:40px 0 10px}
+  .done{display:none;text-align:center;padding:44px 0 10px}
   .done.show{display:block;animation:fade .5s}
   .done .badge{width:96px;height:96px;border-radius:50%;margin:0 auto 22px;display:grid;place-items:center;
-    background:linear-gradient(135deg,var(--ok),var(--ok-2));box-shadow:0 18px 44px -14px rgba(37,211,102,.6)}
+    background:var(--wa);box-shadow:0 18px 44px -14px rgba(34,197,94,.6)}
   .done .badge svg{width:48px;height:48px;color:#fff}
   .done h1{font-size:1.7rem;margin-bottom:10px}
   .done p{color:var(--muted);max-width:420px;margin:0 auto 26px}
   .done .acts{display:flex;flex-direction:column;gap:12px;max-width:360px;margin:0 auto}
   .done .acts .btn{flex:none}
 
-  .install-hint{display:none;margin-top:18px;background:var(--card);border:1px solid var(--line-soft);border-radius:14px;
-    padding:13px 16px;font-size:.86rem;color:var(--muted);align-items:center;gap:12px}
+  .install-hint{display:none;margin-top:18px;background:#fff;border:1px solid var(--line);border-radius:13px;
+    padding:13px 16px;font-size:.86rem;color:var(--muted);align-items:center;gap:12px;box-shadow:var(--shadow-sm)}
   .install-hint.show{display:flex}
   .install-hint b{color:var(--ink)}
-  .install-hint button{margin-left:auto;background:var(--grad);color:#1a1203;border:0;border-radius:10px;
-    padding:9px 16px;font-weight:700;font-family:'Plus Jakarta Sans';cursor:pointer;font-size:.86rem}
+  .install-hint button{margin-left:auto;background:var(--amber);color:#fff;border:0;border-radius:10px;
+    padding:9px 16px;font-weight:600;font-family:'Poppins';cursor:pointer;font-size:.86rem}
 </style>
 </head>
 <body>
@@ -193,9 +205,25 @@
   <symbol id="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></symbol>
   <symbol id="back" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
   <symbol id="next" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="roof" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l9-9 9 9M5 10v10h14V10"/></symbol>
+  <!-- service icons -->
+  <symbol id="ic-truck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 17h4V5H2v12h3"/><path d="M14 9h4l3 3v5h-2"/><path d="M14 17h1"/><circle cx="7.5" cy="17.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></symbol>
+  <symbol id="ic-wind" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.8 4.4A2 2 0 1 1 11 8H2"/><path d="M17.5 8a2.5 2.5 0 1 1 2 4H2"/><path d="M12.8 19.6A2 2 0 1 0 14 16H2"/></symbol>
+  <symbol id="ic-droplet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5S12.5 4.5 12 2c-.5 2.5-2 4.9-4 7.5S5 13 5 15a7 7 0 0 0 7 7z"/></symbol>
+  <symbol id="ic-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></symbol>
+  <symbol id="ic-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></symbol>
+  <symbol id="ic-brush" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.06 11.9l8.07-8.06a2.85 2.85 0 1 1 4.03 4.03l-8.06 8.08"/><path d="M7.07 14.94c-1.66 0-3 1.35-3 3.02 0 1.33-2.5 1.52-2 2.02 1.08 1.1 2.49 2.02 4 2.02 2.2 0 4-1.8 4-4.04a3.01 3.01 0 0 0-3-3.02z"/></symbol>
+  <symbol id="ic-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></symbol>
+  <symbol id="ic-hammer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 12l-8.4 8.4a2.1 2.1 0 1 1-3-3L12 9"/><path d="M17.6 15L22 10.6"/><path d="M20.9 11.7l-1.2-1.2c-.6-.6-.9-1.4-.9-2.2v-.9L16 4.6A5.6 5.6 0 0 0 12 3H9l.9.8A6.2 6.2 0 0 1 12 8.4v1.6l2 2h.9c.8 0 1.6.3 2.2.9l1.2 1.2"/></symbol>
+  <symbol id="ic-wrench" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
+  <!-- ui icons -->
+  <symbol id="ic-bolt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></symbol>
+  <symbol id="ic-cal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+  <symbol id="ic-note" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></symbol>
+  <symbol id="ic-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="ic-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="ic-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
 </svg>
-
-<div class="glow"><div class="blob b1"></div><div class="blob b2"></div></div>
 
 <header>
   <div class="wrap nav">
@@ -203,7 +231,7 @@
       <img src="logo.png" alt="Handyman Maldives logo" />
       <span class="logo-txt">Handyman Maldives<small>Book a Service</small></span>
     </a>
-    <a class="home" href="index.html"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l9-9 9 9M5 10v10h14V10"/></svg> Home</a>
+    <a class="home" href="index.html"><svg width="15" height="15"><use href="#roof"/></svg> Home</a>
   </div>
   <div class="wrap progress">
     <div class="pbar"><i id="pbar"></i></div>
@@ -216,7 +244,7 @@
   <!-- STEP 1: SERVICES -->
   <section class="step active" data-step="1">
     <div class="step-head">
-      <h1>What do you need <span class="grad-text">help with?</span></h1>
+      <h1>What do you need <span class="amber-text">help with?</span></h1>
       <p>Pick one or more services — you can combine jobs in a single visit.</p>
     </div>
     <div class="opts" id="svcGrid"></div>
@@ -225,21 +253,21 @@
   <!-- STEP 2: DETAILS -->
   <section class="step" data-step="2">
     <div class="step-head">
-      <h1>Tell us a bit <span class="grad-text">more</span></h1>
+      <h1>Tell us a bit <span class="amber-text">more</span></h1>
       <p>A short description helps us send the right pro and a faster quote.</p>
     </div>
     <div class="field">
       <label for="desc">Describe the job <span class="opt-tag">(optional)</span></label>
       <textarea id="desc" class="ctrl" placeholder="e.g. Kitchen tap leaking and bathroom light not working. AC needs cleaning too."></textarea>
-      <div class="hint">📷 Got a photo? You can attach it on WhatsApp after you send the order.</div>
+      <div class="hint">Got a photo? You can attach it on WhatsApp after you send the order.</div>
     </div>
     <div class="field">
       <label>How soon do you need it?</label>
       <div class="pills" id="urgency">
         <label class="pill"><input type="radio" name="urg" value="As soon as possible" checked>
-          <span class="pi">⚡</span><span><b>As soon as possible</b><span>Same-day / urgent</span></span></label>
+          <span class="pi"><svg><use href="#ic-bolt"/></svg></span><span><b>As soon as possible</b><span>Same-day / urgent</span></span></label>
         <label class="pill"><input type="radio" name="urg" value="Schedule for a specific time">
-          <span class="pi">📅</span><span><b>Pick a time</b><span>Schedule it below</span></span></label>
+          <span class="pi"><svg><use href="#ic-cal"/></svg></span><span><b>Pick a time</b><span>Schedule it below</span></span></label>
       </div>
     </div>
     <div class="two" id="scheduleWrap" style="display:none">
@@ -259,8 +287,8 @@
   <!-- STEP 3: LOCATION -->
   <section class="step" data-step="3">
     <div class="step-head">
-      <h1>Where should we <span class="grad-text">come?</span></h1>
-      <p>We serve Malé, Hulhumalé, Villingili and nearby islands &amp; resorts.</p>
+      <h1>Where should we <span class="amber-text">come?</span></h1>
+      <p>We serve Malé, Hulhumalé, Vilimalé and nearby islands &amp; resorts.</p>
     </div>
     <div class="field">
       <label for="island">Island / Area</label>
@@ -285,7 +313,7 @@
   <!-- STEP 4: CONTACT -->
   <section class="step" data-step="4">
     <div class="step-head">
-      <h1>How can we <span class="grad-text">reach you?</span></h1>
+      <h1>How can we <span class="amber-text">reach you?</span></h1>
       <p>We'll send your quote and confirmation on WhatsApp.</p>
     </div>
     <div class="field">
@@ -307,13 +335,13 @@
   <!-- STEP 5: REVIEW -->
   <section class="step" data-step="5">
     <div class="step-head">
-      <h1>Review your <span class="grad-text">order</span></h1>
+      <h1>Review your <span class="amber-text">order</span></h1>
       <p>Quick check, then send it straight to our team on WhatsApp.</p>
     </div>
     <div class="sum" id="summary"></div>
     <p class="note">By sending, your order opens in WhatsApp pre-filled — just tap send. No payment is taken online; we quote you first.</p>
     <div class="install-hint" id="installHint">
-      <span>📲 <b>Install this app</b> on your phone for one-tap booking next time.</span>
+      <span><b>Install this app</b> on your phone for one-tap booking next time.</span>
       <button id="installBtn">Install</button>
     </div>
   </section>
@@ -321,12 +349,12 @@
   <!-- SUCCESS -->
   <section class="done" id="done">
     <div class="badge"><svg><use href="#check"/></svg></div>
-    <h1>Order ready! 🎉</h1>
+    <h1>Order ready!</h1>
     <p>WhatsApp should have opened with your order. If it didn't, tap the button below to send it now.</p>
     <div class="acts">
       <a class="btn btn-wa" id="resend"><svg><use href="#wa"/></svg> Open WhatsApp</a>
-      <a class="btn btn-ghost" href="index.html" style="justify-content:center">Back to home</a>
-      <a class="btn btn-ghost" id="newOrder" href="#" style="justify-content:center">Start a new order</a>
+      <a class="btn btn-ghost" href="index.html" style="justify-content:center;flex:none">Back to home</a>
+      <a class="btn btn-ghost" id="newOrder" href="#" style="justify-content:center;flex:none">Start a new order</a>
     </div>
   </section>
 
@@ -337,7 +365,7 @@
   <div class="wrap">
     <button class="btn btn-ghost" id="backBtn" aria-label="Go back" style="display:none"><svg><use href="#back"/></svg></button>
     <button class="btn btn-gold" id="nextBtn">Continue <svg><use href="#next"/></svg></button>
-    <button class="btn btn-wa" id="sendBtn" style="display:none"><svg><use href="#wa"/></svg> Send order</button>
+    <button class="btn btn-wa" id="sendBtn" style="display:none"><svg><use href="#wa"/></svg> Confirm via WhatsApp</button>
   </div>
 </nav>
 
@@ -346,18 +374,19 @@
 <script>
   /* ===== BUSINESS DETAILS ===== */
   const WHATSAPP_NUMBER = "9607237764"; // country code + number, digits only
+  const ADS_CONVERSION  = "AW-18234086732/xUFiCKW5hsIcEMyq2PZD"; // Google Ads "WhatsApp Click" conversion
   /* ============================ */
 
   const SERVICES = [
-    {i:"🔧", t:"Plumbing",         d:"Leaks, drains, taps, water heaters"},
-    {i:"⚡", t:"Electrical Work",  d:"Wiring, sockets, lights, fans"},
-    {i:"❄️", t:"Aircon Service",   d:"Cleaning, gas refill, repair, install"},
-    {i:"🎨", t:"Painting",         d:"Interior & exterior, clean finish"},
-    {i:"🧱", t:"Tiling",           d:"Floor & wall tiling, grouting"},
-    {i:"🏠", t:"Ceiling & Roofing",d:"Ceilings, roof leaks, gypsum"},
-    {i:"🪚", t:"Carpentry",        d:"Doors, locks, shelves, furniture"},
-    {i:"🚚", t:"Apartment Moving", d:"Packing, lifting & moving"},
-    {i:"🧰", t:"General Repairs",  d:"Mounting, sealing, odd jobs"},
+    {i:"#ic-truck",   t:"Apartment Moving", d:"Packing, lifting & moving"},
+    {i:"#ic-wind",    t:"Aircon Service",   d:"Cleaning, gas refill, repair, install"},
+    {i:"#ic-droplet", t:"Plumbing",         d:"Leaks, drains, taps, water heaters"},
+    {i:"#ic-zap",     t:"Electrical Work",  d:"Wiring, sockets, lights, fans"},
+    {i:"#ic-grid",    t:"Tiling",           d:"Floor & wall tiling, grouting"},
+    {i:"#ic-brush",   t:"Painting",         d:"Interior & exterior, clean finish"},
+    {i:"#ic-home",    t:"Ceiling & Roofing",d:"Ceilings, roof leaks, gypsum"},
+    {i:"#ic-hammer",  t:"Carpentry",        d:"Doors, locks, shelves, furniture"},
+    {i:"#ic-wrench",  t:"General Repairs",  d:"Mounting, sealing, odd jobs"},
   ];
 
   const TOTAL = 5;
@@ -378,11 +407,11 @@
   const steps = [...document.querySelectorAll(".step")];
 
   // build service cards
-  $("svcGrid").innerHTML = SERVICES.map((s,idx)=>`
+  $("svcGrid").innerHTML = SERVICES.map((s)=>`
     <label class="opt" data-t="${s.t}">
       <input type="checkbox" value="${s.t}">
       <span class="tick"><svg><use href="#check"/></svg></span>
-      <span class="ico">${s.i}</span>
+      <span class="ico"><svg><use href="${s.i}"/></svg></span>
       <span class="opt-t">${s.t}</span>
       <span class="opt-d">${s.d}</span>
     </label>`).join("");
@@ -448,7 +477,6 @@
   }
 
   function refreshNav(){
-    // disable Continue on step 1 with no services
     if(state.step===1) $("nextBtn").disabled = state.services.length===0;
     else $("nextBtn").disabled = false;
   }
@@ -487,15 +515,15 @@
       ? "As soon as possible (same-day / urgent)"
       : `Scheduled${state.pdate?` · ${fmtDate(state.pdate)}`:""}${state.ptime?` · ${state.ptime}`:""}`;
     const rows = [
-      {ic:"🛠️", k:"Services", v:svc, step:1},
-      {ic:"📝", k:"Details", v:esc(state.desc)||"<span style='color:#9fb0d0'>No extra notes</span>", step:2},
-      {ic:"⏱️", k:"Timing", v:esc(timing), step:2},
-      {ic:"📍", k:"Location", v:esc(state.island)+(state.address?`<br><span style="color:#9fb0d0;font-weight:500">${esc(state.address)}</span>`:""), step:3},
-      {ic:"👤", k:"Contact", v:`${esc(state.name)}<br><span style="color:#9fb0d0;font-weight:500">+960 ${esc(state.phone)}</span>`, step:4},
+      {ic:"#ic-wrench", k:"Services", v:svc, step:1},
+      {ic:"#ic-note",   k:"Details", v:esc(state.desc)||"<span style='color:#94a3b8'>No extra notes</span>", step:2},
+      {ic:"#ic-clock",  k:"Timing", v:esc(timing), step:2},
+      {ic:"#ic-pin",    k:"Location", v:esc(state.island)+(state.address?`<br><span style="color:#94a3b8;font-weight:500">${esc(state.address)}</span>`:""), step:3},
+      {ic:"#ic-user",   k:"Contact", v:`${esc(state.name)}<br><span style="color:#94a3b8;font-weight:500">+960 ${esc(state.phone)}</span>`, step:4},
     ];
     $("summary").innerHTML = rows.map(r=>`
       <div class="sum-row">
-        <div class="ic">${r.ic}</div>
+        <div class="ic"><svg><use href="${r.ic}"/></svg></div>
         <div class="bd"><div class="k">${r.k}</div><div class="v">${r.v}</div></div>
         <div class="edit" data-go="${r.step}">Edit</div>
       </div>`).join("");
@@ -530,6 +558,8 @@
     if(!validateStep(4)){ show(4); return; }
     const url = waLink();
     $("resend").href = url; $("resend").target="_blank"; $("resend").rel="noopener";
+    // count this completed order as a Google Ads conversion
+    if(typeof gtag === "function"){ gtag('event','conversion',{'send_to':ADS_CONVERSION}); }
     window.open(url,"_blank");
     showDone();
   });
@@ -568,8 +598,8 @@
   const pre = new URLSearchParams(location.search).get("service");
   if(pre){
     const p = pre.toLowerCase();
-    const m = SERVICES.find(s => s.t.toLowerCase()===p)             // exact
-          || SERVICES.find(s => p.includes(s.t.toLowerCase().split(" ")[0])); // by keyword e.g. "aircon", "ceiling"
+    const m = SERVICES.find(s => s.t.toLowerCase()===p)
+          || SERVICES.find(s => p.includes(s.t.toLowerCase().split(" ")[0]));
     if(m && !state.services.includes(m.t)) state.services.push(m.t);
   }
 
