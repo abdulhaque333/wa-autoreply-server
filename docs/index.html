@@ -14,7 +14,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Handyman Maldives — Trusted Home & Property Services</title>
 <meta name="description" content="Handyman Maldives offers professional plumbing, electrical, aircon servicing, painting, tiling, ceiling & roofing, apartment moving and more across the Maldives. Fast, reliable, affordable." />
-<meta name="theme-color" content="#101a33" />
+<meta name="theme-color" content="#ffffff" />
 <meta name="google-site-verification" content="uP_fp2exWjtJFJCGkklnpJUsFNhvWsxe-CYs3FvXeOg" />
 <link rel="canonical" href="https://handymanmaldives.netlify.app/" />
 <meta name="robots" content="index, follow" />
@@ -73,327 +73,340 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
   :root{
-    --navy:#101a33;          /* page background (matches logo) */
-    --navy-2:#0c1429;        /* darker */
-    --navy-card:#16223f;     /* card base */
-    --card:rgba(255,255,255,.04);
-    --line:rgba(245,166,35,.16);
-    --line-soft:rgba(255,255,255,.09);
-    --gold:#f5a623;
-    --gold-2:#fbc05b;
-    --gold-deep:#e08e10;
-    --ink:#f5f8ff;
-    --muted:#9fb0d0;
-    --body:#c4cfe6;
-    --grad:linear-gradient(120deg,#f5a623,#fbc05b);
-    --grad-soft:linear-gradient(135deg,rgba(245,166,35,.18),rgba(251,192,91,.06));
-    --radius:18px;
+    --navy:#0f2240;          /* deep navy — trust, headings, dark sections */
+    --navy-2:#0b1a33;
+    --navy-soft:#1c3357;
+    --amber:#f59e0b;         /* solid amber — action */
+    --amber-d:#d97706;
+    --amber-soft:#fff7ec;
+    --bg:#ffffff;
+    --bg-2:#f6f8fb;          /* light gray */
+    --bg-3:#eef2f8;
+    --ink:#0f2240;
+    --body:#475569;
+    --muted:#64748b;
+    --line:#e6eaf1;
+    --line-2:#dde3ee;
+    --wa:#22c55e;
+    --radius:14px;
+    --radius-sm:10px;
+    --shadow-sm:0 2px 8px rgba(15,34,64,.06);
+    --shadow:0 12px 30px -12px rgba(15,34,64,.16);
+    --shadow-lg:0 26px 60px -22px rgba(15,34,64,.28);
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--navy);color:var(--body);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
-  h1,h2,h3,h4,.brand,.btn,.stat b,.eyebrow,.step .n,.logo-txt,.who b{font-family:'Plus Jakarta Sans',sans-serif}
+  body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--body);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,h4,h5,.brand,.btn,.stat b,.eyebrow,.step .n,.logo-txt{font-family:'Poppins',sans-serif}
   h1,h2,h3,h4{color:var(--ink)}
   a{text-decoration:none;color:inherit}
   img{max-width:100%;display:block}
   .wrap{width:min(1180px,92%);margin-inline:auto}
-  section{padding:88px 0;position:relative}
-  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.76rem;font-weight:700;letter-spacing:.14em;
-    text-transform:uppercase;color:var(--gold);padding:7px 15px;border:1px solid var(--line);border-radius:999px;
-    background:var(--grad-soft);margin-bottom:18px}
-  h2{font-size:clamp(1.9rem,4vw,2.9rem);line-height:1.12;letter-spacing:-.02em;font-weight:800;margin-bottom:14px}
-  .lead{color:var(--muted);max-width:580px;font-size:1.06rem}
+  section{padding:84px 0;position:relative}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.74rem;font-weight:700;letter-spacing:.13em;
+    text-transform:uppercase;color:var(--amber-d);padding:7px 14px;border:1px solid #fbe3bd;border-radius:999px;
+    background:var(--amber-soft);margin-bottom:16px}
+  h2{font-size:clamp(1.9rem,4vw,2.8rem);line-height:1.13;letter-spacing:-.02em;font-weight:700;margin-bottom:14px}
+  .lead{color:var(--muted);max-width:580px;font-size:1.05rem}
   .center{text-align:center}.center .lead{margin-inline:auto}
-  .grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-
-  /* Aurora glow */
-  .glow{position:fixed;inset:0;z-index:-2;overflow:hidden;pointer-events:none}
-  .blob{position:absolute;border-radius:50%;filter:blur(100px);opacity:.4;animation:float 20s ease-in-out infinite}
-  .b1{width:520px;height:520px;background:#f5a623;top:-200px;right:-120px;opacity:.22}
-  .b2{width:440px;height:440px;background:#1d4ed8;bottom:-160px;left:-120px;opacity:.28;animation-delay:-7s}
-  @keyframes float{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-30px,40px) scale(1.1)}}
+  .amber-text{color:var(--amber-d)}
 
   /* Buttons */
   .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:14px 26px;border-radius:999px;
-    font-weight:700;font-size:.97rem;cursor:pointer;border:0;transition:transform .18s,box-shadow .18s,background .2s;white-space:nowrap}
+    font-weight:600;font-size:.97rem;cursor:pointer;border:0;transition:transform .18s,box-shadow .2s,background .2s,color .2s,border-color .2s;white-space:nowrap}
   .btn:hover{transform:translateY(-2px)}
   .btn svg{width:19px;height:19px;flex:0 0 auto}
-  .btn-wa{background:linear-gradient(135deg,#2bd566,#16a34a);color:#fff;box-shadow:0 10px 26px -10px rgba(37,211,102,.55)}
-  .btn-wa:hover{box-shadow:0 14px 30px -10px rgba(37,211,102,.7)}
-  .btn-gold{background:var(--grad);color:#1a1203;box-shadow:0 12px 30px -8px rgba(245,166,35,.5)}
-  .btn-ghost{background:var(--card);color:var(--ink);border:1px solid var(--line-soft)}
-  .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--gold)}
-  .btn-navy{background:#0c1428;color:var(--gold);border:1px solid var(--line)}
-  .btn-navy:hover{border-color:var(--gold)}
+  .btn-primary{background:var(--amber);color:#fff;box-shadow:0 12px 26px -10px rgba(245,158,11,.6)}
+  .btn-primary:hover{background:var(--amber-d);box-shadow:0 16px 30px -10px rgba(245,158,11,.7)}
+  .btn-dark{background:var(--navy);color:#fff;box-shadow:0 12px 26px -12px rgba(15,34,64,.5)}
+  .btn-dark:hover{background:var(--navy-soft)}
+  .btn-wa{background:var(--wa);color:#fff;box-shadow:0 12px 26px -10px rgba(34,197,94,.5)}
+  .btn-wa:hover{background:#16a34a}
+  .btn-outline{background:#fff;color:var(--navy);border:1.5px solid var(--line-2)}
+  .btn-outline:hover{border-color:var(--amber);color:var(--amber-d)}
+  .btn-ghost-light{background:rgba(255,255,255,.12);color:#fff;border:1.5px solid rgba(255,255,255,.25)}
+  .btn-ghost-light:hover{background:rgba(255,255,255,.2)}
 
   /* Topbar */
-  .topbar{background:var(--navy-2);color:#aab8d6;font-size:.85rem;text-align:center;padding:9px 16px;border-bottom:1px solid var(--line-soft)}
-  .topbar b{color:var(--gold)}
-  .topbar a{color:var(--gold-2);font-weight:700}
+  .topbar{background:var(--navy);color:#cdd8ec;font-size:.85rem;text-align:center;padding:9px 16px}
+  .topbar b{color:#fff}
+  .topbar a{color:var(--amber);font-weight:600}
 
   /* Header */
-  header{position:sticky;top:0;z-index:60;background:rgba(16,26,51,.8);backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:.25s}
-  header.scrolled{border-color:var(--line-soft);box-shadow:0 10px 30px -16px rgba(0,0,0,.6)}
-  .nav{display:flex;align-items:center;justify-content:space-between;padding:13px 0}
-  .brand{display:flex;align-items:center;gap:12px;font-weight:800;font-size:1.16rem;letter-spacing:-.01em;color:var(--ink)}
-  .brand img{width:46px;height:46px;border-radius:12px;flex:0 0 auto;box-shadow:0 6px 18px -6px rgba(0,0,0,.6)}
-  .brand small{display:block;font-weight:600;font-size:.6rem;color:var(--muted);letter-spacing:.2em;text-transform:uppercase}
-  .menu{display:flex;gap:30px;font-size:.95rem;font-weight:600;color:var(--body)}
+  header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);transition:.25s}
+  header.scrolled{box-shadow:var(--shadow-sm)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0;gap:14px}
+  .nav-left{display:flex;align-items:center;gap:12px}
+  .brand{display:flex;align-items:center;gap:11px;font-weight:700;font-size:1.12rem;letter-spacing:-.01em;color:var(--ink)}
+  .brand img{width:44px;height:44px;border-radius:11px;flex:0 0 auto;box-shadow:var(--shadow-sm)}
+  .brand small{display:block;font-weight:500;font-size:.58rem;color:var(--muted);letter-spacing:.18em;text-transform:uppercase}
+  .menu{display:flex;gap:28px;font-size:.95rem;font-weight:500;color:var(--body)}
   .menu a{position:relative;padding:4px 0}
-  .menu a:hover{color:var(--gold)}
-  .menu a::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:2px;background:var(--grad);transition:.25s;border-radius:2px}
+  .menu a:hover{color:var(--amber-d)}
+  .menu a::after{content:"";position:absolute;left:0;bottom:-3px;width:0;height:2px;background:var(--amber);transition:.25s;border-radius:2px}
   .menu a:hover::after{width:100%}
+  .nav-actions{display:flex;align-items:center;gap:10px}
   .nav .btn{padding:11px 20px}
-  @media(max-width:900px){.menu{display:none}}
+  .icon-btn{display:grid;place-items:center;width:44px;height:44px;border-radius:11px;cursor:pointer;
+    background:var(--bg-2);border:1px solid var(--line);color:var(--navy);transition:.2s;flex:0 0 auto}
+  .icon-btn svg{width:21px;height:21px}
+  .icon-btn:hover{border-color:var(--amber);color:var(--amber-d)}
+  .icon-btn.call{color:#fff;background:var(--amber);border-color:transparent;box-shadow:0 10px 22px -10px rgba(245,158,11,.6)}
+  .icon-btn.call:hover{background:var(--amber-d)}
+  .hamburger{display:none}
+  @media(max-width:920px){.menu{display:none}.nav-book{display:none}.hamburger{display:grid}}
+
+  /* Search */
+  .searchwrap{background:var(--bg-2);border-bottom:1px solid var(--line);position:relative;z-index:40}
+  .searchwrap .wrap{padding:18px 0;position:relative}
+  .search{display:flex;align-items:center;gap:8px;background:#fff;border:1.5px solid var(--line-2);
+    border-radius:999px;padding:6px 6px 6px 22px;transition:border-color .2s,box-shadow .2s;box-shadow:var(--shadow-sm)}
+  .search:focus-within{border-color:var(--amber);box-shadow:0 0 0 4px rgba(245,158,11,.14)}
+  .search input{flex:1;background:none;border:0;outline:none;color:var(--ink);font-family:inherit;font-size:1.05rem;padding:13px 0;min-width:0}
+  .search input::placeholder{color:#9aa7bd}
+  .search .sbtn{flex:0 0 auto;width:52px;height:52px;border-radius:50%;display:grid;place-items:center;
+    background:var(--amber);color:#fff;border:0;cursor:pointer;transition:transform .16s,background .2s;
+    box-shadow:0 10px 22px -8px rgba(245,158,11,.6)}
+  .search .sbtn svg{width:23px;height:23px}
+  .search .sbtn:hover{transform:scale(1.05);background:var(--amber-d)}
+  .search .sbtn:active{transform:scale(.96)}
+  @media(max-width:560px){.search{padding-left:18px}.search input{font-size:1rem;padding:12px 0}.search .sbtn{width:48px;height:48px}}
+  .search-results{position:absolute;left:0;right:0;top:calc(100% - 2px);background:#fff;
+    border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow-lg);overflow:hidden;z-index:50;display:none;max-height:min(60vh,440px);overflow-y:auto}
+  .search-results.show{display:block;animation:fade .2s}
+  @keyframes fade{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+  .sr{display:flex;align-items:center;gap:13px;padding:12px 16px;cursor:pointer;border-bottom:1px solid var(--line);transition:background .15s}
+  .sr:last-child{border-bottom:0}
+  .sr:hover,.sr.act{background:var(--amber-soft)}
+  .sr .si2{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;background:var(--amber-soft);border:1px solid #fbe3bd;color:var(--amber-d);flex:0 0 auto}
+  .sr .si2 svg{width:20px;height:20px}
+  .sr b{color:var(--ink);font-size:.96rem;font-weight:600;font-family:'Poppins';display:block}
+  .sr span{color:var(--muted);font-size:.82rem}
+  .sr .go-ic{margin-left:auto;color:var(--amber);width:18px;height:18px;flex:0 0 auto}
+  .sr-empty{padding:16px;color:var(--muted);font-size:.92rem;text-align:center}
+  .sr-empty a{color:var(--amber-d);font-weight:600}
+  .sr-head{padding:11px 16px 7px;font-size:.68rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);font-weight:700;font-family:'Poppins'}
 
   /* Hero */
-  .hero{position:relative;overflow:hidden;padding:54px 0 46px}
-  .hero::after{content:"";position:absolute;inset:0;z-index:-1;opacity:.5;
-    background-image:linear-gradient(var(--line-soft) 1px,transparent 1px),linear-gradient(90deg,var(--line-soft) 1px,transparent 1px);
-    background-size:48px 48px;mask-image:radial-gradient(ellipse 60% 55% at 50% 0%,#000 30%,transparent 78%);
-    -webkit-mask-image:radial-gradient(ellipse 60% 55% at 50% 0%,#000 30%,transparent 78%)}
-  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center}
-  .badge{display:inline-flex;align-items:center;gap:9px;font-size:.84rem;font-weight:600;color:var(--gold-2);
-    padding:7px 15px;border:1px solid var(--line);border-radius:999px;background:var(--grad-soft);margin-bottom:22px}
-  .dot{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 0 rgba(34,197,94,.6);animation:ping 2s infinite}
+  .hero{padding:70px 0 80px;position:relative;overflow:hidden}
+  .hero::before{content:"";position:absolute;top:-160px;right:-120px;width:520px;height:520px;border-radius:50%;
+    background:radial-gradient(circle,rgba(245,158,11,.12),transparent 68%);z-index:-1}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:center}
+  .badge{display:inline-flex;align-items:center;gap:9px;font-size:.84rem;font-weight:600;color:var(--navy);
+    padding:7px 15px;border:1px solid var(--line-2);border-radius:999px;background:#fff;box-shadow:var(--shadow-sm);margin-bottom:22px}
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--wa);box-shadow:0 0 0 0 rgba(34,197,94,.6);animation:ping 2s infinite}
   @keyframes ping{0%{box-shadow:0 0 0 0 rgba(34,197,94,.5)}70%{box-shadow:0 0 0 9px rgba(34,197,94,0)}100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}}
-  .hero h1{font-size:clamp(2.4rem,5.4vw,3.9rem);line-height:1.06;letter-spacing:-.03em;font-weight:800;margin-bottom:20px}
-  .hero p.sub{color:var(--muted);font-size:clamp(1rem,2vw,1.18rem);max-width:520px;margin-bottom:30px}
+  .hero h1{font-size:clamp(2.3rem,5vw,3.6rem);line-height:1.07;letter-spacing:-.025em;font-weight:700;margin-bottom:18px;color:var(--navy)}
+  .hero p.sub{color:var(--muted);font-size:clamp(1rem,1.6vw,1.16rem);max-width:520px;margin-bottom:28px}
   .hero-actions{display:flex;gap:13px;flex-wrap:wrap}
   .hero-trust{display:flex;align-items:center;gap:14px;margin-top:30px;flex-wrap:wrap}
-  .stars{color:var(--gold);letter-spacing:1px}
-  .hero-trust small{color:var(--muted);font-size:.9rem}
   .avs{display:flex}
-  .avs span{width:34px;height:34px;border-radius:50%;border:2px solid var(--navy);margin-left:-10px;display:grid;place-items:center;font-size:.8rem;font-weight:700;color:#1a1203;font-family:'Plus Jakarta Sans'}
+  .avs span{width:36px;height:36px;border-radius:50%;border:2px solid #fff;margin-left:-10px;display:grid;place-items:center;font-size:.8rem;font-weight:700;color:#fff;font-family:'Poppins';box-shadow:var(--shadow-sm)}
   .avs span:first-child{margin-left:0}
+  .stars{color:var(--amber);letter-spacing:1px}
+  .hero-trust small{color:var(--muted);font-size:.9rem;display:block}
+  /* Hero visual */
+  .hero-visual{position:relative}
+  .hero-photo{position:relative;border-radius:24px;overflow:hidden;box-shadow:var(--shadow-lg);aspect-ratio:4/3.4}
+  .hero-photo img{width:100%;height:100%;object-fit:cover}
+  .hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(15,34,64,.28))}
+  .hero-card{position:absolute;background:#fff;border:1px solid var(--line);border-radius:14px;padding:13px 16px;box-shadow:var(--shadow);display:flex;align-items:center;gap:11px}
+  .hero-card .hc-ic{width:40px;height:40px;border-radius:11px;display:grid;place-items:center;flex:0 0 auto}
+  .hero-card .hc-ic svg{width:21px;height:21px}
+  .hero-card b{display:block;font-family:'Poppins';font-weight:700;color:var(--ink);font-size:.95rem;line-height:1.2}
+  .hero-card span{font-size:.78rem;color:var(--muted)}
+  .hc-rating{top:18px;left:-18px}
+  .hc-rating .hc-ic{background:var(--amber-soft);color:var(--amber-d)}
+  .hc-guard{bottom:18px;right:-18px}
+  .hc-guard .hc-ic{background:#eafaf0;color:#16a34a}
+  @media(max-width:920px){.hero{padding:48px 0 56px}.hero-grid{grid-template-columns:1fr;gap:34px}
+    .hero-photo{aspect-ratio:16/11;max-height:380px}.hc-rating{left:10px}.hc-guard{right:10px}}
 
-  /* Hero logo visual */
-  .hero-visual{display:grid;place-items:center;position:relative}
-  .logo-ring{position:relative;width:min(420px,90%);aspect-ratio:1;display:grid;place-items:center}
-  .logo-ring::before{content:"";position:absolute;inset:0;border-radius:50%;
-    background:radial-gradient(circle,rgba(245,166,35,.28),transparent 65%);filter:blur(20px)}
-  .logo-ring img{position:relative;width:100%;border-radius:28px;box-shadow:0 40px 80px -30px rgba(0,0,0,.8),0 0 0 1px var(--line-soft)}
-  .float-badge{position:absolute;background:var(--navy-card);border:1px solid var(--line-soft);border-radius:14px;padding:11px 15px;
-    box-shadow:0 16px 36px -16px rgba(0,0,0,.7);display:flex;align-items:center;gap:10px;font-size:.85rem;font-weight:700;color:var(--ink)}
-  .float-badge .fi{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;font-size:1.1rem;background:var(--grad-soft)}
-  .fb1{top:8px;left:-14px;animation:bob 4s ease-in-out infinite}
-  .fb2{bottom:14px;right:-10px;animation:bob 4s ease-in-out infinite;animation-delay:-2s}
-  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-  .social-proof{padding:34px 0 2px}
-  .social-proof .hero-trust{justify-content:center;margin-top:0}
-  .brand-show{display:none}
-  @media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:26px}.logo-ring{width:min(260px,72%)}
-    .hero-visual{display:none}
-    .brand-show{display:block;padding:6px 0 12px}
-    .brand-show .logo-ring{margin:0 auto}}
-
-  /* Strip */
-  .strip{border-block:1px solid var(--line-soft);background:var(--navy-2)}
+  /* Trust strip */
+  .strip{background:var(--navy);color:#cdd8ec}
   .strip .wrap{display:flex;align-items:center;justify-content:center;gap:14px 40px;flex-wrap:wrap;padding:22px 0}
-  .strip span{font-family:'Plus Jakarta Sans';font-weight:700;color:#6f7fa3;font-size:.98rem;display:inline-flex;align-items:center;gap:9px}
+  .strip span{font-family:'Poppins';font-weight:600;color:#aebbd4;font-size:.95rem;display:inline-flex;align-items:center;gap:9px}
+  .strip span svg{width:18px;height:18px;color:var(--amber)}
+
+  /* Services */
+  .services{background:var(--bg-2)}
+  .sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:44px}
+  .scard{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
+    display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s,border-color .25s;box-shadow:var(--shadow-sm)}
+  .scard:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:var(--line-2)}
+  .scard-img{position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--bg-3)}
+  .scard-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+  .scard:hover .scard-img img{transform:scale(1.06)}
+  .scard-body{padding:20px 22px 22px;display:flex;flex-direction:column;flex:1;position:relative}
+  .scard-ic{position:absolute;top:-26px;left:22px;width:48px;height:48px;border-radius:12px;display:grid;place-items:center;
+    background:var(--amber);color:#fff;box-shadow:0 10px 22px -8px rgba(245,158,11,.6)}
+  .scard-ic svg{width:23px;height:23px}
+  .scard h3{font-size:1.16rem;font-weight:600;margin:14px 0 6px}
+  .scard p{color:var(--muted);font-size:.93rem;flex:1}
+  .scard-btn{display:inline-flex;align-items:center;gap:7px;margin-top:16px;color:var(--amber-d);font-weight:600;font-size:.92rem;font-family:'Poppins';align-self:flex-start}
+  .scard-btn svg{width:15px;height:15px;transition:transform .2s}
+  .scard:hover .scard-btn svg{transform:translateX(4px)}
+  @media(max-width:920px){.sgrid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.sgrid{grid-template-columns:1fr;gap:30px}}
 
   /* Stats */
   .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-  .stat{text-align:center;padding:26px 16px;background:var(--card);border:1px solid var(--line-soft);border-radius:var(--radius);backdrop-filter:blur(6px)}
-  .stat b{display:block;font-size:2.1rem;font-weight:800;line-height:1;margin-bottom:6px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .stat{text-align:center;padding:28px 16px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow-sm)}
+  .stat b{display:block;font-size:2.1rem;font-weight:700;line-height:1;margin-bottom:6px;color:var(--amber-d)}
   .stat span{color:var(--muted);font-size:.88rem;font-weight:500}
   @media(max-width:640px){.stats{grid-template-columns:repeat(2,1fr)}}
 
-  /* Services */
-  .sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:46px}
-  .card{position:relative;background:var(--card);border:1px solid var(--line-soft);border-radius:var(--radius);padding:28px;
-    transition:transform .24s,box-shadow .24s,border-color .24s,background .24s;overflow:hidden;backdrop-filter:blur(6px)}
-  .card::after{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad);transform:scaleX(0);transform-origin:left;transition:.3s}
-  .card:hover{transform:translateY(-7px);background:rgba(255,255,255,.06);border-color:var(--line)}
-  .card:hover::after{transform:scaleX(1)}
-  .card .ico{width:58px;height:58px;border-radius:16px;display:grid;place-items:center;font-size:1.7rem;margin-bottom:18px;background:var(--grad-soft);border:1px solid var(--line)}
-  .card h3{font-size:1.2rem;font-weight:700;margin-bottom:7px}
-  .card p{color:var(--muted);font-size:.95rem}
-  .card .go{display:inline-flex;align-items:center;gap:6px;margin-top:16px;color:var(--gold);font-weight:700;font-size:.9rem;font-family:'Plus Jakarta Sans'}
-  .card .go svg{transition:transform .2s}
-  .card:hover .go svg{transform:translateX(4px)}
-  @media(max-width:900px){.sgrid{grid-template-columns:repeat(2,1fr)}}
-  @media(max-width:560px){.sgrid{grid-template-columns:1fr}}
-
   /* Why */
-  .why{background:var(--navy-2);border-block:1px solid var(--line-soft)}
-  .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:46px}
-  .feat{background:var(--card);border:1px solid var(--line-soft);border-radius:var(--radius);padding:28px;transition:.24s;backdrop-filter:blur(6px)}
-  .feat:hover{transform:translateY(-5px);border-color:var(--line)}
-  .feat .b{width:50px;height:50px;border-radius:14px;display:grid;place-items:center;font-size:1.4rem;margin-bottom:15px;background:var(--grad);color:#1a1203}
-  .feat h4{font-size:1.13rem;font-weight:700;margin-bottom:6px}
+  .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:44px}
+  .feat{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px 28px;transition:.24s;box-shadow:var(--shadow-sm)}
+  .feat:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:var(--line-2)}
+  .feat .b{width:52px;height:52px;border-radius:13px;display:grid;place-items:center;margin-bottom:16px;background:var(--amber-soft);color:var(--amber-d);border:1px solid #fbe3bd}
+  .feat .b svg{width:25px;height:25px}
+  .feat h4{font-size:1.12rem;font-weight:600;margin-bottom:6px}
   .feat p{color:var(--muted);font-size:.94rem}
   @media(max-width:860px){.why-grid{grid-template-columns:1fr}}
 
   /* Process */
+  .process{background:var(--bg-2)}
   .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px;position:relative}
-  .steps::before{content:"";position:absolute;top:34px;left:16%;right:16%;height:2px;background:linear-gradient(90deg,var(--gold),transparent);opacity:.4}
+  .steps::before{content:"";position:absolute;top:34px;left:16%;right:16%;height:2px;background:linear-gradient(90deg,var(--amber),transparent);opacity:.35}
   .step{text-align:center;position:relative}
-  .step .n{width:68px;height:68px;border-radius:50%;display:grid;place-items:center;margin:0 auto 18px;font-size:1.5rem;font-weight:800;color:#1a1203;background:var(--grad);box-shadow:0 14px 30px -10px rgba(245,166,35,.6);border:5px solid var(--navy)}
-  .step h4{font-size:1.18rem;font-weight:700;margin-bottom:7px}
+  .step .n{width:68px;height:68px;border-radius:50%;display:grid;place-items:center;margin:0 auto 18px;font-size:1.5rem;font-weight:700;color:#fff;background:var(--amber);box-shadow:0 14px 28px -10px rgba(245,158,11,.6);border:5px solid var(--bg-2)}
+  .step h4{font-size:1.16rem;font-weight:600;margin-bottom:7px}
   .step p{color:var(--muted);font-size:.95rem;max-width:280px;margin-inline:auto}
   @media(max-width:860px){.steps{grid-template-columns:1fr;gap:30px}.steps::before{display:none}}
 
   /* Testimonials */
-  .tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:46px}
-  .quote{background:var(--card);border:1px solid var(--line-soft);border-radius:var(--radius);padding:28px;transition:.24s;backdrop-filter:blur(6px)}
-  .quote:hover{transform:translateY(-4px);border-color:var(--line)}
+  .tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:44px}
+  .quote{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;transition:.24s;box-shadow:var(--shadow-sm)}
+  .quote:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--line-2)}
   .quote .stars{font-size:1rem;margin-bottom:13px}
-  .quote p{font-size:.98rem;color:var(--body);margin-bottom:18px}
+  .quote p{font-size:.98rem;color:#3f4d63;margin-bottom:18px}
   .who{display:flex;align-items:center;gap:12px}
-  .av{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-family:'Plus Jakarta Sans';color:#1a1203;background:var(--grad)}
-  .who b{display:block;font-size:.95rem;color:var(--ink)}.who span{color:var(--muted);font-size:.82rem}
+  .av{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-family:'Poppins';color:#fff;background:var(--navy)}
+  .who b{display:block;font-size:.95rem;color:var(--ink);font-family:'Poppins'}.who span{color:var(--muted);font-size:.82rem}
   @media(max-width:860px){.tgrid{grid-template-columns:1fr}}
 
   /* FAQ */
-  .faq{max-width:780px;margin:46px auto 0}
-  .qa{border:1px solid var(--line-soft);border-radius:14px;background:var(--card);margin-bottom:14px;overflow:hidden;transition:.2s;backdrop-filter:blur(6px)}
-  .qa[open]{border-color:var(--line)}
-  .qa summary{list-style:none;cursor:pointer;padding:20px 24px;font-weight:700;font-family:'Plus Jakarta Sans';color:var(--ink);display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:1.02rem}
+  .faq{max-width:780px;margin:44px auto 0}
+  .qa{border:1px solid var(--line);border-radius:12px;background:#fff;margin-bottom:13px;overflow:hidden;transition:.2s;box-shadow:var(--shadow-sm)}
+  .qa[open]{border-color:var(--line-2);box-shadow:var(--shadow-sm)}
+  .qa summary{list-style:none;cursor:pointer;padding:19px 22px;font-weight:600;font-family:'Poppins';color:var(--ink);display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:1.02rem}
   .qa summary::-webkit-details-marker{display:none}
-  .qa summary .plus{transition:.25s;color:var(--gold);font-size:1.5rem;flex:0 0 auto;line-height:1}
+  .qa summary .plus{transition:.25s;color:var(--amber);font-size:1.5rem;flex:0 0 auto;line-height:1}
   .qa[open] summary .plus{transform:rotate(45deg)}
-  .qa .a{padding:0 24px 22px;color:var(--muted);font-size:.96rem}
+  .qa .a{padding:0 22px 20px;color:var(--muted);font-size:.96rem}
 
   /* CTA */
-  .cta-band{position:relative;border-radius:28px;padding:60px 40px;text-align:center;overflow:hidden;background:var(--grad);box-shadow:0 30px 70px -28px rgba(245,166,35,.6)}
-  .cta-band::before{content:"";position:absolute;inset:0;opacity:.12;background:radial-gradient(circle at 85% 15%,#000,transparent 40%),radial-gradient(circle at 10% 90%,#000,transparent 45%)}
-  .cta-band h2{color:#1a1203;position:relative;font-size:clamp(1.8rem,4vw,2.7rem)}
-  .cta-band p{color:#3a2a06;position:relative;max-width:520px;margin:10px auto 28px;font-weight:500}
+  .cta-band{position:relative;border-radius:26px;padding:58px 40px;text-align:center;overflow:hidden;background:var(--navy)}
+  .cta-band::before{content:"";position:absolute;top:-120px;right:-80px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(245,158,11,.25),transparent 65%)}
+  .cta-band h2{color:#fff;position:relative;font-size:clamp(1.8rem,4vw,2.6rem)}
+  .cta-band p{color:#bcc8de;position:relative;max-width:520px;margin:10px auto 28px}
   .cta-band .hero-actions{position:relative;justify-content:center}
 
   /* Footer */
-  footer{background:var(--navy-2);color:#8294b5;padding:62px 0 28px;border-top:1px solid var(--line-soft)}
-  .fgrid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:38px}
-  footer .brand{color:#fff}
-  footer h5{font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:#5d6f92;margin-bottom:16px;font-weight:700;font-family:'Plus Jakarta Sans'}
-  .fcol li{list-style:none;margin-bottom:11px;font-size:.95rem}
-  .fcol a:hover{color:var(--gold)}
-  .copy{border-top:1px solid var(--line-soft);margin-top:42px;padding-top:22px;text-align:center;color:#5d6f92;font-size:.85rem}
-  @media(max-width:760px){.fgrid{grid-template-columns:1fr;gap:28px}}
+  footer{background:var(--navy);color:#9fb0cc;padding:62px 0 26px}
+  .fgrid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:36px}
+  footer .brand{color:#fff;margin-bottom:16px}
+  footer .brand small{color:#8fa1bf}
+  footer h5{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:#8093b0;margin-bottom:15px;font-weight:700}
+  .fcol li{list-style:none;margin-bottom:10px;font-size:.93rem;display:flex;align-items:center;gap:9px}
+  .fcol li svg{width:16px;height:16px;color:var(--amber);flex:0 0 auto}
+  .fcol a:hover{color:#fff}
+  .fbadge{display:inline-flex;align-items:center;gap:8px;font-size:.8rem;font-weight:600;color:#bff0d0;background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.28);border-radius:99px;padding:8px 14px;margin-top:16px}
+  .fbadge svg{width:16px;height:16px}
+  .copy{border-top:1px solid rgba(255,255,255,.1);margin-top:42px;padding-top:22px;text-align:center;color:#7f92b0;font-size:.85rem}
+  @media(max-width:860px){.fgrid{grid-template-columns:1fr 1fr;gap:30px}}
+  @media(max-width:520px){.fgrid{grid-template-columns:1fr}}
 
   /* Floating WhatsApp */
-  .float-wa{position:fixed;right:22px;bottom:22px;z-index:80;background:linear-gradient(135deg,#2bd566,#16a34a);color:#fff;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;box-shadow:0 12px 28px -8px rgba(37,211,102,.6);transition:transform .2s,box-shadow .2s}
+  .float-wa{position:fixed;right:22px;bottom:22px;z-index:80;background:var(--wa);color:#fff;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;box-shadow:0 12px 28px -8px rgba(34,197,94,.6);transition:transform .2s,box-shadow .2s}
   .float-wa::before{content:"";position:absolute;inset:0;border-radius:50%;animation:ping2 2.6s infinite}
-  .float-wa:hover{transform:scale(1.07);box-shadow:0 16px 34px -8px rgba(37,211,102,.75)}
+  .float-wa:hover{transform:scale(1.07);background:#16a34a}
   .float-wa svg{width:30px;height:30px}
-  @keyframes ping2{0%{box-shadow:0 0 0 0 rgba(37,211,102,.4)}70%{box-shadow:0 0 0 14px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+  @keyframes ping2{0%{box-shadow:0 0 0 0 rgba(34,197,94,.4)}70%{box-shadow:0 0 0 14px rgba(34,197,94,0)}100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}}
 
   /* Reveal */
   .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
   .reveal.in{opacity:1;transform:none}
-  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}.dot,.float-badge,.float-wa,.blob{animation:none}}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}.dot,.float-wa{animation:none}}
 
-  /* ===== Header actions: hamburger + call ===== */
-  .nav-left{display:flex;align-items:center;gap:12px}
-  .nav-actions{display:flex;align-items:center;gap:10px}
-  .icon-btn{display:grid;place-items:center;width:44px;height:44px;border-radius:12px;cursor:pointer;
-    background:var(--card);border:1px solid var(--line-soft);color:var(--ink);transition:.2s;flex:0 0 auto}
-  .icon-btn svg{width:21px;height:21px}
-  .icon-btn:hover{border-color:var(--gold);background:rgba(255,255,255,.08)}
-  .icon-btn.call{color:#1a1203;background:var(--grad);border-color:transparent;box-shadow:0 10px 24px -10px rgba(245,166,35,.5)}
-  .icon-btn.call:hover{transform:translateY(-2px)}
-  .nav .btn{padding:11px 20px}
-  @media(max-width:900px){.nav-book{display:none}}
-
-  /* ===== Search bar ===== */
-  .searchwrap{background:rgba(12,20,41,.55);border-bottom:1px solid var(--line-soft);backdrop-filter:blur(8px);position:relative;z-index:40}
-  .searchwrap .wrap{padding:20px 0;position:relative}
-  .search{display:flex;align-items:center;gap:8px;background:var(--navy-card);border:1.5px solid var(--line-soft);
-    border-radius:999px;padding:7px 7px 7px 26px;transition:border-color .2s,box-shadow .2s}
-  .search:focus-within{border-color:var(--gold);box-shadow:0 0 0 4px rgba(245,166,35,.16)}
-  .search input{flex:1;background:none;border:0;outline:none;color:var(--ink);font-family:inherit;font-size:1.08rem;padding:15px 0;min-width:0}
-  .search input::placeholder{color:#7184a6}
-  .search .sbtn{flex:0 0 auto;width:54px;height:54px;border-radius:50%;display:grid;place-items:center;
-    background:var(--grad);color:#1a1203;border:0;cursor:pointer;transition:transform .16s,box-shadow .2s;
-    box-shadow:0 10px 24px -8px rgba(245,166,35,.55)}
-  .search .sbtn svg{width:24px;height:24px}
-  .search .sbtn:hover{transform:scale(1.05)}
-  .search .sbtn:active{transform:scale(.96)}
-  @media(max-width:560px){.search{padding-left:22px}.search input{font-size:1.02rem;padding:14px 0}.search .sbtn{width:50px;height:50px}.search .sbtn svg{width:22px;height:22px}}
-  .search-results{position:absolute;left:0;right:0;top:calc(100% - 2px);background:var(--navy-card);
-    border:1px solid var(--line);border-radius:18px;box-shadow:0 26px 60px -20px rgba(0,0,0,.8);overflow:hidden;
-    z-index:50;display:none}
-  .search-results.show{display:block;animation:fade .2s}
-  @keyframes fade{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
-  .sr{display:flex;align-items:center;gap:13px;padding:13px 16px;cursor:pointer;border-bottom:1px solid var(--line-soft);transition:background .15s}
-  .sr:last-child{border-bottom:0}
-  .sr:hover,.sr.act{background:rgba(245,166,35,.1)}
-  .sr .si2{width:40px;height:40px;border-radius:11px;display:grid;place-items:center;font-size:1.2rem;background:var(--grad-soft);border:1px solid var(--line);flex:0 0 auto}
-  .sr b{color:var(--ink);font-size:.97rem;font-weight:700;font-family:'Plus Jakarta Sans';display:block}
-  .sr span{color:var(--muted);font-size:.82rem}
-  .sr .go-ic{margin-left:auto;color:var(--gold);width:18px;height:18px;flex:0 0 auto}
-  .sr-empty{padding:16px;color:var(--muted);font-size:.92rem;text-align:center}
-  .sr-empty a{color:var(--gold);font-weight:700}
-  .sr-head{padding:11px 16px 7px;font-size:.7rem;letter-spacing:.13em;text-transform:uppercase;color:#5d6f92;font-weight:700;font-family:'Plus Jakarta Sans'}
-  .search-results{max-height:min(60vh,440px);overflow-y:auto}
-
-  /* ===== Drawer (kebab info panel) ===== */
-  .drawer-overlay{position:fixed;inset:0;background:rgba(4,8,18,.6);backdrop-filter:blur(2px);z-index:90;opacity:0;
-    transition:opacity .3s}
+  /* Drawer */
+  .drawer-overlay{position:fixed;inset:0;background:rgba(15,34,64,.5);backdrop-filter:blur(2px);z-index:90;opacity:0;transition:opacity .3s}
   .drawer-overlay.show{opacity:1}
-  .drawer{position:fixed;top:0;left:0;height:100dvh;width:min(380px,88vw);z-index:100;background:var(--navy-2);
-    border-right:1px solid var(--line);box-shadow:30px 0 80px -30px rgba(0,0,0,.8);transform:translateX(-102%);
-    transition:transform .34s cubic-bezier(.2,.7,.2,1);display:flex;flex-direction:column}
+  .drawer{position:fixed;top:0;left:0;height:100dvh;width:min(380px,88vw);z-index:100;background:#fff;
+    box-shadow:30px 0 80px -30px rgba(15,34,64,.4);transform:translateX(-102%);transition:transform .34s cubic-bezier(.2,.7,.2,1);display:flex;flex-direction:column}
   .drawer.show{transform:translateX(0)}
-  .drawer-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 18px;
-    border-bottom:1px solid var(--line-soft);padding-top:calc(16px + env(safe-area-inset-top))}
-  .drawer-head .brand{display:flex;align-items:center;gap:11px;font-weight:800;font-size:1.02rem;color:var(--ink);font-family:'Plus Jakarta Sans'}
+  .drawer-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 18px;border-bottom:1px solid var(--line);padding-top:calc(16px + env(safe-area-inset-top))}
+  .drawer-head .brand{font-size:1.02rem;color:var(--ink)}
   .drawer-head .brand img{width:40px;height:40px;border-radius:11px}
-  .drawer-head .brand small{display:block;font-weight:600;font-size:.55rem;color:var(--muted);letter-spacing:.16em;text-transform:uppercase}
   .drawer-scroll{overflow-y:auto;padding:18px 18px calc(28px + env(safe-area-inset-bottom));flex:1}
-  .verify{display:flex;align-items:center;gap:8px;font-size:.82rem;font-weight:600;color:#7fe0a3;
-    background:rgba(43,213,102,.08);border:1px solid rgba(43,213,102,.22);border-radius:99px;padding:8px 14px;margin-bottom:18px}
-  .verify .v-dot{width:8px;height:8px;border-radius:50%;background:#2bd566;box-shadow:0 0 0 0 rgba(43,213,102,.6);animation:ping 2s infinite}
+  .verify{display:flex;align-items:center;gap:8px;font-size:.82rem;font-weight:600;color:#16a34a;background:#eafaf0;border:1px solid #bdecca;border-radius:99px;padding:8px 14px;margin-bottom:18px}
+  .verify .v-dot{width:8px;height:8px;border-radius:50%;background:var(--wa);box-shadow:0 0 0 0 rgba(34,197,94,.6);animation:ping 2s infinite}
   .drawer-cta{display:flex;flex-direction:column;gap:10px;margin-bottom:22px}
   .drawer-cta .btn{width:100%}
   .drawer-cta-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-  .btn-call{background:#0c1428;color:var(--gold);border:1px solid var(--line)}
-  .btn-call:hover{border-color:var(--gold)}
   .drawer-nav{display:flex;flex-direction:column;margin-bottom:8px}
-  .drawer-nav a{padding:13px 4px;font-weight:600;color:var(--body);border-bottom:1px solid var(--line-soft);font-size:1rem;transition:.15s}
-  .drawer-nav a:hover{color:var(--gold);padding-left:8px}
-  .drawer-h{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:#5d6f92;margin:22px 0 12px;font-weight:700;font-family:'Plus Jakarta Sans'}
+  .drawer-nav a{padding:13px 4px;font-weight:500;color:var(--body);border-bottom:1px solid var(--line);font-size:1rem;transition:.15s}
+  .drawer-nav a:hover{color:var(--amber-d);padding-left:8px}
+  .drawer-h{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:22px 0 12px;font-weight:700;font-family:'Poppins'}
   .drawer-svcs{display:grid;grid-template-columns:1fr 1fr;gap:9px}
-  .drawer-svcs a{display:flex;align-items:center;gap:9px;background:var(--card);border:1px solid var(--line-soft);
-    border-radius:12px;padding:10px 11px;font-size:.86rem;font-weight:600;color:var(--ink);transition:.18s}
-  .drawer-svcs a:hover{border-color:var(--gold);transform:translateY(-2px)}
-  .drawer-svcs a .em{font-size:1.1rem;flex:0 0 auto}
+  .drawer-svcs a{display:flex;align-items:center;gap:9px;background:var(--bg-2);border:1px solid var(--line);border-radius:11px;padding:10px 11px;font-size:.85rem;font-weight:500;color:var(--ink);transition:.18s}
+  .drawer-svcs a:hover{border-color:var(--amber);transform:translateY(-2px)}
+  .drawer-svcs a .em{flex:0 0 auto;color:var(--amber-d);display:grid;place-items:center}
+  .drawer-svcs a .em svg{width:18px;height:18px}
   .drawer-contact{list-style:none}
-  .drawer-contact li{display:flex;align-items:center;gap:13px;padding:11px 0;border-bottom:1px solid var(--line-soft)}
+  .drawer-contact li{display:flex;align-items:center;gap:13px;padding:11px 0;border-bottom:1px solid var(--line)}
   .drawer-contact li:last-child{border-bottom:0}
-  .drawer-contact .ci{width:40px;height:40px;border-radius:11px;display:grid;place-items:center;background:var(--grad-soft);border:1px solid var(--line);color:var(--gold);flex:0 0 auto}
+  .drawer-contact .ci{width:40px;height:40px;border-radius:11px;display:grid;place-items:center;background:var(--amber-soft);border:1px solid #fbe3bd;color:var(--amber-d);flex:0 0 auto}
   .drawer-contact .ci svg{width:19px;height:19px}
-  .drawer-contact a{display:block}
-  .drawer-contact b{display:block;color:var(--ink);font-size:.95rem;font-weight:700;font-family:'Plus Jakarta Sans'}
+  .drawer-contact b{display:block;color:var(--ink);font-size:.95rem;font-weight:600;font-family:'Poppins'}
   .drawer-contact span{color:var(--muted);font-size:.8rem}
   .trust-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
-  .trust-badges span{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:600;color:var(--gold-2);
-    background:var(--grad-soft);border:1px solid var(--line);border-radius:99px;padding:7px 12px}
+  .trust-badges span{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:600;color:var(--amber-d);background:var(--amber-soft);border:1px solid #fbe3bd;border-radius:99px;padding:7px 12px}
   .trust-badges svg{width:15px;height:15px}
-  .drawer-foot{margin-top:24px;font-size:.78rem;color:#5d6f92;text-align:center}
+  .drawer-foot{margin-top:24px;font-size:.78rem;color:var(--muted);text-align:center}
   body.no-scroll{overflow:hidden}
 </style>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <!-- brand / contact -->
   <symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></symbol>
   <symbol id="phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
-  <symbol id="dots" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="12" cy="19" r="2"/></symbol>
   <symbol id="bars" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
   <symbol id="close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></symbol>
-  <symbol id="mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol>
   <symbol id="pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
   <symbol id="clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
   <symbol id="shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></symbol>
-  <symbol id="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></symbol>
+  <symbol id="search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></symbol>
+  <symbol id="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01z"/></symbol>
+  <!-- why-us -->
+  <symbol id="ic-bolt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></symbol>
+  <symbol id="ic-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+  <symbol id="ic-dollar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></symbol>
+  <symbol id="ic-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M19 4v3M20.5 5.5h-3M5 17v3M6.5 18.5h-3"/></symbol>
+  <symbol id="ic-pinned" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <!-- strip / footer -->
+  <symbol id="ic-house" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></symbol>
+  <symbol id="ic-building" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01M16 6h.01M8 10h.01M16 10h.01M8 14h.01M16 14h.01"/></symbol>
+  <symbol id="ic-umbrella" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12v8a2 2 0 0 0 4 0"/><path d="M12 2v1"/><path d="M2 12a10 10 0 0 1 20 0z"/></symbol>
+  <!-- service icons -->
+  <symbol id="ic-truck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 17h4V5H2v12h3"/><path d="M14 9h4l3 3v5h-2"/><path d="M14 17h1"/><circle cx="7.5" cy="17.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></symbol>
+  <symbol id="ic-wind" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.8 4.4A2 2 0 1 1 11 8H2"/><path d="M17.5 8a2.5 2.5 0 1 1 2 4H2"/><path d="M12.8 19.6A2 2 0 1 0 14 16H2"/></symbol>
+  <symbol id="ic-droplet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5S12.5 4.5 12 2c-.5 2.5-2 4.9-4 7.5S5 13 5 15a7 7 0 0 0 7 7z"/></symbol>
+  <symbol id="ic-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></symbol>
+  <symbol id="ic-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></symbol>
+  <symbol id="ic-brush" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.06 11.9l8.07-8.06a2.85 2.85 0 1 1 4.03 4.03l-8.06 8.08"/><path d="M7.07 14.94c-1.66 0-3 1.35-3 3.02 0 1.33-2.5 1.52-2 2.02 1.08 1.1 2.49 2.02 4 2.02 2.2 0 4-1.8 4-4.04a3.01 3.01 0 0 0-3-3.02z"/></symbol>
+  <symbol id="ic-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></symbol>
+  <symbol id="ic-hammer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 12l-8.4 8.4a2.1 2.1 0 1 1-3-3L12 9"/><path d="M17.6 15L22 10.6"/><path d="M20.9 11.7l-1.2-1.2c-.6-.6-.9-1.4-.9-2.2v-.9L16 4.6A5.6 5.6 0 0 0 12 3H9l.9.8A6.2 6.2 0 0 1 12 8.4v1.6l2 2h.9c.8 0 1.6.3 2.2.9l1.2 1.2"/></symbol>
+  <symbol id="ic-wrench" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
 </svg>
-
-<div class="glow"><div class="blob b1"></div><div class="blob b2"></div></div>
 
 <div class="topbar">⚡ <b>Same-day service</b> across Malé &amp; nearby islands — <a id="top-wa">Book on WhatsApp →</a></div>
 
@@ -410,11 +423,12 @@
       <a href="#services">Services</a>
       <a href="#why">Why Us</a>
       <a href="#how">Process</a>
+      <a href="#reviews">Reviews</a>
       <a href="#faq">FAQ</a>
     </nav>
     <div class="nav-actions">
       <a class="icon-btn call" id="nav-call" aria-label="Call us"><svg><use href="#phone"/></svg></a>
-      <a class="btn btn-wa nav-book" id="nav-wa"><svg><use href="#wa"/></svg> Book Now</a>
+      <a class="btn btn-primary nav-book" id="nav-wa"><svg><use href="#wa"/></svg> Book Now</a>
     </div>
   </div>
 </header>
@@ -429,18 +443,15 @@
     </div>
     <button class="icon-btn" id="drawerClose" aria-label="Close menu"><svg><use href="#close"/></svg></button>
   </div>
-
   <div class="drawer-scroll">
     <div class="verify"><span class="v-dot"></span> Verified local business · Malé, Maldives 🇲🇻</div>
-
     <div class="drawer-cta">
-      <a class="btn btn-gold dbook" id="drawer-book"><svg><use href="#wa"/></svg> Book a service</a>
+      <a class="btn btn-primary dbook" id="drawer-book"><svg><use href="#wa"/></svg> Book a service</a>
       <div class="drawer-cta-row">
-        <a class="btn btn-call" id="drawer-call"><svg><use href="#phone"/></svg> Call</a>
+        <a class="btn btn-outline" id="drawer-call"><svg><use href="#phone"/></svg> Call</a>
         <a class="btn btn-wa" id="drawer-wa"><svg><use href="#wa"/></svg> WhatsApp</a>
       </div>
     </div>
-
     <nav class="drawer-nav">
       <a href="#services">Services</a>
       <a href="#why">Why choose us</a>
@@ -448,23 +459,19 @@
       <a href="#reviews">Reviews</a>
       <a href="#faq">FAQ</a>
     </nav>
-
     <h6 class="drawer-h">Our services</h6>
     <div class="drawer-svcs" id="drawerSvcs"></div>
-
     <h6 class="drawer-h">Get in touch</h6>
     <ul class="drawer-contact">
       <li><span class="ci"><svg><use href="#phone"/></svg></span><a id="drawer-call2"><b>+960 723 7764</b><span>Tap to call · 7 days a week</span></a></li>
       <li><span class="ci"><svg><use href="#wa"/></svg></span><a id="drawer-wa2"><b>WhatsApp us</b><span>Fast quotes &amp; booking</span></a></li>
-      <li><span class="ci"><svg><use href="#pin"/></svg></span><a><b>Malé &amp; nearby islands</b><span>Hulhumalé · Villingili · resorts</span></a></li>
+      <li><span class="ci"><svg><use href="#pin"/></svg></span><a><b>Malé &amp; nearby islands</b><span>Hulhumalé · Vilimalé · resorts</span></a></li>
       <li><span class="ci"><svg><use href="#clock"/></svg></span><a><b>Open every day</b><span>Same-day &amp; emergency slots</span></a></li>
     </ul>
-
     <div class="trust-badges">
       <span><svg><use href="#shield"/></svg> Work guaranteed</span>
       <span><svg><use href="#shield"/></svg> Insured &amp; vetted pros</span>
     </div>
-
     <p class="drawer-foot">© <span class="yr"></span> Handyman Maldives · Built with care in the Maldives 🇲🇻</p>
   </div>
 </aside>
@@ -474,9 +481,7 @@
   <div class="wrap">
     <form class="search" id="searchForm" role="search" autocomplete="off">
       <input type="search" id="svcSearch" placeholder="Search a service — Moving, AC, plumbing…" aria-label="Search services" />
-      <button type="submit" class="sbtn" aria-label="Search">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
-      </button>
+      <button type="submit" class="sbtn" aria-label="Search"><svg><use href="#search"/></svg></button>
     </form>
     <div class="search-results" id="searchResults"></div>
   </div>
@@ -487,68 +492,53 @@
   <div class="wrap hero-grid">
     <div class="hero-copy">
       <span class="badge"><span class="dot"></span> Available now · Booking in under 60 seconds</span>
-      <h1>Your trusted handyman, <span class="grad-text">anywhere in the Maldives</span></h1>
-      <p class="sub">From a dripping tap to a full apartment move — one skilled team for every home, office and resort job. Fast, reliable, and fairly priced.</p>
+      <h1>Your trusted home care partner <span class="amber-text">in the Maldives</span></h1>
+      <p class="sub">From a full apartment move to a dripping tap — one skilled, reliable team for every home, office and resort job. Fair prices, clean work, done on time.</p>
       <div class="hero-actions">
-        <a class="btn btn-wa" id="hero-wa"><svg><use href="#wa"/></svg> Book a service</a>
-        <a class="btn btn-ghost" href="#services">Browse services →</a>
+        <a class="btn btn-primary" id="hero-wa"><svg><use href="#wa"/></svg> Book Now</a>
+        <a class="btn btn-outline" href="#services">Our Services <svg><use href="#arrow"/></svg></a>
+      </div>
+      <div class="hero-trust">
+        <div class="avs">
+          <span style="background:#f59e0b">A</span><span style="background:#0f2240">M</span>
+          <span style="background:#d97706">S</span><span style="background:#1d4ed8">+</span>
+        </div>
+        <div><div class="stars">★★★★★</div><small>Trusted by homes, offices &amp; resorts</small></div>
       </div>
     </div>
-
     <div class="hero-visual">
-      <div class="logo-ring">
-        <div class="float-badge fb1"><span class="fi">⚡</span> Quick response</div>
-        <div class="float-badge fb2"><span class="fi">✅</span> Work guaranteed</div>
-        <img src="logo.png" alt="Handyman Maldives — Home Repair Services" />
-      </div>
+      <div class="hero-photo"><img src="img/hero.jpg" alt="Professional handyman working on a home repair in the Maldives" /></div>
+      <div class="hero-card hc-rating"><span class="hc-ic"><svg><use href="#star"/></svg></span><span><b>4.9 / 5 rating</b><span>500+ jobs completed</span></span></div>
+      <div class="hero-card hc-guard"><span class="hc-ic"><svg><use href="#shield"/></svg></span><span><b>Work guaranteed</b><span>Insured &amp; vetted pros</span></span></div>
     </div>
   </div>
 </section>
 
+<!-- TRUST STRIP -->
+<div class="strip">
+  <div class="wrap">
+    <span><svg><use href="#ic-house"/></svg> Homes</span>
+    <span><svg><use href="#ic-building"/></svg> Offices</span>
+    <span><svg><use href="#ic-umbrella"/></svg> Resorts</span>
+    <span><svg><use href="#shield"/></svg> Insured Work</span>
+    <span><svg><use href="#clock"/></svg> Open 7 Days</span>
+  </div>
+</div>
+
 <!-- SERVICES -->
-<section id="services" style="padding-top:40px">
+<section class="services" id="services">
   <div class="wrap">
     <div class="center reveal">
-      <span class="eyebrow">⚙️ What we do</span>
-      <h2>One team for <span class="grad-text">every fix</span></h2>
+      <span class="eyebrow">What we do</span>
+      <h2>One team for <span class="amber-text">every fix</span></h2>
       <p class="lead">Professional help for homes, apartments, offices and resorts — all under one roof.</p>
     </div>
     <div class="sgrid" id="sgrid"></div>
   </div>
 </section>
 
-<!-- SOCIAL PROOF + STRIP (moved below services) -->
-<div class="social-proof reveal">
-  <div class="wrap">
-    <div class="hero-trust">
-      <div class="avs">
-        <span style="background:#f5a623">A</span><span style="background:#fbc05b">M</span>
-        <span style="background:#e08e10">S</span><span style="background:#1d4ed8;color:#fff">+</span>
-      </div>
-      <div><div class="stars">★★★★★</div><small>Trusted by homes, offices &amp; resorts</small></div>
-    </div>
-  </div>
-</div>
-<div class="strip">
-  <div class="wrap">
-    <span>🏠 Homes</span><span>🏢 Offices</span><span>🏝️ Resorts</span>
-    <span>🛟 Insured Work</span><span>🕒 Open 7 Days</span>
-  </div>
-</div>
-
-<!-- BRAND SHOWCASE (mobile: shown below services) -->
-<div class="brand-show">
-  <div class="wrap">
-    <div class="logo-ring">
-      <div class="float-badge fb1"><span class="fi">⚡</span> Quick response</div>
-      <div class="float-badge fb2"><span class="fi">✅</span> Work guaranteed</div>
-      <img src="logo.png" alt="Handyman Maldives — Home Repair Services" />
-    </div>
-  </div>
-</div>
-
 <!-- STATS -->
-<section style="padding:50px 0 6px">
+<section style="padding:64px 0">
   <div class="wrap">
     <div class="stats reveal">
       <div class="stat"><b data-count="10" data-suffix="+">0</b><span>Service categories</span></div>
@@ -560,30 +550,30 @@
 </section>
 
 <!-- WHY -->
-<section class="why" id="why">
+<section id="why" style="padding-top:20px">
   <div class="wrap">
     <div class="center reveal">
-      <span class="eyebrow">✨ Why choose us</span>
-      <h2>Reliable work, <span class="grad-text">every single time</span></h2>
+      <span class="eyebrow">Why choose us</span>
+      <h2>Reliable work, <span class="amber-text">every single time</span></h2>
       <p class="lead">We treat your space like our own. Here's what sets Handyman Maldives apart.</p>
     </div>
     <div class="why-grid">
-      <div class="feat reveal"><div class="b">⚡</div><h4>Fast Response</h4><p>Get a quote within minutes on WhatsApp — not days. Same-day &amp; emergency slots available.</p></div>
-      <div class="feat reveal"><div class="b">🧰</div><h4>Skilled Professionals</h4><p>Experienced plumbers, electricians, painters &amp; AC technicians you can trust.</p></div>
-      <div class="feat reveal"><div class="b">💎</div><h4>Fair, Upfront Pricing</h4><p>Clear quotes before we start — no hidden charges, no surprises.</p></div>
-      <div class="feat reveal"><div class="b">🧹</div><h4>Clean &amp; Tidy</h4><p>We leave your home spotless once the job is done, every time.</p></div>
-      <div class="feat reveal"><div class="b">🛡️</div><h4>Work Guaranteed</h4><p>Not happy with something? We'll come back and make it right.</p></div>
-      <div class="feat reveal"><div class="b">📍</div><h4>Local &amp; Island-wide</h4><p>Based in Malé, serving nearby islands and resorts across the Maldives.</p></div>
+      <div class="feat reveal"><div class="b"><svg><use href="#ic-bolt"/></svg></div><h4>Fast Response</h4><p>Get a quote within minutes on WhatsApp — not days. Same-day &amp; emergency slots available.</p></div>
+      <div class="feat reveal"><div class="b"><svg><use href="#ic-users"/></svg></div><h4>Skilled Professionals</h4><p>Experienced plumbers, electricians, painters &amp; AC technicians you can trust.</p></div>
+      <div class="feat reveal"><div class="b"><svg><use href="#ic-dollar"/></svg></div><h4>Fair, Upfront Pricing</h4><p>Clear quotes before we start — no hidden charges, no surprises.</p></div>
+      <div class="feat reveal"><div class="b"><svg><use href="#ic-sparkle"/></svg></div><h4>Clean &amp; Tidy</h4><p>We leave your home spotless once the job is done, every time.</p></div>
+      <div class="feat reveal"><div class="b"><svg><use href="#shield"/></svg></div><h4>Work Guaranteed</h4><p>Not happy with something? We'll come back and make it right.</p></div>
+      <div class="feat reveal"><div class="b"><svg><use href="#ic-pinned"/></svg></div><h4>Local &amp; Island-wide</h4><p>Based in Malé, serving nearby islands and resorts across the Maldives.</p></div>
     </div>
   </div>
 </section>
 
 <!-- PROCESS -->
-<section id="how">
+<section class="process" id="how">
   <div class="wrap">
     <div class="center reveal">
-      <span class="eyebrow">🚀 How it works</span>
-      <h2>Booked in <span class="grad-text">3 simple steps</span></h2>
+      <span class="eyebrow">How it works</span>
+      <h2>Booked in <span class="amber-text">3 simple steps</span></h2>
       <p class="lead">No apps, no forms, no waiting. Just message us and relax.</p>
     </div>
     <div class="steps">
@@ -595,29 +585,29 @@
 </section>
 
 <!-- TESTIMONIALS -->
-<section id="reviews" class="why" style="border-bottom:0">
+<section id="reviews">
   <div class="wrap">
     <div class="center reveal">
-      <span class="eyebrow">★ Happy customers</span>
-      <h2>Loved across <span class="grad-text">the Maldives</span></h2>
+      <span class="eyebrow">Happy customers</span>
+      <h2>Loved across <span class="amber-text">the Maldives</span></h2>
     </div>
     <div class="tgrid">
       <div class="quote reveal"><div class="stars">★★★★★</div><p>"AC stopped working at night — they came the next morning and fixed it within an hour. Super professional and clean."</p><div class="who"><div class="av">AR</div><div><b>Aishath R.</b><span>Hulhumalé</span></div></div></div>
       <div class="quote reveal"><div class="stars">★★★★★</div><p>"Booked plumbing and painting together. Fair price, great work, and they tidied everything up after. Highly recommend."</p><div class="who"><div class="av">MH</div><div><b>Mohamed H.</b><span>Malé</span></div></div></div>
-      <div class="quote reveal"><div class="stars">★★★★★</div><p>"Whole apartment move handled with real care. Nothing broken, very fast team. Will definitely use them again."</p><div class="who"><div class="av">SN</div><div><b>Sana N.</b><span>Villingili</span></div></div></div>
+      <div class="quote reveal"><div class="stars">★★★★★</div><p>"Whole apartment move handled with real care. Nothing broken, very fast team. Will definitely use them again."</p><div class="who"><div class="av">SN</div><div><b>Sana N.</b><span>Vilimalé</span></div></div></div>
     </div>
   </div>
 </section>
 
 <!-- FAQ -->
-<section id="faq">
+<section id="faq" class="services" style="background:var(--bg-2)">
   <div class="wrap">
     <div class="center reveal">
-      <span class="eyebrow">❓ Good to know</span>
-      <h2>Frequently asked <span class="grad-text">questions</span></h2>
+      <span class="eyebrow">Good to know</span>
+      <h2>Frequently asked <span class="amber-text">questions</span></h2>
     </div>
     <div class="faq reveal">
-      <details class="qa" open><summary>Which areas do you cover? <span class="plus">+</span></summary><div class="a">We're based in Malé and serve Hulhumalé, Villingili and nearby islands. For resorts and other islands, message us and we'll arrange it.</div></details>
+      <details class="qa" open><summary>Which areas do you cover? <span class="plus">+</span></summary><div class="a">We're based in Malé and serve Hulhumalé, Vilimalé and nearby islands. For resorts and other islands, message us and we'll arrange it.</div></details>
       <details class="qa"><summary>How fast can you come? <span class="plus">+</span></summary><div class="a">For most jobs in the Malé area we offer same-day visits, and we keep slots open for urgent and emergency repairs.</div></details>
       <details class="qa"><summary>How much do you charge? <span class="plus">+</span></summary><div class="a">It depends on the job, but we always give you a clear, upfront quote on WhatsApp before any work begins — no hidden costs.</div></details>
       <details class="qa"><summary>Can I book more than one service at once? <span class="plus">+</span></summary><div class="a">Absolutely. Many customers combine jobs — like plumbing + painting, or AC servicing + electrical. Just list everything in your message.</div></details>
@@ -627,14 +617,14 @@
 </section>
 
 <!-- CTA -->
-<section style="padding-top:10px">
+<section style="padding:70px 0">
   <div class="wrap">
     <div class="cta-band reveal">
       <h2>Need it fixed today?</h2>
       <p>Don't wait around. Message us now and get a quote in minutes.</p>
       <div class="hero-actions">
-        <a class="btn btn-navy" id="cta-wa"><svg><use href="#wa"/></svg> Chat on WhatsApp</a>
-        <a class="btn btn-navy" id="cta-call">📞 Call +960 723 7764</a>
+        <a class="btn btn-wa" id="cta-wa"><svg><use href="#wa"/></svg> Chat on WhatsApp</a>
+        <a class="btn btn-ghost-light" id="cta-call"><svg><use href="#phone"/></svg> Call +960 723 7764</a>
       </div>
     </div>
   </div>
@@ -645,23 +635,32 @@
   <div class="wrap">
     <div class="fgrid">
       <div class="fcol">
-        <div class="brand" style="margin-bottom:16px;display:flex;align-items:center;gap:12px"><img src="logo.png" alt="Handyman Maldives" style="width:46px;height:46px;border-radius:12px"><span>Handyman Maldives</span></div>
-        <p style="max-width:340px">Your one-stop solution for home, apartment, office and resort maintenance across the Maldives.</p>
+        <div class="brand"><img src="logo.png" alt="Handyman Maldives" style="width:46px;height:46px;border-radius:11px"><span class="logo-txt">Handyman Maldives<small>Home Repair Services</small></span></div>
+        <p style="max-width:300px;color:#9fb0cc">Your one-stop solution for home, apartment, office and resort maintenance across the Maldives.</p>
+        <span class="fbadge"><svg><use href="#shield"/></svg> Verified &amp; insured local business</span>
       </div>
       <div class="fcol">
         <h5>Services</h5>
         <ul>
-          <li>Plumbing</li><li>Electrical Work</li><li>Aircon Repair &amp; Servicing</li>
-          <li>Painting &amp; Tiling</li><li>Ceiling &amp; Roofing</li><li>Apartment Moving</li>
+          <li>Apartment Moving</li><li>Aircon Repair</li><li>Plumbing</li>
+          <li>Electrical Work</li><li>Painting &amp; Tiling</li><li>Ceiling &amp; Roofing</li>
+        </ul>
+      </div>
+      <div class="fcol">
+        <h5>Service Areas</h5>
+        <ul>
+          <li><svg><use href="#pin"/></svg> Malé</li>
+          <li><svg><use href="#pin"/></svg> Hulhumalé</li>
+          <li><svg><use href="#pin"/></svg> Vilimalé</li>
+          <li><svg><use href="#pin"/></svg> Resorts &amp; islands</li>
         </ul>
       </div>
       <div class="fcol">
         <h5>Get in touch</h5>
         <ul>
-          <li><a id="footer-wa" style="display:inline-flex;align-items:center;gap:7px"><svg width="15" height="15"><use href="#wa"/></svg> WhatsApp us</a></li>
-          <li>📞 <a id="footer-call">+960 723 7764</a></li>
-          <li>📍 Malé &amp; nearby islands</li>
-          <li>🕒 Open 7 days a week</li>
+          <li><svg><use href="#wa"/></svg> <a id="footer-wa">WhatsApp us</a></li>
+          <li><svg><use href="#phone"/></svg> <a id="footer-call">+960 723 7764</a></li>
+          <li><svg><use href="#clock"/></svg> Open 7 days · 8am–11pm</li>
         </ul>
       </div>
     </div>
@@ -679,26 +678,29 @@
   /* =========================================== */
 
   const services = [
-    {i:"🚚", t:"Apartment Moving", d:"Careful packing, lifting and moving for homes, apartments and offices.", k:"move moving mover shifting relocation packing transport house shift goods furniture"},
-    {i:"🔧", t:"Plumbing", d:"Leaks, blocked drains, taps, pipes, water heaters and bathroom fittings.", k:"plumber leak leakage water tap faucet drain blockage clog pipe toilet bathroom sink geyser heater flush"},
-    {i:"❄️", t:"Aircon Repair & Servicing", d:"AC cleaning, gas refill, installation, repair and routine maintenance.", k:"ac a/c air con conditioner cooling gas refill servicing service clean cooling not cooling fridge freezer hvac"},
-    {i:"⚡", t:"Electrical Work", d:"Wiring, sockets, lights, fans, switchboards and safe fault fixing.", k:"electrician electric wiring wire socket plug light bulb fan switch switchboard power short circuit fuse db board"},
-    {i:"🧱", t:"Tiling", d:"Floor and wall tiling, repairs, grouting and waterproofing.", k:"tile tiles tiler floor wall grout grouting marble waterproofing bathroom"},
-    {i:"🎨", t:"Painting", d:"Interior and exterior painting with a clean, professional finish.", k:"paint painter painting wall colour color interior exterior putty primer"},
-    {i:"🏠", t:"Ceiling & Roofing", d:"Ceiling install & repair, roof leaks, gypsum and false ceilings.", k:"ceiling roof roofing gypsum false ceiling pop leak waterproof"},
-    {i:"🪚", t:"Carpentry", d:"Doors, locks, shelves, cabinets, furniture assembly and repairs.", k:"carpenter carpentry wood door lock hinge shelf cabinet cupboard wardrobe furniture assembly drawer"},
-    {i:"🧰", t:"General Repairs", d:"Odd jobs, fixtures, mounting, sealing and small fixes around the home.", k:"handyman general repair fix odd job mount mounting tv curtain hang drill seal silicone maintenance fixture"},
+    {img:"img/moving.jpg",     i:"#ic-truck",   t:"Apartment Moving",          d:"Careful packing, lifting and moving for homes, apartments and offices.", k:"move moving mover shifting relocation packing transport house shift goods furniture"},
+    {img:"img/aircon.jpg",     i:"#ic-wind",    t:"Aircon Repair & Servicing", d:"AC cleaning, gas refill, installation, repair and routine maintenance.", k:"ac a/c air con conditioner cooling gas refill servicing service clean cooling not cooling fridge freezer hvac"},
+    {img:"img/plumbing.jpg",   i:"#ic-droplet", t:"Plumbing",                  d:"Leaks, blocked drains, taps, pipes, water heaters and bathroom fittings.", k:"plumber leak leakage water tap faucet drain blockage clog pipe toilet bathroom sink geyser heater flush"},
+    {img:"img/electrical.jpg", i:"#ic-zap",     t:"Electrical Work",           d:"Wiring, sockets, lights, fans, switchboards and safe fault fixing.", k:"electrician electric wiring wire socket plug light bulb fan switch switchboard power short circuit fuse db board"},
+    {img:"img/tiling.jpg",     i:"#ic-grid",    t:"Tiling",                    d:"Floor and wall tiling, repairs, grouting and waterproofing.", k:"tile tiles tiler floor wall grout grouting marble waterproofing bathroom"},
+    {img:"img/painting.jpg",   i:"#ic-brush",   t:"Painting",                  d:"Interior and exterior painting with a clean, professional finish.", k:"paint painter painting wall colour color interior exterior putty primer"},
+    {img:"img/roofing.jpg",    i:"#ic-home",    t:"Ceiling & Roofing",         d:"Ceiling install & repair, roof leaks, gypsum and false ceilings.", k:"ceiling roof roofing gypsum false ceiling pop leak waterproof"},
+    {img:"img/carpentry.jpg",  i:"#ic-hammer",  t:"Carpentry",                 d:"Doors, locks, shelves, cabinets, furniture assembly and repairs.", k:"carpenter carpentry wood door lock hinge shelf cabinet cupboard wardrobe furniture assembly drawer"},
+    {img:"img/general.jpg",    i:"#ic-wrench",  t:"General Repairs",           d:"Odd jobs, fixtures, mounting, sealing and small fixes around the home.", k:"handyman general repair fix odd job mount mounting tv curtain hang drill seal silicone maintenance fixture"},
   ];
 
-  const arrow='<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+  const arrow='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
 
   document.getElementById("sgrid").innerHTML = services.map(s=>`
-    <div class="card">
-      <div class="ico">${s.i}</div>
-      <h3>${s.t}</h3>
-      <p>${s.d}</p>
-      <a class="go" href="#" data-svc="${s.t}">Book this ${arrow}</a>
-    </div>`).join("");
+    <article class="scard">
+      <div class="scard-img"><img src="${s.img}" alt="${s.t}" loading="lazy"></div>
+      <div class="scard-body">
+        <div class="scard-ic"><svg><use href="${s.i}"/></svg></div>
+        <h3>${s.t}</h3>
+        <p>${s.d}</p>
+        <a class="scard-btn" href="#" data-svc="${s.t}">Book Service ${arrow}</a>
+      </div>
+    </article>`).join("");
 
   const ORDER_URL = "order.html";   // the booking app
   const waLink=(msg)=>`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg||DEFAULT_MESSAGE)}`;
@@ -754,12 +756,11 @@
   document.getElementById("drawerClose").addEventListener("click",closeDrawer);
   overlay.addEventListener("click",closeDrawer);
   document.addEventListener("keydown",(e)=>{if(e.key==="Escape"&&drawer.classList.contains("show"))closeDrawer();});
-  // close drawer when an in-page link inside it is tapped
   drawer.querySelectorAll('.drawer-nav a, .drawer-svcs a').forEach(a=>a.addEventListener("click",()=>setTimeout(closeDrawer,80)));
 
   // populate the drawer's service shortcuts (open the app with that service)
   document.getElementById("drawerSvcs").innerHTML = services.map(s=>
-    `<a href="${orderLink(s.t)}"><span class="em">${s.i}</span>${s.t}</a>`).join("");
+    `<a href="${orderLink(s.t)}"><span class="em"><svg><use href="${s.i}"/></svg></span>${s.t}</a>`).join("");
 
   /* ===== Search bar ===== */
   const searchInput=document.getElementById("svcSearch");
@@ -772,28 +773,26 @@
     const head = header ? `<div class="sr-head">${header}</div>` : "";
     searchResults.innerHTML = head + list.map((s,i)=>`
       <a class="sr" href="${orderLink(s.t)}" data-i="${i}">
-        <span class="si2">${s.i}</span>
+        <span class="si2"><svg><use href="${s.i}"/></svg></span>
         <span><b>${s.t}</b><span>${s.d}</span></span>
         <svg class="go-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>`).join("");
     searchResults.classList.add("show");
   }
-  // pre-tokenise each service for smarter matching (word-start, not loose substring)
   services.forEach(s=>{ s._tok = (s.t+" "+s.d+" "+(s.k||"")).toLowerCase().split(/[^a-z0-9/]+/).filter(Boolean); });
 
   function scoreMatch(s,term){
     const title=s.t.toLowerCase();
     if(title===term) return 0;
     if(title.startsWith(term)) return 1;
-    if(title.split(/\s+/).some(w=>w.startsWith(term))) return 2;          // word in title starts with term
-    if(s._tok.some(w=>w===term)) return 3;                                 // exact keyword (e.g. "ac", "tv")
-    if(term.length>=2 && s._tok.some(w=>w.startsWith(term))) return 4;     // keyword starts with term
-    if(term.length>=4 && (title+" "+s.d).toLowerCase().includes(term)) return 5; // longer free-text in desc
+    if(title.split(/\s+/).some(w=>w.startsWith(term))) return 2;
+    if(s._tok.some(w=>w===term)) return 3;
+    if(term.length>=2 && s._tok.some(w=>w.startsWith(term))) return 4;
+    if(term.length>=4 && (title+" "+s.d).toLowerCase().includes(term)) return 5;
     return -1;
   }
   function renderResults(q){
     const term=q.trim().toLowerCase();
-    // Empty box → show every service so customers can browse them all
     if(!term){ paintResults(services, "All services"); return; }
     const matches = services.map(s=>({s,sc:scoreMatch(s,term)}))
       .filter(x=>x.sc>=0).sort((a,b)=>a.sc-b.sc).map(x=>x.s);
