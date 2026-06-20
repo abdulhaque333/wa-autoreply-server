@@ -212,11 +212,13 @@
     background:var(--bg-2);border:1px solid var(--line);color:var(--navy);font-weight:600;font-size:.85rem;transition:.2s;
     font-family:'Noto Sans Thaana','Poppins',sans-serif}
   .lang-btn:hover{border-color:var(--amber);color:var(--amber-d)}
-  html.lang-dv body{font-family:'Noto Sans Thaana','Inter',sans-serif}
-  html.lang-dv h1,html.lang-dv h2,html.lang-dv h3,html.lang-dv h4,html.lang-dv .brand,
-  html.lang-dv .btn,html.lang-dv .opt-t,html.lang-dv .logo-txt,html.lang-dv .pmeta .lab,
-  html.lang-dv .field label,html.lang-dv .sum-h,html.lang-dv .pill b{font-family:'Noto Sans Thaana','Poppins',sans-serif}
-  html.lang-dv .step-head h1{line-height:1.5}
+  /* Dhivehi: ONE unified Thaana font everywhere + readable fili spacing.
+     We deliberately do NOT use `unicode-bidi: bidi-override` (it reverses
+     Thaana). `dir="rtl"` on <html> handles direction correctly. */
+  html.lang-dv, html.lang-dv *{font-family:'Noto Sans Thaana','Tahoma','Inter',sans-serif !important}
+  html.lang-dv body{line-height:1.85;font-feature-settings:"kern" 1,"liga" 1}
+  html.lang-dv .btn,html.lang-dv .lang-btn{line-height:1.35}
+  html.lang-dv h1,html.lang-dv .step-head h1{line-height:1.5}
   html[dir="rtl"] .pbar{direction:ltr}
   html[dir="rtl"] .phone-row{direction:ltr}
   html[dir="rtl"] .opt .ico{left:auto;right:14px}

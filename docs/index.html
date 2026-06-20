@@ -380,11 +380,14 @@
     background:var(--bg-2);border:1px solid var(--line);color:var(--navy);font-weight:600;font-size:.9rem;transition:.2s;font-family:'Noto Sans Thaana','Poppins',sans-serif}
   .lang-btn:hover{border-color:var(--amber);color:var(--amber-d)}
   .lang-btn svg{width:17px;height:17px}
-  html.lang-dv body{font-family:'Noto Sans Thaana','Inter',sans-serif}
-  html.lang-dv h1,html.lang-dv h2,html.lang-dv h3,html.lang-dv h4,html.lang-dv h5,
-  html.lang-dv .brand,html.lang-dv .btn,html.lang-dv .eyebrow,html.lang-dv .opt-t,
-  html.lang-dv .logo-txt,html.lang-dv .scard h3,html.lang-dv .menu,html.lang-dv .lead{font-family:'Noto Sans Thaana','Poppins',sans-serif}
-  html.lang-dv .hero h1{line-height:1.5}
+  /* Dhivehi: ONE unified Thaana font everywhere + readable fili spacing.
+     NOTE: we deliberately do NOT use `unicode-bidi: bidi-override` — that
+     REVERSES Thaana and is exactly what makes it look "backward".
+     `dir="rtl"` (set on <html> by the toggler) is the correct way. */
+  html.lang-dv, html.lang-dv *{font-family:'Noto Sans Thaana','Tahoma','Inter',sans-serif !important}
+  html.lang-dv body{line-height:1.85;font-feature-settings:"kern" 1,"liga" 1}
+  html.lang-dv .btn,html.lang-dv .lang-btn{line-height:1.35}
+  html.lang-dv h1,html.lang-dv h2,html.lang-dv .hero h1{line-height:1.5}
   html[dir="rtl"] .menu a::after{left:auto;right:0}
   html[dir="rtl"] .scard-ic,html[dir="rtl"] .scard-btn{left:auto;right:22px}
   html[dir="rtl"] .scard-btn{align-self:flex-end}
