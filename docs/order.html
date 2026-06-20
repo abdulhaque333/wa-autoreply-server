@@ -84,23 +84,27 @@
   .step-head p{color:var(--muted);font-size:.97rem}
 
   /* Service options grid */
-  .opts{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}
+  .opts{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
   @media(min-width:560px){.opts{grid-template-columns:repeat(3,1fr)}}
-  .opt{position:relative;display:flex;flex-direction:column;gap:7px;text-align:left;cursor:pointer;
-    background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:16px 15px;box-shadow:var(--shadow-sm);
-    transition:transform .18s,border-color .2s,background .2s,box-shadow .2s}
+  .opt{position:relative;display:flex;flex-direction:column;text-align:left;cursor:pointer;
+    background:#fff;border:1.5px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow-sm);
+    transition:transform .18s,border-color .2s,box-shadow .2s}
   .opt:hover{transform:translateY(-3px);border-color:var(--line-2);box-shadow:var(--shadow)}
-  .opt .ico{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;
-    background:var(--amber-soft);border:1px solid #fbe3bd;color:var(--amber-d)}
-  .opt .ico svg{width:24px;height:24px}
-  .opt .opt-t{font-weight:600;font-size:.98rem;color:var(--ink)}
-  .opt .opt-d{font-size:.8rem;color:var(--muted);line-height:1.45}
+  .opt-img{position:relative;display:block;aspect-ratio:16/10;overflow:hidden;background:var(--bg-3)}
+  .opt-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+  .opt:hover .opt-img img{transform:scale(1.06)}
+  .opt-body{position:relative;display:flex;flex-direction:column;gap:4px;padding:24px 14px 15px}
+  .opt .ico{position:absolute;top:-20px;left:14px;width:40px;height:40px;border-radius:11px;display:grid;place-items:center;
+    background:var(--amber);border:2px solid #fff;color:#fff;box-shadow:0 8px 18px -8px rgba(245,158,11,.7)}
+  .opt .ico svg{width:21px;height:21px}
+  .opt .opt-t{font-weight:600;font-size:.95rem;color:var(--ink)}
+  .opt .opt-d{font-size:.79rem;color:var(--muted);line-height:1.45}
   .opt input{position:absolute;opacity:0;pointer-events:none}
-  .opt .tick{position:absolute;top:11px;right:11px;width:22px;height:22px;border-radius:50%;
-    border:2px solid var(--line-2);display:grid;place-items:center;transition:.2s;color:transparent}
-  .opt.sel{border-color:var(--amber);background:var(--amber-soft);box-shadow:0 10px 24px -12px rgba(245,158,11,.5)}
-  .opt.sel .tick{background:var(--amber);border-color:transparent;color:#fff}
-  .opt .tick svg{width:13px;height:13px}
+  .opt .tick{position:absolute;top:9px;right:9px;width:25px;height:25px;border-radius:50%;
+    background:rgba(255,255,255,.92);border:2px solid #fff;display:grid;place-items:center;transition:.2s;color:transparent;box-shadow:var(--shadow-sm);z-index:2}
+  .opt.sel{border-color:var(--amber);box-shadow:0 12px 26px -12px rgba(245,158,11,.55)}
+  .opt.sel .tick{background:var(--amber);border-color:#fff;color:#fff}
+  .opt .tick svg{width:14px;height:14px}
 
   /* Pills (urgency) */
   .pills{display:grid;grid-template-columns:1fr 1fr;gap:13px}
@@ -378,15 +382,15 @@
   /* ============================ */
 
   const SERVICES = [
-    {i:"#ic-truck",   t:"Apartment Moving", d:"Packing, lifting & moving"},
-    {i:"#ic-wind",    t:"Aircon Service",   d:"Cleaning, gas refill, repair, install"},
-    {i:"#ic-droplet", t:"Plumbing",         d:"Leaks, drains, taps, water heaters"},
-    {i:"#ic-zap",     t:"Electrical Work",  d:"Wiring, sockets, lights, fans"},
-    {i:"#ic-grid",    t:"Tiling",           d:"Floor & wall tiling, grouting"},
-    {i:"#ic-brush",   t:"Painting",         d:"Interior & exterior, clean finish"},
-    {i:"#ic-home",    t:"Ceiling & Roofing",d:"Ceilings, roof leaks, gypsum"},
-    {i:"#ic-hammer",  t:"Carpentry",        d:"Doors, locks, shelves, furniture"},
-    {i:"#ic-wrench",  t:"General Repairs",  d:"Mounting, sealing, odd jobs"},
+    {i:"#ic-truck",   img:"img/moving.jpg",     t:"Apartment Moving", d:"Packing, lifting & moving"},
+    {i:"#ic-wind",    img:"img/aircon.jpg",     t:"Aircon Service",   d:"Cleaning, gas refill, repair, install"},
+    {i:"#ic-droplet", img:"img/plumbing.jpg",   t:"Plumbing",         d:"Leaks, drains, taps, water heaters"},
+    {i:"#ic-zap",     img:"img/electrical.jpg", t:"Electrical Work",  d:"Wiring, sockets, lights, fans"},
+    {i:"#ic-grid",    img:"img/tiling.jpg",     t:"Tiling",           d:"Floor & wall tiling, grouting"},
+    {i:"#ic-brush",   img:"img/painting.jpg",   t:"Painting",         d:"Interior & exterior, clean finish"},
+    {i:"#ic-home",    img:"img/roofing.jpg",    t:"Ceiling & Roofing",d:"Ceilings, roof leaks, gypsum"},
+    {i:"#ic-hammer",  img:"img/carpentry.jpg",  t:"Carpentry",        d:"Doors, locks, shelves, furniture"},
+    {i:"#ic-wrench",  img:"img/general.jpg",    t:"General Repairs",  d:"Mounting, sealing, odd jobs"},
   ];
 
   const TOTAL = 5;
@@ -410,10 +414,12 @@
   $("svcGrid").innerHTML = SERVICES.map((s)=>`
     <label class="opt" data-t="${s.t}">
       <input type="checkbox" value="${s.t}">
-      <span class="tick"><svg><use href="#check"/></svg></span>
-      <span class="ico"><svg><use href="${s.i}"/></svg></span>
-      <span class="opt-t">${s.t}</span>
-      <span class="opt-d">${s.d}</span>
+      <span class="opt-img"><img src="${s.img}" alt="${s.t}" loading="lazy"><span class="tick"><svg><use href="#check"/></svg></span></span>
+      <span class="opt-body">
+        <span class="ico"><svg><use href="${s.i}"/></svg></span>
+        <span class="opt-t">${s.t}</span>
+        <span class="opt-d">${s.d}</span>
+      </span>
     </label>`).join("");
 
   // hydrate fields from state
