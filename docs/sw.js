@@ -1,7 +1,7 @@
 /* Handyman Maldives — service worker (offline-ready app shell) */
 /* Relative URLs so it works both at a domain root (Netlify) and a
    project subpath (GitHub Pages). They resolve against this script's URL. */
-const CACHE = "hm-app-v4";
+const CACHE = "hm-app-v5";
 const ASSETS = [
   "./",
   "index.html",
