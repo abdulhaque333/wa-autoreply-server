@@ -73,7 +73,8 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=Noto+Sans+Thaana:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="i18n.js"></script>
 
 <style>
   :root{
@@ -371,6 +372,24 @@
   .trust-badges svg{width:15px;height:15px}
   .drawer-foot{margin-top:24px;font-size:.78rem;color:var(--muted);text-align:center}
   body.no-scroll{overflow:hidden}
+
+  /* ===== Language toggle + Dhivehi (RTL / Thaana) ===== */
+  .lang-btn{display:inline-flex;align-items:center;gap:6px;height:44px;padding:0 14px;border-radius:11px;cursor:pointer;
+    background:var(--bg-2);border:1px solid var(--line);color:var(--navy);font-weight:600;font-size:.9rem;transition:.2s;font-family:'Noto Sans Thaana','Poppins',sans-serif}
+  .lang-btn:hover{border-color:var(--amber);color:var(--amber-d)}
+  .lang-btn svg{width:17px;height:17px}
+  html.lang-dv body{font-family:'Noto Sans Thaana','Inter',sans-serif}
+  html.lang-dv h1,html.lang-dv h2,html.lang-dv h3,html.lang-dv h4,html.lang-dv h5,
+  html.lang-dv .brand,html.lang-dv .btn,html.lang-dv .eyebrow,html.lang-dv .opt-t,
+  html.lang-dv .logo-txt,html.lang-dv .scard h3,html.lang-dv .menu,html.lang-dv .lead{font-family:'Noto Sans Thaana','Poppins',sans-serif}
+  html.lang-dv .hero h1{line-height:1.5}
+  html[dir="rtl"] .menu a::after{left:auto;right:0}
+  html[dir="rtl"] .scard-ic,html[dir="rtl"] .scard-btn{left:auto;right:22px}
+  html[dir="rtl"] .scard-btn{align-self:flex-end}
+  html[dir="rtl"] .hc-rating{left:auto;right:-18px}
+  html[dir="rtl"] .hc-guard{right:auto;left:-18px}
+  html[dir="rtl"] .steps::before{left:16%;right:16%}
+  html[dir="rtl"] .fcol li{flex-direction:row-reverse;justify-content:flex-end}
 </style>
 </head>
 <body>
@@ -420,15 +439,16 @@
       </a>
     </div>
     <nav class="menu">
-      <a href="#services">Services</a>
-      <a href="#why">Why Us</a>
-      <a href="#how">Process</a>
-      <a href="#reviews">Reviews</a>
-      <a href="#faq">FAQ</a>
+      <a href="#services" data-i18n="nav.services">Services</a>
+      <a href="#why" data-i18n="nav.why">Why Us</a>
+      <a href="#how" data-i18n="nav.process">Process</a>
+      <a href="#reviews" data-i18n="nav.reviews">Reviews</a>
+      <a href="#faq" data-i18n="nav.faq">FAQ</a>
     </nav>
     <div class="nav-actions">
+      <button class="lang-btn" data-lang-toggle aria-label="Change language / ބަސް ބަދަލުކުރައްވާ">ދިވެހި</button>
       <a class="icon-btn call" id="nav-call" aria-label="Call us"><svg><use href="#phone"/></svg></a>
-      <a class="btn btn-primary nav-book" id="nav-wa"><svg><use href="#wa"/></svg> Book Now</a>
+      <a class="btn btn-primary nav-book" id="nav-wa"><svg><use href="#wa"/></svg> <span data-i18n="btn.book_now">Book Now</span></a>
     </div>
   </div>
 </header>
@@ -446,22 +466,22 @@
   <div class="drawer-scroll">
     <div class="verify"><span class="v-dot"></span> Verified local business · Malé, Maldives 🇲🇻</div>
     <div class="drawer-cta">
-      <a class="btn btn-primary dbook" id="drawer-book"><svg><use href="#wa"/></svg> Book a service</a>
+      <a class="btn btn-primary dbook" id="drawer-book"><svg><use href="#wa"/></svg> <span data-i18n="btn.book_a_service">Book a service</span></a>
       <div class="drawer-cta-row">
-        <a class="btn btn-outline" id="drawer-call"><svg><use href="#phone"/></svg> Call</a>
-        <a class="btn btn-wa" id="drawer-wa"><svg><use href="#wa"/></svg> WhatsApp</a>
+        <a class="btn btn-outline" id="drawer-call"><svg><use href="#phone"/></svg> <span data-i18n="btn.call">Call</span></a>
+        <a class="btn btn-wa" id="drawer-wa"><svg><use href="#wa"/></svg> <span data-i18n="btn.whatsapp">WhatsApp</span></a>
       </div>
     </div>
     <nav class="drawer-nav">
-      <a href="#services">Services</a>
-      <a href="#why">Why choose us</a>
-      <a href="#how">How it works</a>
-      <a href="#reviews">Reviews</a>
-      <a href="#faq">FAQ</a>
+      <a href="#services" data-i18n="nav.services">Services</a>
+      <a href="#why" data-i18n="why.eyebrow">Why choose us</a>
+      <a href="#how" data-i18n="nav.howitworks">How it works</a>
+      <a href="#reviews" data-i18n="nav.reviews">Reviews</a>
+      <a href="#faq" data-i18n="nav.faq">FAQ</a>
     </nav>
-    <h6 class="drawer-h">Our services</h6>
+    <h6 class="drawer-h" data-i18n="drawer.services">Our services</h6>
     <div class="drawer-svcs" id="drawerSvcs"></div>
-    <h6 class="drawer-h">Get in touch</h6>
+    <h6 class="drawer-h" data-i18n="drawer.getintouch">Get in touch</h6>
     <ul class="drawer-contact">
       <li><span class="ci"><svg><use href="#phone"/></svg></span><a id="drawer-call2"><b>+960 723 7764</b><span>Tap to call · 7 days a week</span></a></li>
       <li><span class="ci"><svg><use href="#wa"/></svg></span><a id="drawer-wa2"><b>WhatsApp us</b><span>Fast quotes &amp; booking</span></a></li>
@@ -480,7 +500,7 @@
 <div class="searchwrap">
   <div class="wrap">
     <form class="search" id="searchForm" role="search" autocomplete="off">
-      <input type="search" id="svcSearch" placeholder="Search a service — Moving, AC, plumbing…" aria-label="Search services" />
+      <input type="search" id="svcSearch" data-i18n-ph="search.ph" placeholder="Search a service — Moving, AC, plumbing…" aria-label="Search services" />
       <button type="submit" class="sbtn" aria-label="Search"><svg><use href="#search"/></svg></button>
     </form>
     <div class="search-results" id="searchResults"></div>
@@ -491,19 +511,19 @@
 <section class="hero" id="top">
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <span class="badge"><span class="dot"></span> Available now · Booking in under 60 seconds</span>
-      <h1>Your trusted home care partner <span class="amber-text">in the Maldives</span></h1>
+      <span class="badge"><span class="dot"></span> <span data-i18n="hero.badge">Available now · Booking in under 60 seconds</span></span>
+      <h1 data-i18n="hero.h1">Your trusted home care partner in the Maldives</h1>
       <p class="sub">From a full apartment move to a dripping tap — one skilled, reliable team for every home, office and resort job. Fair prices, clean work, done on time.</p>
       <div class="hero-actions">
-        <a class="btn btn-primary" id="hero-wa"><svg><use href="#wa"/></svg> Book Now</a>
-        <a class="btn btn-outline" href="#services">Our Services <svg><use href="#arrow"/></svg></a>
+        <a class="btn btn-primary" id="hero-wa"><svg><use href="#wa"/></svg> <span data-i18n="btn.book_now">Book Now</span></a>
+        <a class="btn btn-outline" href="#services"><span data-i18n="btn.our_services">Our Services</span> <svg><use href="#arrow"/></svg></a>
       </div>
       <div class="hero-trust">
         <div class="avs">
           <span style="background:#f59e0b">A</span><span style="background:#0f2240">M</span>
           <span style="background:#d97706">S</span><span style="background:#1d4ed8">+</span>
         </div>
-        <div><div class="stars">★★★★★</div><small>Trusted by homes, offices &amp; resorts</small></div>
+        <div><div class="stars">★★★★★</div><small data-i18n="hero.trust">Trusted by homes, offices &amp; resorts</small></div>
       </div>
     </div>
     <div class="hero-visual">
@@ -517,11 +537,11 @@
 <!-- TRUST STRIP -->
 <div class="strip">
   <div class="wrap">
-    <span><svg><use href="#ic-house"/></svg> Homes</span>
-    <span><svg><use href="#ic-building"/></svg> Offices</span>
-    <span><svg><use href="#ic-umbrella"/></svg> Resorts</span>
-    <span><svg><use href="#shield"/></svg> Insured Work</span>
-    <span><svg><use href="#clock"/></svg> Open 7 Days</span>
+    <span><svg><use href="#ic-house"/></svg> <span data-i18n="strip.homes">Homes</span></span>
+    <span><svg><use href="#ic-building"/></svg> <span data-i18n="strip.offices">Offices</span></span>
+    <span><svg><use href="#ic-umbrella"/></svg> <span data-i18n="strip.resorts">Resorts</span></span>
+    <span><svg><use href="#shield"/></svg> <span data-i18n="strip.insured">Insured Work</span></span>
+    <span><svg><use href="#clock"/></svg> <span data-i18n="strip.open">Open 7 Days</span></span>
   </div>
 </div>
 
@@ -529,8 +549,8 @@
 <section class="services" id="services">
   <div class="wrap">
     <div class="center reveal">
-      <span class="eyebrow">What we do</span>
-      <h2>One team for <span class="amber-text">every fix</span></h2>
+      <span class="eyebrow" data-i18n="sec.whatwedo">What we do</span>
+      <h2 data-i18n="sec.svc_h2">One team for every fix</h2>
       <p class="lead">Professional help for homes, apartments, offices and resorts — all under one roof.</p>
     </div>
     <div class="sgrid" id="sgrid"></div>
@@ -541,10 +561,10 @@
 <section style="padding:64px 0">
   <div class="wrap">
     <div class="stats reveal">
-      <div class="stat"><b data-count="10" data-suffix="+">0</b><span>Service categories</span></div>
-      <div class="stat"><b data-count="500" data-suffix="+">0</b><span>Jobs completed</span></div>
-      <div class="stat"><b data-count="60" data-suffix="min">0</b><span>Avg. response time</span></div>
-      <div class="stat"><b data-count="7">0</b><span>Days a week</span></div>
+      <div class="stat"><b data-count="10" data-suffix="+">0</b><span data-i18n="stat.s1">Service categories</span></div>
+      <div class="stat"><b data-count="500" data-suffix="+">0</b><span data-i18n="stat.s2">Jobs completed</span></div>
+      <div class="stat"><b data-count="60" data-suffix="min">0</b><span data-i18n="stat.s3">Avg. response time</span></div>
+      <div class="stat"><b data-count="7">0</b><span data-i18n="stat.s4">Days a week</span></div>
     </div>
   </div>
 </section>
@@ -553,17 +573,17 @@
 <section id="why" style="padding-top:20px">
   <div class="wrap">
     <div class="center reveal">
-      <span class="eyebrow">Why choose us</span>
-      <h2>Reliable work, <span class="amber-text">every single time</span></h2>
+      <span class="eyebrow" data-i18n="why.eyebrow">Why choose us</span>
+      <h2 data-i18n="why.h2">Reliable work, every single time</h2>
       <p class="lead">We treat your space like our own. Here's what sets Handyman Maldives apart.</p>
     </div>
     <div class="why-grid">
-      <div class="feat reveal"><div class="b"><svg><use href="#ic-bolt"/></svg></div><h4>Fast Response</h4><p>Get a quote within minutes on WhatsApp — not days. Same-day &amp; emergency slots available.</p></div>
-      <div class="feat reveal"><div class="b"><svg><use href="#ic-users"/></svg></div><h4>Skilled Professionals</h4><p>Experienced plumbers, electricians, painters &amp; AC technicians you can trust.</p></div>
-      <div class="feat reveal"><div class="b"><svg><use href="#ic-dollar"/></svg></div><h4>Fair, Upfront Pricing</h4><p>Clear quotes before we start — no hidden charges, no surprises.</p></div>
-      <div class="feat reveal"><div class="b"><svg><use href="#ic-sparkle"/></svg></div><h4>Clean &amp; Tidy</h4><p>We leave your home spotless once the job is done, every time.</p></div>
-      <div class="feat reveal"><div class="b"><svg><use href="#shield"/></svg></div><h4>Work Guaranteed</h4><p>Not happy with something? We'll come back and make it right.</p></div>
-      <div class="feat reveal"><div class="b"><svg><use href="#ic-pinned"/></svg></div><h4>Local &amp; Island-wide</h4><p>Based in Malé, serving nearby islands and resorts across the Maldives.</p></div>
+      <div class="feat reveal"><div class="b"><svg><use href="#ic-bolt"/></svg></div><h4 data-i18n="why.f1">Fast Response</h4><p>Get a quote within minutes on WhatsApp — not days. Same-day &amp; emergency slots available.</p></div>
+      <div class="feat reveal"><div class="b"><svg><use href="#ic-users"/></svg></div><h4 data-i18n="why.f2">Skilled Professionals</h4><p>Experienced plumbers, electricians, painters &amp; AC technicians you can trust.</p></div>
+      <div class="feat reveal"><div class="b"><svg><use href="#ic-dollar"/></svg></div><h4 data-i18n="why.f3">Fair, Upfront Pricing</h4><p>Clear quotes before we start — no hidden charges, no surprises.</p></div>
+      <div class="feat reveal"><div class="b"><svg><use href="#ic-sparkle"/></svg></div><h4 data-i18n="why.f4">Clean &amp; Tidy</h4><p>We leave your home spotless once the job is done, every time.</p></div>
+      <div class="feat reveal"><div class="b"><svg><use href="#shield"/></svg></div><h4 data-i18n="why.f5">Work Guaranteed</h4><p>Not happy with something? We'll come back and make it right.</p></div>
+      <div class="feat reveal"><div class="b"><svg><use href="#ic-pinned"/></svg></div><h4 data-i18n="why.f6">Local &amp; Island-wide</h4><p>Based in Malé, serving nearby islands and resorts across the Maldives.</p></div>
     </div>
   </div>
 </section>
@@ -572,14 +592,14 @@
 <section class="process" id="how">
   <div class="wrap">
     <div class="center reveal">
-      <span class="eyebrow">How it works</span>
-      <h2>Booked in <span class="amber-text">3 simple steps</span></h2>
+      <span class="eyebrow" data-i18n="proc.eyebrow">How it works</span>
+      <h2 data-i18n="proc.h2">Booked in 3 simple steps</h2>
       <p class="lead">No apps, no forms, no waiting. Just message us and relax.</p>
     </div>
     <div class="steps">
-      <div class="step reveal"><div class="n">1</div><h4>Tell us the job</h4><p>Send a WhatsApp with your service, location and a photo if you have one.</p></div>
-      <div class="step reveal"><div class="n">2</div><h4>Get a quick quote</h4><p>We reply fast with a clear price and the earliest available time slot.</p></div>
-      <div class="step reveal"><div class="n">3</div><h4>We get it done</h4><p>Our pro arrives on time, fixes it right, and leaves your space clean.</p></div>
+      <div class="step reveal"><div class="n">1</div><h4 data-i18n="proc.t1">Tell us the job</h4><p>Send a WhatsApp with your service, location and a photo if you have one.</p></div>
+      <div class="step reveal"><div class="n">2</div><h4 data-i18n="proc.t2">Get a quick quote</h4><p>We reply fast with a clear price and the earliest available time slot.</p></div>
+      <div class="step reveal"><div class="n">3</div><h4 data-i18n="proc.t3">We get it done</h4><p>Our pro arrives on time, fixes it right, and leaves your space clean.</p></div>
     </div>
   </div>
 </section>
@@ -588,8 +608,8 @@
 <section id="reviews">
   <div class="wrap">
     <div class="center reveal">
-      <span class="eyebrow">Happy customers</span>
-      <h2>Loved across <span class="amber-text">the Maldives</span></h2>
+      <span class="eyebrow" data-i18n="rev.eyebrow">Happy customers</span>
+      <h2 data-i18n="rev.h2">Loved across the Maldives</h2>
     </div>
     <div class="tgrid">
       <div class="quote reveal"><div class="stars">★★★★★</div><p>"AC stopped working at night — they came the next morning and fixed it within an hour. Super professional and clean."</p><div class="who"><div class="av">AR</div><div><b>Aishath R.</b><span>Hulhumalé</span></div></div></div>
@@ -603,8 +623,8 @@
 <section id="faq" class="services" style="background:var(--bg-2)">
   <div class="wrap">
     <div class="center reveal">
-      <span class="eyebrow">Good to know</span>
-      <h2>Frequently asked <span class="amber-text">questions</span></h2>
+      <span class="eyebrow" data-i18n="faq.eyebrow">Good to know</span>
+      <h2 data-i18n="faq.h2">Frequently asked questions</h2>
     </div>
     <div class="faq reveal">
       <details class="qa" open><summary>Which areas do you cover? <span class="plus">+</span></summary><div class="a">We're based in Malé and serve Hulhumalé, Vilimalé and nearby islands. For resorts and other islands, message us and we'll arrange it.</div></details>
@@ -620,11 +640,11 @@
 <section style="padding:70px 0">
   <div class="wrap">
     <div class="cta-band reveal">
-      <h2>Need it fixed today?</h2>
+      <h2 data-i18n="cta.h2">Need it fixed today?</h2>
       <p>Don't wait around. Message us now and get a quote in minutes.</p>
       <div class="hero-actions">
-        <a class="btn btn-wa" id="cta-wa"><svg><use href="#wa"/></svg> Chat on WhatsApp</a>
-        <a class="btn btn-ghost-light" id="cta-call"><svg><use href="#phone"/></svg> Call +960 723 7764</a>
+        <a class="btn btn-wa" id="cta-wa"><svg><use href="#wa"/></svg> <span data-i18n="btn.chat_wa">Chat on WhatsApp</span></a>
+        <a class="btn btn-ghost-light" id="cta-call"><svg><use href="#phone"/></svg> <span data-i18n="btn.call_num">Call +960 723 7764</span></a>
       </div>
     </div>
   </div>
@@ -640,14 +660,14 @@
         <span class="fbadge"><svg><use href="#shield"/></svg> Verified &amp; insured local business</span>
       </div>
       <div class="fcol">
-        <h5>Services</h5>
+        <h5 data-i18n="foot.services">Services</h5>
         <ul>
           <li>Apartment Moving</li><li>Aircon Repair</li><li>Plumbing</li>
           <li>Electrical Work</li><li>Painting &amp; Tiling</li><li>Ceiling &amp; Roofing</li>
         </ul>
       </div>
       <div class="fcol">
-        <h5>Service Areas</h5>
+        <h5 data-i18n="foot.areas">Service Areas</h5>
         <ul>
           <li><svg><use href="#pin"/></svg> Malé</li>
           <li><svg><use href="#pin"/></svg> Hulhumalé</li>
@@ -656,9 +676,9 @@
         </ul>
       </div>
       <div class="fcol">
-        <h5>Get in touch</h5>
+        <h5 data-i18n="foot.contact">Get in touch</h5>
         <ul>
-          <li><svg><use href="#wa"/></svg> <a id="footer-wa">WhatsApp us</a></li>
+          <li><svg><use href="#wa"/></svg> <a id="footer-wa" data-i18n="foot.wa">WhatsApp us</a></li>
           <li><svg><use href="#phone"/></svg> <a id="footer-call">+960 723 7764</a></li>
           <li><svg><use href="#clock"/></svg> Open 7 days · 8am–11pm</li>
         </ul>
@@ -678,29 +698,36 @@
   /* =========================================== */
 
   const services = [
-    {img:"img/moving.jpg",     i:"#ic-truck",   t:"Apartment Moving",          d:"Careful packing, lifting and moving for homes, apartments and offices.", k:"move moving mover shifting relocation packing transport house shift goods furniture"},
-    {img:"img/aircon.jpg",     i:"#ic-wind",    t:"Aircon Repair & Servicing", d:"AC cleaning, gas refill, installation, repair and routine maintenance.", k:"ac a/c air con conditioner cooling gas refill servicing service clean cooling not cooling fridge freezer hvac"},
-    {img:"img/plumbing.jpg",   i:"#ic-droplet", t:"Plumbing",                  d:"Leaks, blocked drains, taps, pipes, water heaters and bathroom fittings.", k:"plumber leak leakage water tap faucet drain blockage clog pipe toilet bathroom sink geyser heater flush"},
-    {img:"img/electrical.jpg", i:"#ic-zap",     t:"Electrical Work",           d:"Wiring, sockets, lights, fans, switchboards and safe fault fixing.", k:"electrician electric wiring wire socket plug light bulb fan switch switchboard power short circuit fuse db board"},
-    {img:"img/tiling.jpg",     i:"#ic-grid",    t:"Tiling",                    d:"Floor and wall tiling, repairs, grouting and waterproofing.", k:"tile tiles tiler floor wall grout grouting marble waterproofing bathroom"},
-    {img:"img/painting.jpg",   i:"#ic-brush",   t:"Painting",                  d:"Interior and exterior painting with a clean, professional finish.", k:"paint painter painting wall colour color interior exterior putty primer"},
-    {img:"img/roofing.jpg",    i:"#ic-home",    t:"Ceiling & Roofing",         d:"Ceiling install & repair, roof leaks, gypsum and false ceilings.", k:"ceiling roof roofing gypsum false ceiling pop leak waterproof"},
-    {img:"img/carpentry.jpg",  i:"#ic-hammer",  t:"Carpentry",                 d:"Doors, locks, shelves, cabinets, furniture assembly and repairs.", k:"carpenter carpentry wood door lock hinge shelf cabinet cupboard wardrobe furniture assembly drawer"},
-    {img:"img/general.jpg",    i:"#ic-wrench",  t:"General Repairs",           d:"Odd jobs, fixtures, mounting, sealing and small fixes around the home.", k:"handyman general repair fix odd job mount mounting tv curtain hang drill seal silicone maintenance fixture"},
+    {img:"img/moving.jpg",     i:"#ic-truck",   t:"Apartment Moving",          dv:"އެޕާޓްމަންޓް މޫވިން",   d:"Careful packing, lifting and moving for homes, apartments and offices.", k:"move moving mover shifting relocation packing transport house shift goods furniture"},
+    {img:"img/aircon.jpg",     i:"#ic-wind",    t:"Aircon Repair & Servicing", dv:"އޭސީ މަރާމާތާއި ސާވިސް", d:"AC cleaning, gas refill, installation, repair and routine maintenance.", k:"ac a/c air con conditioner cooling gas refill servicing service clean cooling not cooling fridge freezer hvac"},
+    {img:"img/plumbing.jpg",   i:"#ic-droplet", t:"Plumbing",                  dv:"ޕްލަމްބިން",            d:"Leaks, blocked drains, taps, pipes, water heaters and bathroom fittings.", k:"plumber leak leakage water tap faucet drain blockage clog pipe toilet bathroom sink geyser heater flush"},
+    {img:"img/electrical.jpg", i:"#ic-zap",     t:"Electrical Work",           dv:"ކަރަންޓް މަސައްކަތް",   d:"Wiring, sockets, lights, fans, switchboards and safe fault fixing.", k:"electrician electric wiring wire socket plug light bulb fan switch switchboard power short circuit fuse db board"},
+    {img:"img/tiling.jpg",     i:"#ic-grid",    t:"Tiling",                    dv:"ޓައިލް ޖެހުން",         d:"Floor and wall tiling, repairs, grouting and waterproofing.", k:"tile tiles tiler floor wall grout grouting marble waterproofing bathroom"},
+    {img:"img/painting.jpg",   i:"#ic-brush",   t:"Painting",                  dv:"ކުލަ ލުން",             d:"Interior and exterior painting with a clean, professional finish.", k:"paint painter painting wall colour color interior exterior putty primer"},
+    {img:"img/roofing.jpg",    i:"#ic-home",    t:"Ceiling & Roofing",         dv:"ސީލިން އަދި ރޫފިން",     d:"Ceiling install & repair, roof leaks, gypsum and false ceilings.", k:"ceiling roof roofing gypsum false ceiling pop leak waterproof"},
+    {img:"img/carpentry.jpg",  i:"#ic-hammer",  t:"Carpentry",                 dv:"ވަޑާން",                d:"Doors, locks, shelves, cabinets, furniture assembly and repairs.", k:"carpenter carpentry wood door lock hinge shelf cabinet cupboard wardrobe furniture assembly drawer"},
+    {img:"img/general.jpg",    i:"#ic-wrench",  t:"General Repairs",           dv:"އާންމު މަރާމާތު",       d:"Odd jobs, fixtures, mounting, sealing and small fixes around the home.", k:"handyman general repair fix odd job mount mounting tv curtain hang drill seal silicone maintenance fixture"},
   ];
+  const L = ()=> (window.i18n ? window.i18n.lang : "en");
+  const svcName = (s)=> (L()==="dv" && s.dv) ? s.dv : s.t;
+  const tr = (k,fb)=> (window.i18n && window.i18n.t(k)!=null) ? window.i18n.t(k) : fb;
 
   const arrow='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
 
-  document.getElementById("sgrid").innerHTML = services.map(s=>`
+  function renderServices(){
+    const book = tr("btn.book_service","Book Service");
+    document.getElementById("sgrid").innerHTML = services.map(s=>`
     <article class="scard">
       <div class="scard-img"><img src="${s.img}" alt="${s.t}" loading="lazy"></div>
       <div class="scard-body">
         <div class="scard-ic"><svg><use href="${s.i}"/></svg></div>
-        <h3>${s.t}</h3>
+        <h3>${svcName(s)}</h3>
         <p>${s.d}</p>
-        <a class="scard-btn" href="#" data-svc="${s.t}">Book Service ${arrow}</a>
+        <a class="scard-btn" href="#" data-svc="${s.t}">${book} ${arrow}</a>
       </div>
     </article>`).join("");
+  }
+  renderServices();
 
   const ORDER_URL = "order.html";   // the booking app
   const waLink=(msg)=>`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg||DEFAULT_MESSAGE)}`;
@@ -759,8 +786,11 @@
   drawer.querySelectorAll('.drawer-nav a, .drawer-svcs a').forEach(a=>a.addEventListener("click",()=>setTimeout(closeDrawer,80)));
 
   // populate the drawer's service shortcuts (open the app with that service)
-  document.getElementById("drawerSvcs").innerHTML = services.map(s=>
-    `<a href="${orderLink(s.t)}"><span class="em"><svg><use href="${s.i}"/></svg></span>${s.t}</a>`).join("");
+  function renderDrawerSvcs(){
+    document.getElementById("drawerSvcs").innerHTML = services.map(s=>
+      `<a href="${orderLink(s.t)}"><span class="em"><svg><use href="${s.i}"/></svg></span>${svcName(s)}</a>`).join("");
+  }
+  renderDrawerSvcs();
 
   /* ===== Search bar ===== */
   const searchInput=document.getElementById("svcSearch");
@@ -774,7 +804,7 @@
     searchResults.innerHTML = head + list.map((s,i)=>`
       <a class="sr" href="${orderLink(s.t)}" data-i="${i}">
         <span class="si2"><svg><use href="${s.i}"/></svg></span>
-        <span><b>${s.t}</b><span>${s.d}</span></span>
+        <span><b>${svcName(s)}</b><span>${s.d}</span></span>
         <svg class="go-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>`).join("");
     searchResults.classList.add("show");
@@ -821,6 +851,13 @@
     items[activeIdx]?.scrollIntoView({block:"nearest"});
   });
   document.addEventListener("click",(e)=>{ if(!e.target.closest(".searchwrap")) searchResults.classList.remove("show"); });
+
+  // re-render dynamic (JS-generated) content when language changes
+  window.onLangChange = function(){
+    renderServices();
+    renderDrawerSvcs();
+    if(searchResults.classList.contains("show")) renderResults(searchInput.value);
+  };
 
   const hdr=document.getElementById("hdr");
   addEventListener("scroll",()=>hdr.classList.toggle("scrolled",scrollY>16));

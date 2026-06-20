@@ -31,7 +31,8 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=Noto+Sans+Thaana:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="i18n.js"></script>
 
 <style>
   :root{
@@ -201,6 +202,21 @@
   .install-hint b{color:var(--ink)}
   .install-hint button{margin-left:auto;background:var(--amber);color:#fff;border:0;border-radius:10px;
     padding:9px 16px;font-weight:600;font-family:'Poppins';cursor:pointer;font-size:.86rem}
+
+  /* ===== Language toggle + Dhivehi (RTL / Thaana) ===== */
+  .lang-btn{display:inline-flex;align-items:center;justify-content:center;height:38px;padding:0 14px;border-radius:10px;cursor:pointer;
+    background:var(--bg-2);border:1px solid var(--line);color:var(--navy);font-weight:600;font-size:.85rem;transition:.2s;
+    font-family:'Noto Sans Thaana','Poppins',sans-serif}
+  .lang-btn:hover{border-color:var(--amber);color:var(--amber-d)}
+  html.lang-dv body{font-family:'Noto Sans Thaana','Inter',sans-serif}
+  html.lang-dv h1,html.lang-dv h2,html.lang-dv h3,html.lang-dv h4,html.lang-dv .brand,
+  html.lang-dv .btn,html.lang-dv .opt-t,html.lang-dv .logo-txt,html.lang-dv .pmeta .lab,
+  html.lang-dv .field label,html.lang-dv .sum-h,html.lang-dv .pill b{font-family:'Noto Sans Thaana','Poppins',sans-serif}
+  html.lang-dv .step-head h1{line-height:1.5}
+  html[dir="rtl"] .pbar{direction:ltr}
+  html[dir="rtl"] .phone-row{direction:ltr}
+  html[dir="rtl"] .opt .ico{left:auto;right:14px}
+  html[dir="rtl"] .opt .tick{right:auto;left:9px}
 </style>
 </head>
 <body>
@@ -235,7 +251,10 @@
       <img src="logo.png" alt="Handyman Maldives logo" />
       <span class="logo-txt">Handyman Maldives<small>Book a Service</small></span>
     </a>
-    <a class="home" href="index.html"><svg width="15" height="15"><use href="#roof"/></svg> Home</a>
+    <div style="display:flex;align-items:center;gap:9px">
+      <button class="lang-btn" data-lang-toggle aria-label="Change language / ބަސް ބަދަލުކުރައްވާ">ދިވެހި</button>
+      <a class="home" href="index.html"><svg width="15" height="15"><use href="#roof"/></svg> <span data-i18n="ord.home">Home</span></a>
+    </div>
   </div>
   <div class="wrap progress">
     <div class="pbar"><i id="pbar"></i></div>
@@ -248,7 +267,7 @@
   <!-- STEP 1: SERVICES -->
   <section class="step active" data-step="1">
     <div class="step-head">
-      <h1>What do you need <span class="amber-text">help with?</span></h1>
+      <h1 data-i18n="ord.h1_1">What do you need help with?</h1>
       <p>Pick one or more services — you can combine jobs in a single visit.</p>
     </div>
     <div class="opts" id="svcGrid"></div>
@@ -257,26 +276,26 @@
   <!-- STEP 2: DETAILS -->
   <section class="step" data-step="2">
     <div class="step-head">
-      <h1>Tell us a bit <span class="amber-text">more</span></h1>
+      <h1 data-i18n="ord.h1_2">Tell us a bit more</h1>
       <p>A short description helps us send the right pro and a faster quote.</p>
     </div>
     <div class="field">
-      <label for="desc">Describe the job <span class="opt-tag">(optional)</span></label>
+      <label for="desc"><span data-i18n="ord.desc_label">Describe the job</span> <span class="opt-tag" data-i18n="ord.optional">(optional)</span></label>
       <textarea id="desc" class="ctrl" placeholder="e.g. Kitchen tap leaking and bathroom light not working. AC needs cleaning too."></textarea>
       <div class="hint">Got a photo? You can attach it on WhatsApp after you send the order.</div>
     </div>
     <div class="field">
-      <label>How soon do you need it?</label>
+      <label data-i18n="ord.urgency">How soon do you need it?</label>
       <div class="pills" id="urgency">
         <label class="pill"><input type="radio" name="urg" value="As soon as possible" checked>
-          <span class="pi"><svg><use href="#ic-bolt"/></svg></span><span><b>As soon as possible</b><span>Same-day / urgent</span></span></label>
+          <span class="pi"><svg><use href="#ic-bolt"/></svg></span><span><b data-i18n="ord.urg_asap">As soon as possible</b><span data-i18n="ord.urg_asap_sub">Same-day / urgent</span></span></label>
         <label class="pill"><input type="radio" name="urg" value="Schedule for a specific time">
-          <span class="pi"><svg><use href="#ic-cal"/></svg></span><span><b>Pick a time</b><span>Schedule it below</span></span></label>
+          <span class="pi"><svg><use href="#ic-cal"/></svg></span><span><b data-i18n="ord.urg_time">Pick a time</b><span data-i18n="ord.urg_time_sub">Schedule it below</span></span></label>
       </div>
     </div>
     <div class="two" id="scheduleWrap" style="display:none">
-      <div class="field"><label for="pdate">Preferred date</label><input type="date" id="pdate" class="ctrl"></div>
-      <div class="field"><label for="ptime">Preferred time</label>
+      <div class="field"><label for="pdate" data-i18n="ord.date">Preferred date</label><input type="date" id="pdate" class="ctrl"></div>
+      <div class="field"><label for="ptime" data-i18n="ord.time">Preferred time</label>
         <select id="ptime" class="ctrl">
           <option value="">Any time</option>
           <option>Morning (8am – 12pm)</option>
@@ -291,11 +310,11 @@
   <!-- STEP 3: LOCATION -->
   <section class="step" data-step="3">
     <div class="step-head">
-      <h1>Where should we <span class="amber-text">come?</span></h1>
+      <h1 data-i18n="ord.h1_3">Where should we come?</h1>
       <p>We serve Malé, Hulhumalé, Vilimalé and nearby islands &amp; resorts.</p>
     </div>
     <div class="field">
-      <label for="island">Island / Area</label>
+      <label for="island" data-i18n="ord.island">Island / Area</label>
       <select id="island" class="ctrl">
         <option value="">Select your island…</option>
         <option>Malé</option>
@@ -308,7 +327,7 @@
       <div class="err" id="island-err">Please choose your island or area.</div>
     </div>
     <div class="field">
-      <label for="address">Address details <span class="opt-tag">(building, floor, flat)</span></label>
+      <label for="address"><span data-i18n="ord.address">Address details</span> <span class="opt-tag" data-i18n="ord.address_tag">(building, floor, flat)</span></label>
       <textarea id="address" class="ctrl" placeholder="e.g. Orchid Magu, Maafannu, 3rd floor, Apt 3B — near the mosque." style="min-height:80px"></textarea>
       <div class="err" id="address-err">Please add a few address details so we can find you.</div>
     </div>
@@ -317,16 +336,16 @@
   <!-- STEP 4: CONTACT -->
   <section class="step" data-step="4">
     <div class="step-head">
-      <h1>How can we <span class="amber-text">reach you?</span></h1>
+      <h1 data-i18n="ord.h1_4">How can we reach you?</h1>
       <p>We'll send your quote and confirmation on WhatsApp.</p>
     </div>
     <div class="field">
-      <label for="name">Your name</label>
+      <label for="name" data-i18n="ord.name">Your name</label>
       <input type="text" id="name" class="ctrl" placeholder="e.g. Aishath" autocomplete="name">
       <div class="err" id="name-err">Please tell us your name.</div>
     </div>
     <div class="field">
-      <label for="phone">WhatsApp number</label>
+      <label for="phone" data-i18n="ord.phone">WhatsApp number</label>
       <div class="phone-row">
         <span class="cc">🇲🇻 +960</span>
         <input type="tel" id="phone" class="ctrl" placeholder="7XX XXXX" inputmode="numeric" autocomplete="tel">
@@ -339,7 +358,7 @@
   <!-- STEP 5: REVIEW -->
   <section class="step" data-step="5">
     <div class="step-head">
-      <h1>Review your <span class="amber-text">order</span></h1>
+      <h1 data-i18n="ord.h1_5">Review your order</h1>
       <p>Quick check, then send it straight to our team on WhatsApp.</p>
     </div>
     <div class="sum" id="summary"></div>
@@ -353,12 +372,12 @@
   <!-- SUCCESS -->
   <section class="done" id="done">
     <div class="badge"><svg><use href="#check"/></svg></div>
-    <h1>Order ready!</h1>
+    <h1 data-i18n="ord.success_h1">Order ready!</h1>
     <p>WhatsApp should have opened with your order. If it didn't, tap the button below to send it now.</p>
     <div class="acts">
-      <a class="btn btn-wa" id="resend"><svg><use href="#wa"/></svg> Open WhatsApp</a>
-      <a class="btn btn-ghost" href="index.html" style="justify-content:center;flex:none">Back to home</a>
-      <a class="btn btn-ghost" id="newOrder" href="#" style="justify-content:center;flex:none">Start a new order</a>
+      <a class="btn btn-wa" id="resend"><svg><use href="#wa"/></svg> <span data-i18n="ord.open_wa">Open WhatsApp</span></a>
+      <a class="btn btn-ghost" href="index.html" style="justify-content:center;flex:none" data-i18n="ord.back_home">Back to home</a>
+      <a class="btn btn-ghost" id="newOrder" href="#" style="justify-content:center;flex:none" data-i18n="ord.new_order">Start a new order</a>
     </div>
   </section>
 
@@ -368,8 +387,8 @@
 <nav class="footnav" id="footnav">
   <div class="wrap">
     <button class="btn btn-ghost" id="backBtn" aria-label="Go back" style="display:none"><svg><use href="#back"/></svg></button>
-    <button class="btn btn-gold" id="nextBtn">Continue <svg><use href="#next"/></svg></button>
-    <button class="btn btn-wa" id="sendBtn" style="display:none"><svg><use href="#wa"/></svg> Confirm via WhatsApp</button>
+    <button class="btn btn-gold" id="nextBtn"><span data-i18n="ord.continue">Continue</span> <svg><use href="#next"/></svg></button>
+    <button class="btn btn-wa" id="sendBtn" style="display:none"><svg><use href="#wa"/></svg> <span data-i18n="ord.confirm_wa">Confirm via WhatsApp</span></button>
   </div>
 </nav>
 
@@ -382,19 +401,24 @@
   /* ============================ */
 
   const SERVICES = [
-    {i:"#ic-truck",   img:"img/moving.jpg",     t:"Apartment Moving", d:"Packing, lifting & moving"},
-    {i:"#ic-wind",    img:"img/aircon.jpg",     t:"Aircon Service",   d:"Cleaning, gas refill, repair, install"},
-    {i:"#ic-droplet", img:"img/plumbing.jpg",   t:"Plumbing",         d:"Leaks, drains, taps, water heaters"},
-    {i:"#ic-zap",     img:"img/electrical.jpg", t:"Electrical Work",  d:"Wiring, sockets, lights, fans"},
-    {i:"#ic-grid",    img:"img/tiling.jpg",     t:"Tiling",           d:"Floor & wall tiling, grouting"},
-    {i:"#ic-brush",   img:"img/painting.jpg",   t:"Painting",         d:"Interior & exterior, clean finish"},
-    {i:"#ic-home",    img:"img/roofing.jpg",    t:"Ceiling & Roofing",d:"Ceilings, roof leaks, gypsum"},
-    {i:"#ic-hammer",  img:"img/carpentry.jpg",  t:"Carpentry",        d:"Doors, locks, shelves, furniture"},
-    {i:"#ic-wrench",  img:"img/general.jpg",    t:"General Repairs",  d:"Mounting, sealing, odd jobs"},
+    {i:"#ic-truck",   img:"img/moving.jpg",     t:"Apartment Moving", dv:"އެޕާޓްމަންޓް މޫވިން",   d:"Packing, lifting & moving"},
+    {i:"#ic-wind",    img:"img/aircon.jpg",     t:"Aircon Service",   dv:"އޭސީ ސާވިސް",           d:"Cleaning, gas refill, repair, install"},
+    {i:"#ic-droplet", img:"img/plumbing.jpg",   t:"Plumbing",         dv:"ޕްލަމްބިން",            d:"Leaks, drains, taps, water heaters"},
+    {i:"#ic-zap",     img:"img/electrical.jpg", t:"Electrical Work",  dv:"ކަރަންޓް މަސައްކަތް",   d:"Wiring, sockets, lights, fans"},
+    {i:"#ic-grid",    img:"img/tiling.jpg",     t:"Tiling",           dv:"ޓައިލް ޖެހުން",         d:"Floor & wall tiling, grouting"},
+    {i:"#ic-brush",   img:"img/painting.jpg",   t:"Painting",         dv:"ކުލަ ލުން",             d:"Interior & exterior, clean finish"},
+    {i:"#ic-home",    img:"img/roofing.jpg",    t:"Ceiling & Roofing",dv:"ސީލިން އަދި ރޫފިން",     d:"Ceilings, roof leaks, gypsum"},
+    {i:"#ic-hammer",  img:"img/carpentry.jpg",  t:"Carpentry",        dv:"ވަޑާން",                d:"Doors, locks, shelves, furniture"},
+    {i:"#ic-wrench",  img:"img/general.jpg",    t:"General Repairs",  dv:"އާންމު މަރާމާތު",       d:"Mounting, sealing, odd jobs"},
   ];
 
+  const L = ()=> (window.i18n ? window.i18n.lang : "en");
+  const svcName = (s)=> (L()==="dv" && s.dv) ? s.dv : s.t;
+  const tr = (k,fb)=> (window.i18n && window.i18n.t(k)!=null) ? window.i18n.t(k) : fb;
+
   const TOTAL = 5;
-  const LABELS = ["Choose services","Job details","Your location","Contact info","Review & send"];
+  const LABEL_KEYS = ["ord.step1","ord.step2","ord.step3","ord.step4","ord.step5"];
+  const LABELS_EN  = ["Choose services","Job details","Your location","Contact info","Review & send"];
   const STORE = "hm_order_v1";
 
   const state = {
@@ -411,16 +435,20 @@
   const steps = [...document.querySelectorAll(".step")];
 
   // build service cards
-  $("svcGrid").innerHTML = SERVICES.map((s)=>`
-    <label class="opt" data-t="${s.t}">
-      <input type="checkbox" value="${s.t}">
-      <span class="opt-img"><img src="${s.img}" alt="${s.t}" loading="lazy"><span class="tick"><svg><use href="#check"/></svg></span></span>
-      <span class="opt-body">
-        <span class="ico"><svg><use href="${s.i}"/></svg></span>
-        <span class="opt-t">${s.t}</span>
-        <span class="opt-d">${s.d}</span>
-      </span>
-    </label>`).join("");
+  function renderSvcGrid(){
+    const checked = state.services.slice();
+    $("svcGrid").innerHTML = SERVICES.map((s)=>`
+      <label class="opt${checked.includes(s.t)?" sel":""}" data-t="${s.t}">
+        <input type="checkbox" value="${s.t}"${checked.includes(s.t)?" checked":""}>
+        <span class="opt-img"><img src="${s.img}" alt="${s.t}" loading="lazy"><span class="tick"><svg><use href="#check"/></svg></span></span>
+        <span class="opt-body">
+          <span class="ico"><svg><use href="${s.i}"/></svg></span>
+          <span class="opt-t">${svcName(s)}</span>
+          <span class="opt-d">${s.d}</span>
+        </span>
+      </label>`).join("");
+  }
+  renderSvcGrid();
 
   // hydrate fields from state
   function hydrate(){
@@ -472,8 +500,8 @@
     state.step = n;
     steps.forEach(s=> s.classList.toggle("active", +s.dataset.step===n));
     $("pbar").style.width = (n/TOTAL*100)+"%";
-    $("plabel").textContent = LABELS[n-1];
-    $("pcount").textContent = `Step ${n} of ${TOTAL}`;
+    $("plabel").textContent = tr(LABEL_KEYS[n-1], LABELS_EN[n-1]);
+    $("pcount").textContent = `${tr("ord.step_of","Step")} ${n} ${tr("ord.of","of")} ${TOTAL}`;
     $("backBtn").style.display = n>1 ? "inline-flex":"none";
     $("nextBtn").style.display = n<TOTAL ? "inline-flex":"none";
     $("sendBtn").style.display = n===TOTAL ? "inline-flex":"none";
@@ -515,23 +543,24 @@
   // ---- summary ----
   function buildSummary(){
     const svc = state.services.length
-      ? state.services.map(s=>`<span class="chip">${s}</span>`).join("")
+      ? state.services.map(s=>{ const so=SERVICES.find(x=>x.t===s); return `<span class="chip">${so?svcName(so):s}</span>`; }).join("")
       : '<span class="v">—</span>';
     const timing = state.urg==="As soon as possible"
       ? "As soon as possible (same-day / urgent)"
       : `Scheduled${state.pdate?` · ${fmtDate(state.pdate)}`:""}${state.ptime?` · ${state.ptime}`:""}`;
     const rows = [
-      {ic:"#ic-wrench", k:"Services", v:svc, step:1},
-      {ic:"#ic-note",   k:"Details", v:esc(state.desc)||"<span style='color:#94a3b8'>No extra notes</span>", step:2},
-      {ic:"#ic-clock",  k:"Timing", v:esc(timing), step:2},
-      {ic:"#ic-pin",    k:"Location", v:esc(state.island)+(state.address?`<br><span style="color:#94a3b8;font-weight:500">${esc(state.address)}</span>`:""), step:3},
-      {ic:"#ic-user",   k:"Contact", v:`${esc(state.name)}<br><span style="color:#94a3b8;font-weight:500">+960 ${esc(state.phone)}</span>`, step:4},
+      {ic:"#ic-wrench", k:tr("ord.sum.services","Services"), v:svc, step:1},
+      {ic:"#ic-note",   k:tr("ord.sum.details","Details"), v:esc(state.desc)||"<span style='color:#94a3b8'>No extra notes</span>", step:2},
+      {ic:"#ic-clock",  k:tr("ord.sum.timing","Timing"), v:esc(timing), step:2},
+      {ic:"#ic-pin",    k:tr("ord.sum.location","Location"), v:esc(state.island)+(state.address?`<br><span style="color:#94a3b8;font-weight:500">${esc(state.address)}</span>`:""), step:3},
+      {ic:"#ic-user",   k:tr("ord.sum.contact","Contact"), v:`${esc(state.name)}<br><span style="color:#94a3b8;font-weight:500">+960 ${esc(state.phone)}</span>`, step:4},
     ];
+    const editTxt = tr("ord.sum.edit","Edit");
     $("summary").innerHTML = rows.map(r=>`
       <div class="sum-row">
         <div class="ic"><svg><use href="${r.ic}"/></svg></div>
         <div class="bd"><div class="k">${r.k}</div><div class="v">${r.v}</div></div>
-        <div class="edit" data-go="${r.step}">Edit</div>
+        <div class="edit" data-go="${r.step}">${editTxt}</div>
       </div>`).join("");
     $("summary").querySelectorAll(".edit").forEach(e=>e.onclick=()=>show(+e.dataset.go));
   }
@@ -608,6 +637,14 @@
           || SERVICES.find(s => p.includes(s.t.toLowerCase().split(" ")[0]));
     if(m && !state.services.includes(m.t)) state.services.push(m.t);
   }
+
+  // refresh language-dependent dynamic text without losing place
+  window.onLangChange = function(){
+    renderSvcGrid();
+    $("plabel").textContent = tr(LABEL_KEYS[state.step-1], LABELS_EN[state.step-1]);
+    $("pcount").textContent = `${tr("ord.step_of","Step")} ${state.step} ${tr("ord.of","of")} ${TOTAL}`;
+    if(state.step===TOTAL) buildSummary();
+  };
 
   // init
   hydrate(); show(1);
