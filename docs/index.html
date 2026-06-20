@@ -127,6 +127,8 @@
   .btn-dark:hover{background:var(--navy-soft)}
   .btn-wa{background:var(--wa);color:#fff;box-shadow:0 12px 26px -10px rgba(34,197,94,.5)}
   .btn-wa:hover{background:#16a34a}
+  .btn-viber{background:#7360F2;color:#fff;box-shadow:0 12px 26px -10px rgba(115,96,242,.55)}
+  .btn-viber:hover{background:#5b48d8}
   .btn-outline{background:#fff;color:var(--navy);border:1.5px solid var(--line-2)}
   .btn-outline:hover{border-color:var(--amber);color:var(--amber-d)}
   .btn-ghost-light{background:rgba(255,255,255,.12);color:#fff;border:1.5px solid rgba(255,255,255,.25)}
@@ -397,6 +399,7 @@
   <!-- brand / contact -->
   <symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></symbol>
   <symbol id="phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+  <symbol id="viber" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.4a8.6 8.6 0 0 1-9.2 8.6L7 21l1-3.6A8.6 8.6 0 1 1 21 11.4z"/><path d="M9 8.1c.2 0 .4.1.5.3l.8 1.3c.1.2.1.4 0 .6l-.5.6c.5 1 1.3 1.8 2.3 2.3l.6-.5c.2-.1.4-.1.6 0l1.3.8c.2.1.3.3.3.5 0 .9-.7 1.5-1.6 1.5-3-.2-5.4-2.6-5.6-5.6 0-.9.6-1.6 1.5-1.6z"/></symbol>
   <symbol id="bars" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
   <symbol id="close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></symbol>
   <symbol id="pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
@@ -427,7 +430,7 @@
   <symbol id="ic-wrench" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
 </svg>
 
-<div class="topbar">⚡ <b>Same-day service</b> across Malé &amp; nearby islands — <a id="top-wa">Book on WhatsApp →</a></div>
+<div class="topbar">⚡ <span data-i18n="topbar.text">Same-day service across Malé &amp; nearby islands —</span> <a id="top-wa" data-i18n="topbar.link">Book on WhatsApp →</a></div>
 
 <header id="hdr">
   <div class="wrap nav">
@@ -468,9 +471,10 @@
     <div class="drawer-cta">
       <a class="btn btn-primary dbook" id="drawer-book"><svg><use href="#wa"/></svg> <span data-i18n="btn.book_a_service">Book a service</span></a>
       <div class="drawer-cta-row">
-        <a class="btn btn-outline" id="drawer-call"><svg><use href="#phone"/></svg> <span data-i18n="btn.call">Call</span></a>
         <a class="btn btn-wa" id="drawer-wa"><svg><use href="#wa"/></svg> <span data-i18n="btn.whatsapp">WhatsApp</span></a>
+        <a class="btn btn-viber" id="drawer-viber"><svg><use href="#viber"/></svg> <span data-i18n="btn.viber">Viber</span></a>
       </div>
+      <a class="btn btn-outline" id="drawer-call" style="width:100%;margin-top:10px"><svg><use href="#phone"/></svg> <span data-i18n="btn.call">Call</span></a>
     </div>
     <nav class="drawer-nav">
       <a href="#services" data-i18n="nav.services">Services</a>
@@ -513,9 +517,9 @@
     <div class="hero-copy">
       <span class="badge"><span class="dot"></span> <span data-i18n="hero.badge">Available now · Booking in under 60 seconds</span></span>
       <h1 data-i18n="hero.h1">Your trusted home care partner in the Maldives</h1>
-      <p class="sub">From a full apartment move to a dripping tap — one skilled, reliable team for every home, office and resort job. Fair prices, clean work, done on time.</p>
+      <p class="sub" data-i18n="hero.sub">From a full apartment move to a dripping tap — one skilled, reliable team for every home, office and resort job. Fair prices, clean work, done on time.</p>
       <div class="hero-actions">
-        <a class="btn btn-primary" id="hero-wa"><svg><use href="#wa"/></svg> <span data-i18n="btn.book_now">Book Now</span></a>
+        <a class="btn btn-primary" id="hero-wa"><svg><use href="#wa"/></svg> <span data-i18n="hero.cta_wa">Book Now</span></a>
         <a class="btn btn-outline" href="#services"><span data-i18n="btn.our_services">Our Services</span> <svg><use href="#arrow"/></svg></a>
       </div>
       <div class="hero-trust">
@@ -644,6 +648,7 @@
       <p>Don't wait around. Message us now and get a quote in minutes.</p>
       <div class="hero-actions">
         <a class="btn btn-wa" id="cta-wa"><svg><use href="#wa"/></svg> <span data-i18n="btn.chat_wa">Chat on WhatsApp</span></a>
+        <a class="btn btn-viber" id="cta-viber"><svg><use href="#viber"/></svg> <span data-i18n="btn.chat_viber">Chat on Viber</span></a>
         <a class="btn btn-ghost-light" id="cta-call"><svg><use href="#phone"/></svg> <span data-i18n="btn.call_num">Call +960 723 7764</span></a>
       </div>
     </div>
@@ -679,6 +684,7 @@
         <h5 data-i18n="foot.contact">Get in touch</h5>
         <ul>
           <li><svg><use href="#wa"/></svg> <a id="footer-wa" data-i18n="foot.wa">WhatsApp us</a></li>
+          <li><svg><use href="#viber"/></svg> <a id="footer-viber" data-i18n="btn.viber">Viber</a></li>
           <li><svg><use href="#phone"/></svg> <a id="footer-call">+960 723 7764</a></li>
           <li><svg><use href="#clock"/></svg> Open 7 days · 8am–11pm</li>
         </ul>
@@ -694,6 +700,7 @@
   /* ===== EDIT YOUR BUSINESS DETAILS HERE ===== */
   const WHATSAPP_NUMBER = "9607237764";          // WhatsApp number, country code, digits only
   const CALL_NUMBER     = "+9607237764";         // phone number to dial
+  const VIBER_NUMBER    = "+9607237764";         // Viber number (with country code)
   const DEFAULT_MESSAGE = "Hi Handyman Maldives! I'd like to book a service.";
   /* =========================================== */
 
@@ -757,6 +764,12 @@
   // Call buttons (tracked separately by the existing "Phone call lead" conversion)
   ["cta-call","footer-call","nav-call","drawer-call","drawer-call2"].forEach(id=>{
     const el=document.getElementById(id); if(el) el.href="tel:"+CALL_NUMBER;
+  });
+  // Viber chat buttons — count as a contact conversion
+  const viberLink = `viber://chat?number=${encodeURIComponent(VIBER_NUMBER)}`;
+  ["cta-viber","drawer-viber","footer-viber"].forEach(id=>{
+    const el=document.getElementById(id);
+    if(el){ el.href=viberLink; el.addEventListener("click",()=>fireContactConversion()); }
   });
 
   // Tapping a service card opens the app with that service pre-selected

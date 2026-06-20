@@ -170,11 +170,15 @@
   .btn-gold:hover{background:var(--amber-d)}
   .btn-wa{background:var(--wa);color:#fff;box-shadow:0 12px 30px -10px rgba(34,197,94,.5)}
   .btn-wa:hover{background:var(--wa-d)}
+  .btn-viber{background:#7360F2;color:#fff;box-shadow:0 12px 30px -10px rgba(115,96,242,.55)}
+  .btn-viber:hover{background:#5b48d8}
   .btn-ghost{flex:0 0 auto;background:#fff;color:var(--navy);border:1.5px solid var(--line-2);min-width:54px;padding:15px 18px}
   .btn-ghost:hover{border-color:var(--amber);color:var(--amber-d)}
   .btn[disabled]{opacity:.45;cursor:not-allowed;box-shadow:none}
   .btn[disabled]:active{transform:none}
-  /* Glowing confirm button */
+  /* Step 5 confirm actions */
+  .confirm-actions{display:flex;flex-direction:column;gap:11px;margin-top:18px}
+  .confirm-actions .btn{flex:none;width:100%}
   #sendBtn{position:relative;animation:glow 2.2s ease-in-out infinite}
   @keyframes glow{0%,100%{box-shadow:0 12px 26px -10px rgba(34,197,94,.5),0 0 0 0 rgba(34,197,94,.45)}
     50%{box-shadow:0 12px 30px -8px rgba(34,197,94,.7),0 0 0 8px rgba(34,197,94,0)}}
@@ -217,11 +221,17 @@
   html[dir="rtl"] .phone-row{direction:ltr}
   html[dir="rtl"] .opt .ico{left:auto;right:14px}
   html[dir="rtl"] .opt .tick{right:auto;left:9px}
+  html[dir="rtl"] .ctrl{text-align:right}
+  html[dir="rtl"] .phone-row .ctrl{text-align:left}
+  html[dir="rtl"] select.ctrl{background-position:left 13px center;padding-right:15px;padding-left:42px}
+  html[dir="rtl"] .field label,html[dir="rtl"] .step-head{text-align:right}
+  html[dir="rtl"] .sum-row .edit{margin-right:auto;margin-left:0}
 </style>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></symbol>
+  <symbol id="viber" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.4a8.6 8.6 0 0 1-9.2 8.6L7 21l1-3.6A8.6 8.6 0 1 1 21 11.4z"/><path d="M9 8.1c.2 0 .4.1.5.3l.8 1.3c.1.2.1.4 0 .6l-.5.6c.5 1 1.3 1.8 2.3 2.3l.6-.5c.2-.1.4-.1.6 0l1.3.8c.2.1.3.3.3.5 0 .9-.7 1.5-1.6 1.5-3-.2-5.4-2.6-5.6-5.6 0-.9.6-1.6 1.5-1.6z"/></symbol>
   <symbol id="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></symbol>
   <symbol id="back" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
   <symbol id="next" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
@@ -281,7 +291,7 @@
     </div>
     <div class="field">
       <label for="desc"><span data-i18n="ord.desc_label">Describe the job</span> <span class="opt-tag" data-i18n="ord.optional">(optional)</span></label>
-      <textarea id="desc" class="ctrl" placeholder="e.g. Kitchen tap leaking and bathroom light not working. AC needs cleaning too."></textarea>
+      <textarea id="desc" class="ctrl" data-i18n-ph="ord.desc_ph" placeholder="Describe your issue here…"></textarea>
       <div class="hint">Got a photo? You can attach it on WhatsApp after you send the order.</div>
     </div>
     <div class="field">
@@ -316,13 +326,13 @@
     <div class="field">
       <label for="island" data-i18n="ord.island">Island / Area</label>
       <select id="island" class="ctrl">
-        <option value="">Select your island…</option>
-        <option>Malé</option>
-        <option>Hulhumalé</option>
-        <option>Villingili (Vilimalé)</option>
-        <option>Hulhulé / Airport</option>
-        <option>A resort island</option>
-        <option>Another island</option>
+        <option value="" data-i18n="ord.isl_select">Select your island…</option>
+        <option value="Malé" data-i18n="ord.isl_male">Malé</option>
+        <option value="Hulhumalé" data-i18n="ord.isl_hulhumale">Hulhumalé</option>
+        <option value="Villingili (Vilimalé)" data-i18n="ord.isl_vilimale">Villingili (Vilimalé)</option>
+        <option value="Hulhulé / Airport" data-i18n="ord.isl_hulhule">Hulhulé / Airport</option>
+        <option value="A resort island" data-i18n="ord.isl_resort">A resort island</option>
+        <option value="Another island" data-i18n="ord.isl_other">Another island</option>
       </select>
       <div class="err" id="island-err">Please choose your island or area.</div>
     </div>
@@ -348,7 +358,7 @@
       <label for="phone" data-i18n="ord.phone">WhatsApp number</label>
       <div class="phone-row">
         <span class="cc">🇲🇻 +960</span>
-        <input type="tel" id="phone" class="ctrl" placeholder="7XX XXXX" inputmode="numeric" autocomplete="tel">
+        <input type="tel" id="phone" class="ctrl" data-i18n-ph="ord.phone_ph" placeholder="Enter phone number" inputmode="numeric" autocomplete="tel">
       </div>
       <div class="err" id="phone-err">Enter a valid Maldivian number (7 digits).</div>
       <div class="hint">Local Maldives number is 7 digits. Outside the Maldives? Add the full number in the description.</div>
@@ -362,7 +372,11 @@
       <p>Quick check, then send it straight to our team on WhatsApp.</p>
     </div>
     <div class="sum" id="summary"></div>
-    <p class="note">By sending, your order opens in WhatsApp pre-filled — just tap send. No payment is taken online; we quote you first.</p>
+    <div class="confirm-actions">
+      <button class="btn btn-wa" id="sendBtn"><svg><use href="#wa"/></svg> <span data-i18n="ord.confirm_wa">Confirm via WhatsApp</span></button>
+      <button class="btn btn-viber" id="sendViberBtn"><svg><use href="#viber"/></svg> <span data-i18n="ord.confirm_viber">Confirm via Viber</span></button>
+    </div>
+    <p class="note">By sending, your order opens in WhatsApp or Viber pre-filled — just tap send. No payment is taken online; we quote you first.</p>
     <div class="install-hint" id="installHint">
       <span><b>Install this app</b> on your phone for one-tap booking next time.</span>
       <button id="installBtn">Install</button>
@@ -376,6 +390,7 @@
     <p>WhatsApp should have opened with your order. If it didn't, tap the button below to send it now.</p>
     <div class="acts">
       <a class="btn btn-wa" id="resend"><svg><use href="#wa"/></svg> <span data-i18n="ord.open_wa">Open WhatsApp</span></a>
+      <a class="btn btn-viber" id="resendViber"><svg><use href="#viber"/></svg> <span data-i18n="ord.open_viber">Open Viber</span></a>
       <a class="btn btn-ghost" href="index.html" style="justify-content:center;flex:none" data-i18n="ord.back_home">Back to home</a>
       <a class="btn btn-ghost" id="newOrder" href="#" style="justify-content:center;flex:none" data-i18n="ord.new_order">Start a new order</a>
     </div>
@@ -386,9 +401,8 @@
 <!-- STICKY NAV -->
 <nav class="footnav" id="footnav">
   <div class="wrap">
-    <button class="btn btn-ghost" id="backBtn" aria-label="Go back" style="display:none"><svg><use href="#back"/></svg></button>
+    <button class="btn btn-ghost" id="backBtn" data-i18n-aria="ord.back" aria-label="Back" style="display:none"><svg><use href="#back"/></svg></button>
     <button class="btn btn-gold" id="nextBtn"><span data-i18n="ord.continue">Continue</span> <svg><use href="#next"/></svg></button>
-    <button class="btn btn-wa" id="sendBtn" style="display:none"><svg><use href="#wa"/></svg> <span data-i18n="ord.confirm_wa">Confirm via WhatsApp</span></button>
   </div>
 </nav>
 
@@ -496,15 +510,16 @@
   function save(){ try{ localStorage.setItem(STORE, JSON.stringify(state)); }catch(e){} }
 
   // ---- navigation ----
+  function progressText(n){ return L()==="dv" ? `މަރުހަލާ ${n} އެއްގެ ${TOTAL}` : `Step ${n} of ${TOTAL}`; }
   function show(n){
     state.step = n;
     steps.forEach(s=> s.classList.toggle("active", +s.dataset.step===n));
     $("pbar").style.width = (n/TOTAL*100)+"%";
     $("plabel").textContent = tr(LABEL_KEYS[n-1], LABELS_EN[n-1]);
-    $("pcount").textContent = `${tr("ord.step_of","Step")} ${n} ${tr("ord.of","of")} ${TOTAL}`;
+    $("pcount").textContent = progressText(n);
     $("backBtn").style.display = n>1 ? "inline-flex":"none";
     $("nextBtn").style.display = n<TOTAL ? "inline-flex":"none";
-    $("sendBtn").style.display = n===TOTAL ? "inline-flex":"none";
+    $("footnav").style.display = n===TOTAL ? "none" : "";
     if(n===TOTAL) buildSummary();
     refreshNav();
     window.scrollTo({top:0,behavior:"smooth"});
@@ -586,19 +601,31 @@
     L.push("_Sent from the Handyman Maldives app_");
     return L.join("\n");
   }
+  const VIBER_NUMBER = "+9607237764"; // Viber number (with country code)
   function waLink(){ return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(buildMessage())}`; }
+  function viberLink(){ return `viber://chat?number=${encodeURIComponent(VIBER_NUMBER)}`; }
 
-  $("sendBtn").addEventListener("click",()=>{
+  function doSend(channel){
     if(!validateStep(3)){ show(3); return; }
     if(!validateStep(4)){ show(4); return; }
-    const url = waLink();
-    $("resend").href = url; $("resend").target="_blank"; $("resend").rel="noopener";
+    const msg = buildMessage();
     // count this completed order as a Google Ads conversion
     if(typeof gtag === "function"){ gtag('event','conversion',{'send_to':ADS_CONVERSION}); }
-    window.open(url,"_blank");
+    // pre-set both "open again" buttons on the success screen
+    $("resend").href = waLink(); $("resend").target="_blank"; $("resend").rel="noopener";
+    $("resendViber").href = viberLink();
+    if(channel === "viber"){
+      // Viber can't pre-fill text to a number, so copy the order for one-tap paste
+      try{ if(navigator.clipboard) navigator.clipboard.writeText(msg); }catch(e){}
+      toast(tr("ord.viber_copied","Order copied — paste it in Viber"));
+      window.location.href = viberLink();
+    }else{
+      window.open(waLink(),"_blank");
+    }
     showDone();
-  });
-  $("resend").addEventListener("click",()=>{ /* href already set */ });
+  }
+  $("sendBtn").addEventListener("click",()=>doSend("wa"));
+  $("sendViberBtn").addEventListener("click",()=>doSend("viber"));
 
   function showDone(){
     document.querySelector(".step.active")?.classList.remove("active");
@@ -642,7 +669,7 @@
   window.onLangChange = function(){
     renderSvcGrid();
     $("plabel").textContent = tr(LABEL_KEYS[state.step-1], LABELS_EN[state.step-1]);
-    $("pcount").textContent = `${tr("ord.step_of","Step")} ${state.step} ${tr("ord.of","of")} ${TOTAL}`;
+    $("pcount").textContent = progressText(state.step);
     if(state.step===TOTAL) buildSummary();
   };
 
