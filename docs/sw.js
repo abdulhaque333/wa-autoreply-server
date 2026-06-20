@@ -1,7 +1,7 @@
 /* Handyman Maldives — service worker (offline-ready app shell) */
 /* Relative URLs so it works both at a domain root (Netlify) and a
    project subpath (GitHub Pages). They resolve against this script's URL. */
-const CACHE = "hm-app-v3";
+const CACHE = "hm-app-v4";
 const ASSETS = [
   "./",
   "index.html",
@@ -40,6 +40,20 @@ self.addEventListener("fetch", (e) => {
           return res;
         })
         .catch(() => caches.match(req).then((m) => m || caches.match("order.html")))
+    );
+    return;
+  }
+
+  // Always fetch fresh JS (e.g. i18n.js translations); fall back to cache offline.
+  if (url.pathname.endsWith(".js")) {
+    e.respondWith(
+      fetch(req)
+        .then((res) => {
+          const copy = res.clone();
+          caches.open(CACHE).then((c) => c.put(req, copy));
+          return res;
+        })
+        .catch(() => caches.match(req))
     );
     return;
   }
