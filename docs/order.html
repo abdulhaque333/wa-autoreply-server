@@ -74,6 +74,13 @@
   .pmeta{display:flex;justify-content:space-between;align-items:center;margin-top:10px}
   .pmeta .lab{font-size:.76rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--amber-d)}
   .pmeta .cnt{font-size:.8rem;color:var(--muted);font-weight:600}
+  .stepper{display:flex;align-items:center;margin-bottom:9px}
+  .sdot{flex:0 0 auto;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-size:.82rem;font-weight:700;font-family:'Poppins';background:#fff;color:var(--muted);border:2px solid var(--line-2);transition:.3s}
+  .sdot svg{width:15px;height:15px}
+  .sline{flex:1;height:3px;background:var(--line-2);margin:0 3px;border-radius:2px;transition:.3s}
+  .sdot.done{background:var(--amber);color:#fff;border-color:var(--amber)}
+  .sdot.active{background:#fff;color:var(--amber-d);border-color:var(--amber);box-shadow:0 0 0 4px var(--amber-soft)}
+  .sline.done{background:var(--amber)}
 
   /* Step */
   .step{display:none;animation:fade .45s cubic-bezier(.2,.7,.2,1)}
@@ -95,14 +102,15 @@
   .opt:hover .opt-img img{transform:scale(1.06)}
   .opt-body{position:relative;display:flex;flex-direction:column;gap:4px;padding:24px 14px 15px}
   .opt .ico{position:absolute;top:-20px;left:14px;width:40px;height:40px;border-radius:11px;display:grid;place-items:center;
-    background:var(--amber);border:2px solid #fff;color:#fff;box-shadow:0 8px 18px -8px rgba(245,158,11,.7)}
+    background:var(--navy);border:2px solid #fff;color:#fff;box-shadow:0 8px 18px -8px rgba(15,34,64,.4);transition:background .2s}
   .opt .ico svg{width:21px;height:21px}
   .opt .opt-t{font-weight:600;font-size:.95rem;color:var(--ink)}
   .opt .opt-d{font-size:.79rem;color:var(--muted);line-height:1.45}
   .opt input{position:absolute;opacity:0;pointer-events:none}
   .opt .tick{position:absolute;top:9px;right:9px;width:25px;height:25px;border-radius:50%;
-    background:rgba(255,255,255,.92);border:2px solid #fff;display:grid;place-items:center;transition:.2s;color:transparent;box-shadow:var(--shadow-sm);z-index:2}
-  .opt.sel{border-color:var(--amber);box-shadow:0 12px 26px -12px rgba(245,158,11,.55)}
+    background:#fff;border:2px solid var(--line-2);display:grid;place-items:center;transition:.2s;color:transparent;box-shadow:var(--shadow-sm);z-index:2}
+  .opt.sel{border-color:var(--amber);background:var(--amber-soft);box-shadow:0 12px 26px -12px rgba(245,158,11,.55)}
+  .opt.sel .ico{background:var(--amber);box-shadow:0 8px 18px -8px rgba(245,158,11,.7)}
   .opt.sel .tick{background:var(--amber);border-color:#fff;color:#fff}
   .opt .tick svg{width:14px;height:14px}
 
@@ -265,7 +273,13 @@
     <a class="home" href="index.html"><svg width="15" height="15"><use href="#roof"/></svg> Home</a>
   </div>
   <div class="wrap progress">
-    <div class="pbar"><i id="pbar"></i></div>
+    <div class="stepper" id="stepper">
+      <div class="sdot">1</div><div class="sline"></div>
+      <div class="sdot">2</div><div class="sline"></div>
+      <div class="sdot">3</div><div class="sline"></div>
+      <div class="sdot">4</div><div class="sline"></div>
+      <div class="sdot">5</div>
+    </div>
     <div class="pmeta"><span class="lab" id="plabel">Choose services</span><span class="cnt" id="pcount">Step 1 of 5</span></div>
   </div>
 </header>
@@ -510,11 +524,21 @@
   function save(){ try{ localStorage.setItem(STORE, JSON.stringify(state)); }catch(e){} }
 
   // ---- navigation ----
+  function updateStepper(n){
+    const dots=[...document.querySelectorAll("#stepper .sdot")];
+    const lines=[...document.querySelectorAll("#stepper .sline")];
+    dots.forEach((d,i)=>{
+      d.classList.remove("done","active");
+      if(i < n-1){ d.classList.add("done"); d.innerHTML='<svg><use href="#check"/></svg>'; }
+      else { if(i === n-1) d.classList.add("active"); d.textContent=(i+1); }
+    });
+    lines.forEach((l,i)=> l.classList.toggle("done", i < n-1));
+  }
   function progressText(n){ return L()==="dv" ? `މަރުހަލާ ${n} އެއްގެ ${TOTAL}` : `Step ${n} of ${TOTAL}`; }
   function show(n){
     state.step = n;
     steps.forEach(s=> s.classList.toggle("active", +s.dataset.step===n));
-    $("pbar").style.width = (n/TOTAL*100)+"%";
+    updateStepper(n);
     $("plabel").textContent = tr(LABEL_KEYS[n-1], LABELS_EN[n-1]);
     $("pcount").textContent = progressText(n);
     $("backBtn").style.display = n>1 ? "inline-flex":"none";

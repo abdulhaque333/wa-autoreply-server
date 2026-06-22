@@ -157,8 +157,8 @@
     background:var(--bg-2);border:1px solid var(--line);color:var(--navy);transition:.2s;flex:0 0 auto}
   .icon-btn svg{width:21px;height:21px}
   .icon-btn:hover{border-color:var(--amber);color:var(--amber-d)}
-  .icon-btn.call{color:var(--amber-d);background:var(--amber-soft);border-color:#f7d9a6}
-  .icon-btn.call:hover{background:var(--amber);color:#fff;border-color:transparent;box-shadow:0 10px 22px -10px rgba(245,158,11,.55);transform:translateY(-1px)}
+  .callpill{background:var(--amber-soft);color:var(--amber-d);border:1px solid #f7d9a6}
+  .callpill:hover{background:var(--amber);color:#fff;border-color:transparent;box-shadow:0 10px 22px -10px rgba(245,158,11,.5);transform:translateY(-2px)}
   .hamburger{display:none}
   @media(max-width:920px){.menu{display:none}.nav-book{display:none}.hamburger{display:grid}}
 
@@ -304,6 +304,20 @@
   .qa .a{padding:0 22px 20px;color:var(--muted);font-size:.96rem}
 
   /* CTA */
+  /* Pricing */
+  .pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+  .pcard{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;box-shadow:var(--shadow-sm);transition:transform .2s,box-shadow .2s,border-color .2s}
+  .pcard:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--line-2)}
+  .pc-top{display:flex;align-items:center;gap:11px;min-width:0}
+  .pc-top .pi{width:42px;height:42px;border-radius:11px;display:grid;place-items:center;background:var(--amber-soft);border:1px solid #fbe3bd;color:var(--amber-d);flex:0 0 auto}
+  .pc-top .pi svg{width:22px;height:22px}
+  .pc-top b{font-family:'Poppins';font-weight:600;color:var(--ink);font-size:.98rem}
+  .pc-price{font-size:.82rem;color:var(--muted);white-space:nowrap;text-align:right}
+  .pc-price b{display:block;font-family:'Poppins';color:var(--amber-d);font-size:1.05rem}
+  .pnote{text-align:center;color:var(--muted);font-size:.84rem;margin:24px auto 0;max-width:660px;line-height:1.6}
+  @media(max-width:820px){.pgrid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:520px){.pgrid{grid-template-columns:1fr}}
+
   .cta-band{position:relative;border-radius:26px;padding:58px 40px;text-align:center;overflow:hidden;background:var(--navy)}
   .cta-band::before{content:"";position:absolute;top:-120px;right:-80px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(245,158,11,.25),transparent 65%)}
   .cta-band h2{color:#fff;position:relative;font-size:clamp(1.8rem,4vw,2.6rem)}
@@ -322,6 +336,8 @@
   .fbadge{display:inline-flex;align-items:center;gap:8px;font-size:.8rem;font-weight:600;color:#bff0d0;background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.28);border-radius:99px;padding:8px 14px;margin-top:16px}
   .fbadge svg{width:16px;height:16px}
   .copy{border-top:1px solid rgba(255,255,255,.1);margin-top:42px;padding-top:22px;text-align:center;color:#7f92b0;font-size:.85rem}
+  .copy a{color:#cdd8ec;font-weight:600}
+  .copy a:hover{color:var(--amber)}
   @media(max-width:860px){.fgrid{grid-template-columns:1fr 1fr;gap:30px}}
   @media(max-width:520px){.fgrid{grid-template-columns:1fr}}
 
@@ -444,14 +460,15 @@
       </a>
     </div>
     <nav class="menu">
-      <a href="#services" data-i18n="nav.services">Services</a>
-      <a href="#why" data-i18n="nav.why">Why Us</a>
-      <a href="#how" data-i18n="nav.process">Process</a>
-      <a href="#reviews" data-i18n="nav.reviews">Reviews</a>
-      <a href="#faq" data-i18n="nav.faq">FAQ</a>
+      <a href="#services">Services</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#why">Why Us</a>
+      <a href="#how">Process</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#faq">FAQ</a>
     </nav>
     <div class="nav-actions">
-      <a class="icon-btn call" id="nav-call" aria-label="Call us"><svg><use href="#phone"/></svg></a>
+      <a class="btn callpill" id="nav-call" aria-label="Call us"><svg><use href="#phone"/></svg> Call</a>
       <a class="btn btn-primary nav-book" id="nav-wa"><svg><use href="#wa"/></svg> <span data-i18n="btn.book_now">Book Now</span></a>
     </div>
   </div>
@@ -542,11 +559,11 @@
 <!-- TRUST STRIP -->
 <div class="strip">
   <div class="wrap">
-    <span><svg><use href="#ic-house"/></svg> <span data-i18n="strip.homes">Homes</span></span>
-    <span><svg><use href="#ic-building"/></svg> <span data-i18n="strip.offices">Offices</span></span>
-    <span><svg><use href="#ic-umbrella"/></svg> <span data-i18n="strip.resorts">Resorts</span></span>
-    <span><svg><use href="#shield"/></svg> <span data-i18n="strip.insured">Insured Work</span></span>
-    <span><svg><use href="#clock"/></svg> <span data-i18n="strip.open">Open 7 Days</span></span>
+    <span><svg><use href="#ic-dollar"/></svg> No advance payment</span>
+    <span><svg><use href="#ic-sparkle"/></svg> Free quotes</span>
+    <span><svg><use href="#clock"/></svg> Same-day service</span>
+    <span><svg><use href="#pin"/></svg> Maldives-based team</span>
+    <span><svg><use href="#shield"/></svg> Insured workers</span>
   </div>
 </div>
 
@@ -559,6 +576,26 @@
       <p class="lead" data-i18n="sec.svc_lead">Professional help for homes, apartments, offices and resorts — all under one roof.</p>
     </div>
     <div class="sgrid" id="sgrid"></div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing" style="background:var(--bg-2)">
+  <div class="wrap">
+    <div class="center reveal">
+      <span class="eyebrow">Transparent pricing</span>
+      <h2>Honest starting prices, <span class="amber-text">no surprises</span></h2>
+      <p class="lead">Here's roughly where prices start. You always get an exact, free quote on WhatsApp before any work begins — and you only pay after the job's done.</p>
+    </div>
+    <div class="pgrid reveal">
+      <div class="pcard"><div class="pc-top"><span class="pi"><svg><use href="#ic-wind"/></svg></span><b>Aircon repair &amp; service</b></div><div class="pc-price">from<b>MVR 300</b></div></div>
+      <div class="pcard"><div class="pc-top"><span class="pi"><svg><use href="#ic-droplet"/></svg></span><b>Plumbing &amp; leaks</b></div><div class="pc-price">from<b>MVR 250</b></div></div>
+      <div class="pcard"><div class="pc-top"><span class="pi"><svg><use href="#ic-zap"/></svg></span><b>Electrical work</b></div><div class="pc-price">from<b>MVR 250</b></div></div>
+      <div class="pcard"><div class="pc-top"><span class="pi"><svg><use href="#ic-truck"/></svg></span><b>Apartment moving</b></div><div class="pc-price">from<b>MVR 600</b></div></div>
+      <div class="pcard"><div class="pc-top"><span class="pi"><svg><use href="#ic-brush"/></svg></span><b>Painting (per room)</b></div><div class="pc-price">from<b>MVR 900</b></div></div>
+      <div class="pcard"><div class="pc-top"><span class="pi"><svg><use href="#ic-hammer"/></svg></span><b>Carpentry &amp; repairs</b></div><div class="pc-price">from<b>MVR 300</b></div></div>
+    </div>
+    <p class="pnote">* Indicative starting prices for standard jobs in the Malé area. Your final price depends on the work — we confirm it on WhatsApp <b>before</b> we start. No advance payment, no hidden charges.</p>
   </div>
 </section>
 
@@ -691,7 +728,10 @@
         </ul>
       </div>
     </div>
-    <div class="copy">© <span id="year"></span> <span data-i18n="brand.name">Handyman Maldives</span> · <span data-i18n="foot.copyright">Built with care in the Maldives</span> 🇲🇻</div>
+    <div class="copy">
+      <div style="margin-bottom:12px"><a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Service</a> · <a href="guarantee.html">Service Guarantee</a></div>
+      © <span id="year"></span> Handyman Maldives · Built with care in the Maldives 🇲🇻
+    </div>
   </div>
 </footer>
 
