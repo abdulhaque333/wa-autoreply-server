@@ -339,7 +339,9 @@
   .copy a{color:#cdd8ec;font-weight:600}
   .copy a:hover{color:var(--amber)}
   @media(max-width:860px){.fgrid{grid-template-columns:1fr 1fr;gap:30px}}
-  @media(max-width:520px){.fgrid{grid-template-columns:1fr}}
+  @media(max-width:520px){.fgrid{grid-template-columns:1fr}
+    .fcol ul{display:grid;grid-template-columns:1fr 1fr;gap:11px 16px}
+    .fcol li{margin-bottom:0}}
 
   /* Floating WhatsApp */
   .float-wa{position:fixed;right:22px;bottom:22px;z-index:80;background:var(--wa);color:#fff;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;box-shadow:0 12px 28px -8px rgba(34,197,94,.6);transition:transform .2s,box-shadow .2s}
@@ -722,11 +724,11 @@
       <div class="fcol">
         <h5 data-i18n="foot.contact">Get in touch</h5>
         <ul>
-          <li><svg><use href="#wa"/></svg> <a id="footer-wa" data-i18n="foot.wa">WhatsApp us</a></li>
-          <li><svg><use href="#viber"/></svg> <a id="footer-viber">Viber</a></li>
-          <li><svg><use href="#fb"/></svg> <a href="https://www.facebook.com/share/18tm8DMVhN/?mibextid=wwXIfr" target="_blank" rel="noopener">Facebook page</a></li>
+          <li><svg style="color:#25D366"><use href="#wa"/></svg> <a id="footer-wa">WhatsApp us</a></li>
+          <li><svg style="color:#7360F2"><use href="#viber"/></svg> <a id="footer-viber">Viber</a></li>
+          <li><svg style="color:#1877F2"><use href="#fb"/></svg> <a href="https://www.facebook.com/share/18tm8DMVhN/?mibextid=wwXIfr" target="_blank" rel="noopener">Facebook page</a></li>
           <li><svg><use href="#phone"/></svg> <a id="footer-call">+960 723 7764</a></li>
-          <li><svg><use href="#clock"/></svg> <span data-i18n="foot.hours">Open 7 days · 8am–11pm</span></li>
+          <li><svg><use href="#clock"/></svg> <span>Open 7 days · 8am–11pm</span></li>
         </ul>
       </div>
     </div>
