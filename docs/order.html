@@ -36,7 +36,7 @@
 <style>
   :root{
     --navy:#0f2240; --navy-2:#0b1a33; --navy-soft:#1c3357;
-    --amber:#f59e0b; --amber-d:#d97706; --amber-soft:#fff7ec;
+    --amber:#0e9bb4; --amber-d:#0b7d92; --amber-soft:#e8f7fb;
     --bg:#ffffff; --bg-2:#f6f8fb; --bg-3:#eef2f8;
     --ink:#0f2240; --body:#475569; --muted:#64748b;
     --line:#e6eaf1; --line-2:#dde3ee; --wa:#22c55e; --wa-d:#16a34a;
@@ -109,8 +109,8 @@
   .opt input{position:absolute;opacity:0;pointer-events:none}
   .opt .tick{position:absolute;top:9px;right:9px;width:25px;height:25px;border-radius:50%;
     background:#fff;border:2px solid var(--line-2);display:grid;place-items:center;transition:.2s;color:transparent;box-shadow:var(--shadow-sm);z-index:2}
-  .opt.sel{border-color:var(--amber);background:var(--amber-soft);box-shadow:0 12px 26px -12px rgba(245,158,11,.55)}
-  .opt.sel .ico{background:var(--amber);box-shadow:0 8px 18px -8px rgba(245,158,11,.7)}
+  .opt.sel{border-color:var(--amber);background:var(--amber-soft);box-shadow:0 12px 26px -12px rgba(14,155,180,.55)}
+  .opt.sel .ico{background:var(--amber);box-shadow:0 8px 18px -8px rgba(14,155,180,.7)}
   .opt.sel .tick{background:var(--amber);border-color:#fff;color:#fff}
   .opt .tick svg{width:14px;height:14px}
 
@@ -120,7 +120,7 @@
     padding:16px;display:flex;gap:13px;align-items:flex-start;transition:.2s;box-shadow:var(--shadow-sm)}
   .pill:hover{border-color:var(--line-2)}
   .pill .pi{flex:0 0 auto;width:38px;height:38px;border-radius:10px;display:grid;place-items:center;
-    background:var(--amber-soft);border:1px solid #fbe3bd;color:var(--amber-d)}
+    background:var(--amber-soft);border:1px solid #bfe9f0;color:var(--amber-d)}
   .pill .pi svg{width:20px;height:20px}
   .pill b{display:block;color:var(--ink);font-weight:600;font-size:.96rem;font-family:'Poppins'}
   .pill span{font-size:.8rem;color:var(--muted)}
@@ -136,7 +136,7 @@
   .ctrl{width:100%;background:#fff;border:1.5px solid var(--line-2);border-radius:12px;
     color:var(--ink);font-family:inherit;font-size:.96rem;padding:13px 15px;transition:border-color .2s,box-shadow .2s}
   .ctrl::placeholder{color:#9aa7bd}
-  .ctrl:focus{outline:none;border-color:var(--amber);box-shadow:0 0 0 3px rgba(245,158,11,.16)}
+  .ctrl:focus{outline:none;border-color:var(--amber);box-shadow:0 0 0 3px rgba(14,155,180,.16)}
   textarea.ctrl{resize:vertical;min-height:96px;line-height:1.55}
   select.ctrl{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' viewBox='0 0 24 24'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 13px center;padding-right:42px}
   .two{display:grid;grid-template-columns:1fr 1fr;gap:13px}
@@ -154,12 +154,12 @@
   .sum-row{display:flex;gap:14px;padding:16px 18px;border-bottom:1px solid var(--line)}
   .sum-row:last-child{border-bottom:0}
   .sum-row .ic{flex:0 0 auto;width:40px;height:40px;border-radius:11px;display:grid;place-items:center;
-    background:var(--amber-soft);border:1px solid #fbe3bd;color:var(--amber-d)}
+    background:var(--amber-soft);border:1px solid #bfe9f0;color:var(--amber-d)}
   .sum-row .ic svg{width:20px;height:20px}
   .sum-row .bd{flex:1;min-width:0}
   .sum-row .k{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:3px}
   .sum-row .v{color:var(--ink);font-weight:600;font-size:.96rem;word-wrap:break-word}
-  .sum-row .v .chip{display:inline-block;background:var(--amber-soft);border:1px solid #fbe3bd;color:var(--amber-d);
+  .sum-row .v .chip{display:inline-block;background:var(--amber-soft);border:1px solid #bfe9f0;color:var(--amber-d);
     font-size:.82rem;font-weight:600;padding:3px 10px;border-radius:99px;margin:3px 5px 0 0;font-family:'Poppins'}
   .sum-row .edit{flex:0 0 auto;align-self:flex-start;color:var(--amber-d);font-size:.8rem;font-weight:600;cursor:pointer}
   .sum-row .edit:hover{text-decoration:underline}
@@ -173,7 +173,7 @@
     font-weight:600;font-size:1rem;cursor:pointer;border:0;transition:transform .16s,box-shadow .18s,opacity .2s,background .2s;white-space:nowrap}
   .btn:active{transform:scale(.98)}
   .btn svg{width:20px;height:20px;flex:0 0 auto}
-  .btn-gold{background:var(--amber);color:#fff;box-shadow:0 12px 26px -10px rgba(245,158,11,.55)}
+  .btn-gold{background:var(--amber);color:#fff;box-shadow:0 12px 26px -10px rgba(14,155,180,.55)}
   .btn-gold:hover{background:var(--amber-d)}
   .btn-wa{background:var(--wa);color:#fff;box-shadow:0 12px 30px -10px rgba(34,197,94,.5)}
   .btn-wa:hover{background:var(--wa-d)}
