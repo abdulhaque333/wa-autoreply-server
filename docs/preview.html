@@ -214,7 +214,7 @@
   /* Hero visual */
   .hero-visual{position:relative}
   .hero-photo{position:relative;border-radius:24px;overflow:hidden;box-shadow:var(--shadow-lg);aspect-ratio:4/3.4}
-  .hero-photo img{width:100%;height:100%;object-fit:cover}
+  .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center top}
   .hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(15,34,64,.28))}
   .hero-card{position:absolute;background:#fff;border:1px solid var(--line);border-radius:14px;padding:13px 16px;box-shadow:var(--shadow);display:flex;align-items:center;gap:11px}
   .hero-card .hc-ic{width:40px;height:40px;border-radius:11px;display:grid;place-items:center;flex:0 0 auto}
@@ -241,7 +241,7 @@
     display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s,border-color .25s;box-shadow:var(--shadow-sm)}
   .scard:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:var(--line-2)}
   .scard-img{position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--bg-3)}
-  .scard-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+  .scard-img img{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform .5s}
   .scard:hover .scard-img img{transform:scale(1.06)}
   .scard-body{padding:20px 22px 22px;display:flex;flex-direction:column;flex:1;position:relative}
   .scard-ic{position:absolute;top:-26px;left:22px;width:48px;height:48px;border-radius:12px;display:grid;place-items:center;
