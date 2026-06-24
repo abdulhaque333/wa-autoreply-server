@@ -214,7 +214,7 @@
   /* Hero visual */
   .hero-visual{position:relative}
   .hero-photo{position:relative;border-radius:24px;overflow:hidden;box-shadow:var(--shadow-lg);aspect-ratio:4/3.4}
-  .hero-photo img{width:100%;height:100%;object-fit:cover}
+  .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center top}
   .hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(15,34,64,.28))}
   .hero-card{position:absolute;background:#fff;border:1px solid var(--line);border-radius:14px;padding:13px 16px;box-shadow:var(--shadow);display:flex;align-items:center;gap:11px}
   .hero-card .hc-ic{width:40px;height:40px;border-radius:11px;display:grid;place-items:center;flex:0 0 auto}
@@ -241,7 +241,7 @@
     display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s,border-color .25s;box-shadow:var(--shadow-sm)}
   .scard:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:var(--line-2)}
   .scard-img{position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--bg-3)}
-  .scard-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+  .scard-img img{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform .5s}
   .scard:hover .scard-img img{transform:scale(1.06)}
   .scard-body{padding:20px 22px 22px;display:flex;flex-direction:column;flex:1;position:relative}
   .scard-ic{position:absolute;top:-26px;left:22px;width:48px;height:48px;border-radius:12px;display:grid;place-items:center;
@@ -710,8 +710,8 @@
       <div class="fcol">
         <h5 data-i18n="foot.services">Services</h5>
         <ul>
-          <li data-i18n="svc.moving">Apartment Moving</li><li data-i18n="svc.aircon">Aircon Repair</li><li data-i18n="svc.plumbing">Plumbing</li>
-          <li data-i18n="svc.electrical">Electrical Work</li><li data-i18n="svc.paint_tile">Painting &amp; Tiling</li><li data-i18n="svc.roofing">Ceiling &amp; Roofing</li>
+          <li>Apartment Moving</li><li>Painting &amp; Tiling</li><li>Plumbing</li>
+          <li>Aircon Repair</li><li>Ceiling &amp; Roofing</li><li>Electrical Work</li>
         </ul>
       </div>
       <div class="fcol">
@@ -753,12 +753,12 @@
 
   const services = [
     {img:"img/moving.jpg",     i:"#ic-truck",   t:"Apartment Moving",          dv:"ގެދޮރު ބަދަލުކުރުމާއި ތަކެތި އުފުލުން", d:"Careful packing, lifting and moving for homes, apartments and offices.", dvd:"ގެ، އެޕާޓްމަންޓް އަދި އޮފީސްތަކަށް ރައްކާތެރިކަމާއެކު ޕެކްކޮށް އުފުލައި ބަދަލުކުރުން.", k:"move moving mover shifting relocation packing transport house shift goods furniture"},
-    {img:"img/aircon.jpg",     i:"#ic-wind",    t:"Aircon Repair & Servicing", dv:"އޭސީ މަރާމާތުކުރުމާއި ސާވިސްކުރުން", d:"AC cleaning, gas refill, installation, repair and routine maintenance.", dvd:"އޭސީ ސާފުކުރުން، ގޭސް އެޅުން، ހަރުކުރުން، މަރާމާތު އަދި ބެލެހެއްޓުން.", k:"ac a/c air con conditioner cooling gas refill servicing service clean cooling not cooling fridge freezer hvac"},
-    {img:"img/plumbing.jpg",   i:"#ic-droplet", t:"Plumbing",                  dv:"ފެންވައިރުކުރުމާއި ފެންލީކުވުން މަރާމާތުކުރުން", d:"Leaks, blocked drains, taps, pipes, water heaters and bathroom fittings.", dvd:"ފެން ލީކުވުން، ހޮޅި، އިސްކުރު، ފެން ހީޓަރު އަދި ފާޚާނާގެ މަސައްކަތް.", k:"plumber leak leakage water tap faucet drain blockage clog pipe toilet bathroom sink geyser heater flush"},
-    {img:"img/electrical.jpg", i:"#ic-zap",     t:"Electrical Work",           dv:"ކަރަންޓުގެ މަސައްކަތްތައް", d:"Wiring, sockets, lights, fans, switchboards and safe fault fixing.", dvd:"ވައިރުކުރުން، ސޮކެޓް، ބޮކި، ފަންކާ، ސްވިޗްބޯޑް އަދި ރައްކާތެރިކަމާއެކު މަރާމާތު.", k:"electrician electric wiring wire socket plug light bulb fan switch switchboard power short circuit fuse db board"},
-    {img:"img/tiling.jpg",     i:"#ic-grid",    t:"Tiling",                    dv:"ރޭނުމާއި ޓައިލްޖެހުމުގެ މަސައްކަތް", d:"Floor and wall tiling, repairs, grouting and waterproofing.", dvd:"ތަޅުމާއި ފާރުގައި ޓައިލް ޖެހުން، މަރާމާތު، ގްރައުޓް އަދި ވޯޓަޕްރޫފިން.", k:"tile tiles tiler floor wall grout grouting marble waterproofing bathroom"},
     {img:"img/painting.jpg",   i:"#ic-brush",   t:"Painting",                  dv:"ކުލަލުމާއި އާބާތުރަދިފިލުވުން", d:"Interior and exterior painting with a clean, professional finish.", dvd:"އެތެރެ އާއި ބޭރުގައި ސާފު، ޕްރޮފެޝަނަލް ކުލަ ލުން.", k:"paint painter painting wall colour color interior exterior putty primer"},
+    {img:"img/tiling.jpg",     i:"#ic-grid",    t:"Tiling",                    dv:"ރޭނުމާއި ޓައިލްޖެހުމުގެ މަސައްކަތް", d:"Floor and wall tiling, repairs, grouting and waterproofing.", dvd:"ތަޅުމާއި ފާރުގައި ޓައިލް ޖެހުން، މަރާމާތު، ގްރައުޓް އަދި ވޯޓަޕްރޫފިން.", k:"tile tiles tiler floor wall grout grouting marble waterproofing bathroom"},
+    {img:"img/plumbing.jpg",   i:"#ic-droplet", t:"Plumbing",                  dv:"ފެންވައިރުކުރުމާއި ފެންލީކުވުން މަރާމާތުކުރުން", d:"Leaks, blocked drains, taps, pipes, water heaters and bathroom fittings.", dvd:"ފެން ލީކުވުން، ހޮޅި، އިސްކުރު، ފެން ހީޓަރު އަދި ފާޚާނާގެ މަސައްކަތް.", k:"plumber leak leakage water tap faucet drain blockage clog pipe toilet bathroom sink geyser heater flush"},
+    {img:"img/aircon.jpg",     i:"#ic-wind",    t:"Aircon Repair & Servicing", dv:"އޭސީ މަރާމާތުކުރުމާއި ސާވިސްކުރުން", d:"AC cleaning, gas refill, installation, repair and routine maintenance.", dvd:"އޭސީ ސާފުކުރުން، ގޭސް އެޅުން، ހަރުކުރުން، މަރާމާތު އަދި ބެލެހެއްޓުން.", k:"ac a/c air con conditioner cooling gas refill servicing service clean cooling not cooling fridge freezer hvac"},
     {img:"img/roofing.jpg",    i:"#ic-home",    t:"Ceiling & Roofing",         dv:"ސީލިން އަދި ފުރާޅުގެ މަސައްކަތް", d:"Ceiling install & repair, roof leaks, gypsum and false ceilings.", dvd:"ސީލިން ހެދުމާއި މަރާމާތު، ފުރާޅުގެ ލީކު، ޖިޕްސަމް އަދި ފޯލްސް ސީލިން.", k:"ceiling roof roofing gypsum false ceiling pop leak waterproof"},
+    {img:"img/electrical.jpg", i:"#ic-zap",     t:"Electrical Work",           dv:"ކަރަންޓުގެ މަސައްކަތްތައް", d:"Wiring, sockets, lights, fans, switchboards and safe fault fixing.", dvd:"ވައިރުކުރުން، ސޮކެޓް، ބޮކި، ފަންކާ، ސްވިޗްބޯޑް އަދި ރައްކާތެރިކަމާއެކު މަރާމާތު.", k:"electrician electric wiring wire socket plug light bulb fan switch switchboard power short circuit fuse db board"},
     {img:"img/carpentry.jpg",  i:"#ic-hammer",  t:"Carpentry",                 dv:"ކާޕެންޓްރީ އަދި ފަރުނީޗަރު ރޭވުން", d:"Doors, locks, shelves, cabinets, furniture assembly and repairs.", dvd:"ދޮރު، ތަޅު، ހަރުގަނޑު، ކަބަޑު، ފަރުނީޗަރު ރޭވުމާއި މަރާމާތު.", k:"carpenter carpentry wood door lock hinge shelf cabinet cupboard wardrobe furniture assembly drawer"},
     {img:"img/general.jpg",    i:"#ic-wrench",  t:"General Repairs",           dv:"އާންމު މަރާމާތު", d:"Odd jobs, fixtures, mounting, sealing and small fixes around the home.", dvd:"ކުދިކުދި މަސައްކަތް، ހަރުކުރުން، ސީލް ކުރުން އަދި ގޭތެރޭގެ ކުދި މަރާމާތު.", k:"handyman general repair fix odd job mount mounting tv curtain hang drill seal silicone maintenance fixture"},
   ];

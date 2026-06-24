@@ -98,7 +98,7 @@
     transition:transform .18s,border-color .2s,box-shadow .2s}
   .opt:hover{transform:translateY(-3px);border-color:var(--line-2);box-shadow:var(--shadow)}
   .opt-img{position:relative;display:block;aspect-ratio:16/10;overflow:hidden;background:var(--bg-3)}
-  .opt-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+  .opt-img img{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform .4s}
   .opt:hover .opt-img img{transform:scale(1.06)}
   .opt-body{position:relative;display:flex;flex-direction:column;gap:4px;padding:24px 14px 15px}
   .opt .ico{position:absolute;top:-20px;left:14px;width:40px;height:40px;border-radius:11px;display:grid;place-items:center;
@@ -429,12 +429,12 @@
 
   const SERVICES = [
     {i:"#ic-truck",   img:"img/moving.jpg",     t:"Apartment Moving", dv:"ގެދޮރު ބަދަލުކުރުމާއި ތަކެތި އުފުލުން", d:"Packing, lifting & moving", dvd:"ޕެކްކޮށް، އުފުލައި ބަދަލުކުރުން"},
-    {i:"#ic-wind",    img:"img/aircon.jpg",     t:"Aircon Service",   dv:"އޭސީ މަރާމާތާއި ސާވިސް", d:"Cleaning, gas refill, repair, install", dvd:"ސާފުކުރުން، ގޭސް، މަރާމާތު، ހަރުކުރުން"},
-    {i:"#ic-droplet", img:"img/plumbing.jpg",   t:"Plumbing",         dv:"ފެންވައިރުކުރުމާއި ފެންލީކު", d:"Leaks, drains, taps, water heaters", dvd:"ލީކު، ހޮޅި، އިސްކުރު، ފެން ހީޓަރު"},
-    {i:"#ic-zap",     img:"img/electrical.jpg", t:"Electrical Work",  dv:"ކަރަންޓުގެ މަސައްކަތްތައް", d:"Wiring, sockets, lights, fans", dvd:"ވައިރު، ސޮކެޓް، ބޮކި، ފަންކާ"},
-    {i:"#ic-grid",    img:"img/tiling.jpg",     t:"Tiling",           dv:"ޓައިލް ޖެހުން", d:"Floor & wall tiling, grouting", dvd:"ތަޅުމާއި ފާރުގައި ޓައިލް، ގްރައުޓް"},
     {i:"#ic-brush",   img:"img/painting.jpg",   t:"Painting",         dv:"ކުލަ ލުން", d:"Interior & exterior, clean finish", dvd:"އެތެރެ އާއި ބޭރުގައި ކުލަ ލުން"},
+    {i:"#ic-grid",    img:"img/tiling.jpg",     t:"Tiling",           dv:"ޓައިލް ޖެހުން", d:"Floor & wall tiling, grouting", dvd:"ތަޅުމާއި ފާރުގައި ޓައިލް، ގްރައުޓް"},
+    {i:"#ic-droplet", img:"img/plumbing.jpg",   t:"Plumbing",         dv:"ފެންވައިރުކުރުމާއި ފެންލީކު", d:"Leaks, drains, taps, water heaters", dvd:"ލީކު، ހޮޅި، އިސްކުރު، ފެން ހީޓަރު"},
+    {i:"#ic-wind",    img:"img/aircon.jpg",     t:"Aircon Service",   dv:"އޭސީ މަރާމާތާއި ސާވިސް", d:"Cleaning, gas refill, repair, install", dvd:"ސާފުކުރުން، ގޭސް، މަރާމާތު، ހަރުކުރުން"},
     {i:"#ic-home",    img:"img/roofing.jpg",    t:"Ceiling & Roofing",dv:"ސީލިން އަދި ފުރާޅު", d:"Ceilings, roof leaks, gypsum", dvd:"ސީލިން، ފުރާޅުގެ ލީކު، ޖިޕްސަމް"},
+    {i:"#ic-zap",     img:"img/electrical.jpg", t:"Electrical Work",  dv:"ކަރަންޓުގެ މަސައްކަތްތައް", d:"Wiring, sockets, lights, fans", dvd:"ވައިރު، ސޮކެޓް، ބޮކި، ފަންކާ"},
     {i:"#ic-hammer",  img:"img/carpentry.jpg",  t:"Carpentry",        dv:"ކާޕެންޓްރީ", d:"Doors, locks, shelves, furniture", dvd:"ދޮރު، ތަޅު، ހަރުގަނޑު، ފަރުނީޗަރު"},
     {i:"#ic-wrench",  img:"img/general.jpg",    t:"General Repairs",  dv:"އާންމު މަރާމާތު", d:"Mounting, sealing, odd jobs", dvd:"ހަރުކުރުން، ސީލް، ކުދި މަސައްކަތް"},
   ];
