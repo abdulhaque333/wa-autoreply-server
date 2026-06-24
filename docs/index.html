@@ -374,6 +374,7 @@
   .drawer-cta{display:flex;flex-direction:column;gap:10px;margin-bottom:22px}
   .drawer-cta .btn{width:100%}
   .drawer-cta-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .drawer-cta .dcall-big{padding:17px 26px;font-size:1.06rem;font-weight:700}
   .drawer-nav{display:flex;flex-direction:column;margin-bottom:8px}
   .drawer-nav a{padding:13px 4px;font-weight:500;color:var(--body);border-bottom:1px solid var(--line);font-size:1rem;transition:.15s}
   .drawer-nav a:hover{color:var(--amber-d);padding-left:8px}
@@ -476,7 +477,7 @@
     </nav>
     <div class="nav-actions">
       <a class="btn callpill" id="nav-call" aria-label="Call now"><svg><use href="#phone"/></svg> Call Now</a>
-      <a class="btn btn-primary nav-book" id="nav-wa"><svg><use href="#wa"/></svg> <span data-i18n="btn.book_now">Book</span></a>
+      <a class="btn btn-primary nav-book" id="nav-wa"><svg><use href="#wa"/></svg> <span data-i18n="btn.book_now">WhatsApp</span></a>
     </div>
   </div>
 </header>
@@ -494,10 +495,7 @@
   <div class="drawer-scroll">
     <div class="verify"><span class="v-dot"></span> Online now · Fast reply on WhatsApp</div>
     <div class="drawer-cta">
-      <div class="drawer-cta-row">
-        <a class="btn btn-primary dbook" id="drawer-book"><svg><use href="#wa"/></svg> Book</a>
-        <a class="btn btn-sky" id="drawer-call"><svg><use href="#phone"/></svg> Call Now</a>
-      </div>
+      <a class="btn btn-sky dcall-big" id="drawer-call"><svg><use href="#phone"/></svg> Call Now</a>
       <div class="drawer-cta-row">
         <a class="btn btn-wa" id="drawer-wa"><svg><use href="#wa"/></svg> WhatsApp</a>
         <a class="btn btn-viber" id="drawer-viber"><svg><use href="#viber"/></svg> Viber</a>
@@ -546,7 +544,7 @@
       <h1 data-i18n="hero.h1">Your trusted home care partner in the Maldives</h1>
       <p class="sub" data-i18n="hero.sub">From a full apartment move to a dripping tap — one skilled, reliable team for every home, office and resort job. Fair prices, clean work, done on time.</p>
       <div class="hero-actions">
-        <a class="btn btn-primary" id="hero-wa"><svg><use href="#wa"/></svg> <span data-i18n="hero.cta_wa">Book</span></a>
+        <a class="btn btn-primary" id="hero-wa"><svg><use href="#wa"/></svg> <span data-i18n="hero.cta_wa">WhatsApp</span></a>
         <a class="btn btn-outline" href="#services"><span data-i18n="btn.our_services">Our Services</span> <svg><use href="#arrow"/></svg></a>
       </div>
       <div class="hero-trust">
@@ -774,7 +772,7 @@
   const arrow='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
 
   function renderServices(){
-    const book = tr("btn.book_service","Book Service");
+    const book = tr("btn.book_service","Book on WhatsApp");
     document.getElementById("sgrid").innerHTML = services.map(s=>`
     <article class="scard">
       <div class="scard-img"><img src="${s.img}" alt="${s.t}" loading="lazy"></div>
@@ -788,9 +786,8 @@
   }
   renderServices();
 
-  const ORDER_URL = "order.html";   // the booking app
   const waLink=(msg)=>`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg||DEFAULT_MESSAGE)}`;
-  const orderLink=(svc)=> svc ? `${ORDER_URL}?service=${encodeURIComponent(svc)}` : ORDER_URL;
+  const bookWa=(svc)=> waLink(svc ? "Hi, I'd like to book: "+svc : DEFAULT_MESSAGE);
 
   // ===== Google Ads conversion tracking (WhatsApp / booking contact) =====
   const ADS_CONVERSION = 'AW-18234086732/xUFiCKW5hsIcEMyq2PZD';
@@ -803,13 +800,8 @@
     if(redirectUrl){ setTimeout(go, 800); } // fallback so navigation never hangs
   }
 
-  // Primary "book" CTAs open the ordering app (same tab) — count conversion, then navigate
-  ["top-wa","nav-wa","hero-wa","drawer-book"].forEach(id=>{
-    const el=document.getElementById(id);
-    if(el){ el.href=ORDER_URL; el.addEventListener("click",(e)=>{ e.preventDefault(); fireContactConversion(ORDER_URL); }); }
-  });
-  // Quick-chat CTAs open WhatsApp in a new tab — count conversion (page stays open)
-  ["cta-wa","float-wa","footer-wa","drawer-wa","drawer-wa2"].forEach(id=>{
+  // All booking / chat CTAs open WhatsApp directly in a new tab — count conversion (page stays open)
+  ["top-wa","nav-wa","hero-wa","cta-wa","float-wa","footer-wa","drawer-wa","drawer-wa2"].forEach(id=>{
     const el=document.getElementById(id);
     if(el){ el.href=waLink(); el.target="_blank"; el.rel="noopener"; el.addEventListener("click",()=>fireContactConversion()); }
   });
@@ -824,11 +816,12 @@
     if(el){ el.href=viberLink; el.addEventListener("click",()=>fireContactConversion()); }
   });
 
-  // Tapping a service card opens the app with that service pre-selected
+  // Tapping a service card opens WhatsApp with that service mentioned
   document.getElementById("sgrid").addEventListener("click",(e)=>{
     const a=e.target.closest("a[data-svc]"); if(!a) return;
     e.preventDefault();
-    fireContactConversion(orderLink(a.dataset.svc));
+    fireContactConversion();
+    window.open(waLink("Hi, I'd like to book: "+a.dataset.svc),"_blank","noopener");
   });
 
   /* ===== Slide-out menu / info drawer ===== */
@@ -850,10 +843,10 @@
   document.addEventListener("keydown",(e)=>{if(e.key==="Escape"&&drawer.classList.contains("show"))closeDrawer();});
   drawer.querySelectorAll('.drawer-nav a, .drawer-svcs a').forEach(a=>a.addEventListener("click",()=>setTimeout(closeDrawer,80)));
 
-  // populate the drawer's service shortcuts (open the app with that service)
+  // populate the drawer's service shortcuts (open WhatsApp with that service)
   function renderDrawerSvcs(){
     document.getElementById("drawerSvcs").innerHTML = services.map(s=>
-      `<a href="${orderLink(s.t)}"><span class="em"><svg><use href="${s.i}"/></svg></span>${svcName(s)}</a>`).join("");
+      `<a href="${bookWa(s.t)}" target="_blank" rel="noopener"><span class="em"><svg><use href="${s.i}"/></svg></span>${svcName(s)}</a>`).join("");
   }
   renderDrawerSvcs();
 
@@ -867,7 +860,7 @@
     activeIdx=-1; currentMatches=list;
     const head = header ? `<div class="sr-head">${header}</div>` : "";
     searchResults.innerHTML = head + list.map((s,i)=>`
-      <a class="sr" href="${orderLink(s.t)}" data-i="${i}">
+      <a class="sr" href="${bookWa(s.t)}" target="_blank" rel="noopener" data-i="${i}">
         <span class="si2"><svg><use href="${s.i}"/></svg></span>
         <span><b>${svcName(s)}</b><span>${svcDesc(s)}</span></span>
         <svg class="go-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -893,7 +886,7 @@
       .filter(x=>x.sc>=0).sort((a,b)=>a.sc-b.sc).map(x=>x.s);
     if(!matches.length){
       currentMatches=[]; activeIdx=-1;
-      searchResults.innerHTML=`<div class="sr-empty">No match for “${term}”. <a href="${ORDER_URL}">See all services →</a></div>`;
+      searchResults.innerHTML=`<div class="sr-empty">No match for “${term}”. <a href="${waLink()}" target="_blank" rel="noopener">Message us on WhatsApp →</a></div>`;
       searchResults.classList.add("show");
     }else{
       paintResults(matches);
@@ -903,8 +896,8 @@
   searchInput.addEventListener("focus",()=>renderResults(searchInput.value));
   searchForm.addEventListener("submit",(e)=>{
     e.preventDefault();
-    if(currentMatches.length){ window.location.href=orderLink(currentMatches[Math.max(0,activeIdx)].t); }
-    else { window.location.href=ORDER_URL; }
+    const dest = currentMatches.length ? bookWa(currentMatches[Math.max(0,activeIdx)].t) : waLink();
+    window.open(dest,"_blank","noopener");
   });
   searchInput.addEventListener("keydown",(e)=>{
     const items=[...searchResults.querySelectorAll(".sr")];
