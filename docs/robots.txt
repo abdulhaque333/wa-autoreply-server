@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://handymanmaldives.netlify.app/sitemap.xml
+Sitemap: https://handymatemaldives.com/sitemap.xml
