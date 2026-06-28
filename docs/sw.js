@@ -1,4 +1,4 @@
-/* Handyman Maldives — service worker DISABLED (cache kill-switch).
+/* HandyMate Maldives — service worker DISABLED (cache kill-switch).
    The offline cache was serving stale content during active development,
    so this version deletes all caches and unregisters itself. Every request
    now goes straight to the network (always fresh). */

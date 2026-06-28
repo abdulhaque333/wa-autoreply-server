@@ -64,7 +64,7 @@ python3 -m http.server 8000
 
 ## অনলাইনে প্রকাশ (Netlify) — একবারের সেটআপ
 
-এই রিপোর Handyman সাইট `docs/` থেকে চলে, তাই ব্লগের জন্য **আলাদা একটা Netlify সাইট** বানান:
+এই রিপোর HandyMate সাইট `docs/` থেকে চলে, তাই ব্লগের জন্য **আলাদা একটা Netlify সাইট** বানান:
 
 1. Netlify → **Add new site → Import an existing project** → এই রিপো বাছুন।
 2. **Base directory** = `blog`, **Publish directory** = `blog`, **Build command** = `python3 generate.py`

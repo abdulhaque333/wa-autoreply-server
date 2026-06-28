@@ -1,7 +1,7 @@
 {
-  "name": "Handyman Maldives — Book a Service",
-  "short_name": "Handyman MV",
-  "description": "Order plumbing, electrical, aircon, painting, moving and more from Handyman Maldives in a few quick taps.",
+  "name": "HandyMate Maldives — Book a Service",
+  "short_name": "HandyMate MV",
+  "description": "Order plumbing, electrical, aircon, painting, moving and more from HandyMate Maldives in a few quick taps.",
   "start_url": "order.html?utm_source=pwa",
   "scope": "./",
   "display": "standalone",
