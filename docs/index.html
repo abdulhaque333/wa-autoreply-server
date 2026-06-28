@@ -474,8 +474,6 @@
   <symbol id="ic-wrench" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
 </svg>
 
-<div class="topbar">⚡ <span data-i18n="topbar.text">Same-day service across Malé &amp; nearby islands —</span> <a id="top-wa" data-i18n="topbar.link">Book on WhatsApp →</a></div>
-
 <header id="hdr">
   <div class="wrap nav">
     <div class="nav-left">
@@ -819,7 +817,7 @@
   }
 
   // All booking / chat CTAs open WhatsApp directly in a new tab — count conversion (page stays open)
-  ["top-wa","nav-wa","hero-wa","cta-wa","float-wa","footer-wa","drawer-wa","drawer-wa2"].forEach(id=>{
+  ["nav-wa","hero-wa","cta-wa","float-wa","footer-wa","drawer-wa","drawer-wa2"].forEach(id=>{
     const el=document.getElementById(id);
     if(el){ el.href=waLink(); el.target="_blank"; el.rel="noopener"; el.addEventListener("click",()=>fireContactConversion()); }
   });
