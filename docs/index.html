@@ -162,15 +162,24 @@
   .callpill{background:var(--amber-soft);color:var(--amber-d);border:1px solid #bfe9f0}
   .callpill:hover{background:var(--amber);color:#fff;border-color:transparent;box-shadow:0 10px 22px -10px rgba(14,155,180,.5);transform:translateY(-2px)}
   .hamburger{display:none}
-  @media(max-width:920px){.menu{display:none}.nav-book{display:none}.hamburger{display:grid}}
-  /* Mobile: stack the logo ABOVE the brand text so the name never crowds into the Call Now button */
+  @media(max-width:920px){.menu{display:none}.hamburger{display:grid}
+    /* show WhatsApp as a compact green icon button next to Call Now */
+    .nav-actions .nav-book{display:grid;width:44px;height:44px;padding:0;border-radius:50%;
+      background:var(--wa);border-color:transparent;box-shadow:0 10px 22px -10px rgba(34,197,94,.55)}
+    .nav-actions .nav-book span{display:none}
+    .nav-actions .nav-book svg{width:21px;height:21px}
+    .nav-actions .nav-book:hover{background:#1ea34f}
+  }
+  /* Phones: stack the logo ABOVE the brand text so the name never crowds the action buttons */
   @media(max-width:600px){
     .brand{flex-direction:column;align-items:center;text-align:center;gap:5px}
     .brand img{width:42px;height:42px}
-    .brand .logo-txt{font-size:.92rem;line-height:1.16}
-    .brand small{font-size:.52rem;letter-spacing:.15em;margin-top:1px}
-    .nav-left{gap:10px}
-    .nav .btn{padding:10px 15px}
+    .brand .logo-txt{font-size:.9rem;line-height:1.12;max-width:120px}
+    .brand small{font-size:.5rem;letter-spacing:.14em;margin-top:2px}
+    .nav-left{gap:9px}
+    .nav-actions{gap:8px}
+    .nav .callpill{padding:9px 14px;font-size:.93rem}
+    .nav-actions .nav-book{width:42px;height:42px}
   }
 
   /* Search */
