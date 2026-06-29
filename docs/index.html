@@ -735,8 +735,8 @@
       <div class="fcol">
         <h5 data-i18n="foot.services">Services</h5>
         <ul>
-          <li>Apartment Moving</li><li>Painting &amp; Tiling</li><li>Plumbing</li>
-          <li>Aircon Repair</li><li>Ceiling &amp; Roofing</li><li>Electrical Work</li>
+          <li><a class="fsvc" data-svc="Apartment Moving">Apartment Moving</a></li><li><a class="fsvc" data-svc="Painting &amp; Tiling">Painting &amp; Tiling</a></li><li><a class="fsvc" data-svc="Plumbing">Plumbing</a></li>
+          <li><a class="fsvc" data-svc="Aircon Repair">Aircon Repair</a></li><li><a class="fsvc" data-svc="Ceiling &amp; Roofing">Ceiling &amp; Roofing</a></li><li><a class="fsvc" data-svc="Electrical Work">Electrical Work</a></li>
         </ul>
       </div>
       <div class="fcol">
@@ -836,6 +836,13 @@
     e.preventDefault();
     fireContactConversion();
     window.open(waLink("Hi, I'd like to book: "+a.dataset.svc),"_blank","noopener");
+  });
+
+  // Footer service links → open WhatsApp with that service pre-filled
+  document.querySelectorAll(".fsvc").forEach(a=>{
+    a.href = bookWa(a.dataset.svc);
+    a.target = "_blank"; a.rel = "noopener";
+    a.addEventListener("click", ()=>fireContactConversion());
   });
 
   /* ===== Slide-out menu / info drawer ===== */
