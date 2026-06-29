@@ -284,11 +284,11 @@
   }
 
   /* Stats */
-  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
   .stat{text-align:center;padding:28px 16px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow-sm)}
   .stat b{display:block;font-size:2.1rem;font-weight:700;line-height:1;margin-bottom:6px;color:var(--amber-d)}
   .stat span{color:var(--muted);font-size:.88rem;font-weight:500}
-  @media(max-width:640px){.stats{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:640px){.stats{grid-template-columns:repeat(3,1fr);gap:9px}.stat{padding:18px 7px}.stat b{font-size:1.45rem}.stat span{font-size:.7rem}}
 
   /* Why */
   .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:44px}
@@ -634,7 +634,6 @@
 <section style="padding:64px 0">
   <div class="wrap">
     <div class="stats reveal">
-      <div class="stat"><b data-count="9">0</b><span>Home services</span></div>
       <div class="stat"><b>Free</b><span>Quotes on WhatsApp</span></div>
       <div class="stat"><b>No</b><span>Advance payment</span></div>
       <div class="stat"><b data-count="7">0</b><span>Days a week</span></div>
@@ -747,7 +746,7 @@
           <li><span class="sbadge" style="background:#7360F2"><svg><use href="#viber"/></svg></span> <a id="footer-viber">Viber</a></li>
           <li><span class="sbadge" style="background:#1877F2"><svg><use href="#fb"/></svg></span> <a href="https://www.facebook.com/share/18tm8DMVhN/?mibextid=wwXIfr" target="_blank" rel="noopener">Facebook page</a></li>
           <li><svg><use href="#phone"/></svg> <a id="footer-call">+960 723 7764</a></li>
-          <li><svg><use href="#clock"/></svg> <span>Open 7 days · 8am–11pm</span></li>
+          <li><svg><use href="#clock"/></svg> <span>Call or WhatsApp anytime to book an appointment</span></li>
         </ul>
       </div>
     </div>
