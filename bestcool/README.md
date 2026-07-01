@@ -14,7 +14,7 @@ Open `index.html`, find the `CONFIG` block near the bottom, and change the phone
 
 ```js
 const CONFIG = {
-  phone: "9600000000",   // <-- your real number, no + or spaces (Maldives 7771234 -> 9607771234)
+  phone: "9609250333",   // no + or spaces (Maldives 7771234 -> 9607771234)
   whatsappText: "Hi Best Cool, I need help with my AC.",
   area: "Malé & nearby islands",
   hours: "Sat–Thu, 9am – 9pm"
@@ -22,6 +22,10 @@ const CONFIG = {
 ```
 
 That single number powers the **Call** button, all **WhatsApp** buttons, and the floating chat bubble.
+It is already set to **+960 9250333** — change it here if the number changes.
+
+Prices in the **Pricing** section live directly in `index.html` (search for `price-row`) — edit the
+service names and amounts there anytime.
 
 ---
 
@@ -60,5 +64,6 @@ git push -u origin main
 | File | Purpose |
 |------|---------|
 | `index.html` | The entire website (HTML + CSS + JS) |
+| `logo.jpg` | Best Cool logo (header, footer, favicon) |
 | `robots.txt` | Lets search engines index the site |
 | `.nojekyll` | Ensures GitHub Pages serves all files as-is |

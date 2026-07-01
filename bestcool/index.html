@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Best Cool — AC Repair &amp; Servicing</title>
   <meta name="description" content="Best Cool — fast, reliable air conditioner repair, installation, gas refilling and servicing. Same-day service and honest pricing." />
-  <meta name="theme-color" content="#0ea5e9" />
+  <meta name="theme-color" content="#0369a1" />
+  <link rel="icon" type="image/jpeg" href="logo.jpg" />
+  <link rel="apple-touch-icon" href="logo.jpg" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Best Cool — AC Repair &amp; Servicing" />
@@ -48,8 +50,7 @@
     .nav{display:flex;align-items:center;justify-content:space-between;height:68px}
     .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;letter-spacing:-.3px}
     .logo .mark{
-      width:38px;height:38px;border-radius:10px;display:grid;place-items:center;
-      background:linear-gradient(135deg,var(--brand),var(--accent));color:#fff;font-size:20px;box-shadow:var(--shadow)
+      width:40px;height:40px;border-radius:10px;object-fit:cover;box-shadow:var(--shadow);display:block
     }
     .logo b{color:var(--brand)}
     .nav-links{display:flex;gap:26px;align-items:center}
@@ -112,6 +113,19 @@
     .why-item h3{font-size:17px;margin-bottom:6px}
     .why-item p{color:var(--muted);font-size:14px}
 
+    /* Pricing */
+    .price-list{max-width:720px;margin:0 auto;background:var(--card);border:1px solid var(--line);
+      border-radius:18px;overflow:hidden;box-shadow:var(--shadow)}
+    .price-row{display:flex;align-items:center;justify-content:space-between;gap:16px;
+      padding:18px 24px;border-bottom:1px solid var(--line)}
+    .price-row:last-child{border-bottom:none}
+    .price-row:nth-child(odd){background:#f8fbfe}
+    .price-row .name{font-weight:600;font-size:16px}
+    .price-row .name small{display:block;font-weight:400;color:var(--muted);font-size:13px}
+    .price-row .amt{font-weight:800;font-size:18px;color:var(--brand-dark);white-space:nowrap}
+    .price-row .amt small{font-weight:600;font-size:12px;color:var(--muted)}
+    .price-note{text-align:center;color:var(--muted);font-size:13px;margin-top:16px}
+
     /* Steps */
     .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;counter-reset:step}
     @media(max-width:820px){.steps{grid-template-columns:1fr}}
@@ -157,9 +171,10 @@
   <!-- =============== HEADER =============== -->
   <header>
     <div class="wrap nav">
-      <a href="#" class="logo"><span class="mark">❄</span>Best<b>Cool</b></a>
+      <a href="#" class="logo"><img class="mark" src="logo.jpg" alt="Best Cool logo" />Best<b>Cool</b></a>
       <nav class="nav-links">
         <a href="#services">Services</a>
+        <a href="#pricing">Pricing</a>
         <a href="#why">Why Us</a>
         <a href="#how">How It Works</a>
         <a href="#contact">Contact</a>
@@ -185,7 +200,7 @@
         <div class="hero-trust">
           <div><b>Same&nbsp;Day</b>Fast response</div>
           <div><b>All Brands</b>Split &amp; window AC</div>
-          <div><b>Warranty</b>On every repair</div>
+          <div><b>60-Day</b>Repair warranty</div>
         </div>
       </div>
       <div class="hero-card">
@@ -257,8 +272,29 @@
         <div class="why-item"><div class="ico">⏱️</div><h3>Fast Response</h3><p>Same-day service whenever possible.</p></div>
         <div class="why-item"><div class="ico">👨‍🔧</div><h3>Skilled Techs</h3><p>Experienced, well-equipped technicians.</p></div>
         <div class="why-item"><div class="ico">💰</div><h3>Fair Pricing</h3><p>Clear quotes before we start — no hidden costs.</p></div>
-        <div class="why-item"><div class="ico">🛡️</div><h3>Guaranteed Work</h3><p>Warranty on repairs and genuine parts.</p></div>
+        <div class="why-item"><div class="ico">🛡️</div><h3>60-Day Warranty</h3><p>Every repair is backed for 60 days.*</p></div>
       </div>
+    </div>
+  </section>
+
+  <!-- =============== PRICING =============== -->
+  <section id="pricing">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Price List</span>
+        <h2>Simple, upfront pricing</h2>
+        <p>Standard service rates below. Final price is confirmed after we check your unit.</p>
+      </div>
+      <div class="price-list">
+        <div class="price-row"><div class="name">Full Service</div><div class="amt">MVR&nbsp;800</div></div>
+        <div class="price-row"><div class="name">General Service</div><div class="amt">MVR&nbsp;600</div></div>
+        <div class="price-row"><div class="name">Gas Refilling <small>Full</small></div><div class="amt">MVR&nbsp;800</div></div>
+        <div class="price-row"><div class="name">Gas Refilling <small>Half</small></div><div class="amt">MVR&nbsp;400</div></div>
+        <div class="price-row"><div class="name">Cleaning / Wash</div><div class="amt">MVR&nbsp;300</div></div>
+        <div class="price-row"><div class="name">AC Installation</div><div class="amt">MVR&nbsp;800</div></div>
+        <div class="price-row"><div class="name">Uninstall &amp; Reinstall</div><div class="amt">MVR&nbsp;1000</div></div>
+      </div>
+      <p class="price-note">* 60-day warranty on repairs. Terms &amp; conditions apply.</p>
     </div>
   </section>
 
@@ -319,7 +355,7 @@
   <!-- =============== FOOTER =============== -->
   <footer>
     <div class="wrap">
-      <div class="logo"><span class="mark">❄</span>Best<b>Cool</b></div>
+      <div class="logo"><img class="mark" src="logo.jpg" alt="Best Cool logo" />Best<b>Cool</b></div>
       <p>AC repair, installation &amp; servicing. &copy; <span id="year"></span> Best Cool. All rights reserved.</p>
     </div>
   </footer>
@@ -336,7 +372,7 @@
        2. Everything else is filled in automatically.
        ========================================================= */
     const CONFIG = {
-      phone: "9600000000",                 // <-- CHANGE THIS to the real number
+      phone: "9609250333",                 // Best Cool contact number
       whatsappText: "Hi Best Cool, I need help with my AC.",
       area: "Malé & nearby islands",       // optional: change service area
       hours: "Sat–Thu, 9am – 9pm"          // optional: change opening hours
